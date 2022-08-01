@@ -163,6 +163,7 @@ if( function_exists('acf_add_options_page') ) {
         'menu_slug'     => 'theme-site-options',
         'capability'    => 'edit_posts',
         'redirect'      => false,
-        'position' => '5',
+        'position' 		=> '5',
+        'icon_url' 		=> 'dashicons-layout',
     ));
 }
