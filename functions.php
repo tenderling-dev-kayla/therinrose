@@ -122,3 +122,23 @@ function tend_require_folder($folder) {
  **/
 tend_require_folder('inc/cpt');
 
+
+/**
+ * add theme options pages
+ **/
+add_action('acf/init', 'my_acf_op_init');
+function my_acf_op_init() {
+
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
+
+        // Register options page.
+        $option_page = acf_add_options_page(array(
+            'page_title'    => __('Site Options'),
+            'menu_title'    => __('Site Options'),
+            'menu_slug'     => 'theme-site-options',
+            'capability'    => 'edit_posts',
+            'redirect'      => false
+        ));
+    }
+}
