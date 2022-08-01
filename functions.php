@@ -87,3 +87,21 @@ function understrap_child_customize_controls_js() {
 	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_controls_js' );
+
+
+/**
+ * Add PUC for updates
+ */
+require 'inc/plugin-update-checker/plugin-update-checker.php';
+$repo = 'therinrose';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/tenderling-dev-kayla/therinrose/',
+	__FILE__,
+	$repo
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
+
+//Optional: If you're using a private repository, specify the access token like this:
+//$myUpdateChecker->setAuthentication('your-token-here');
