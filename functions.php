@@ -102,7 +102,7 @@ function tenderling_add_puc() {
 	);
 
 	//Set authentication
-	$myUpdateChecker->setAuthentication(get_field('theme_update_token','option'));
+	$myUpdateChecker->setAuthentication(get_field('theme_','option'));
 
 	//Set the branch that contains the stable release.
 	$myUpdateChecker->setBranch('main');
@@ -129,6 +129,7 @@ tenderling_require_folder('inc/cpt');
 /**
  * add theme options pages
  **/
+add_action('acf/init', 'tenderling_acf_op_init');
 function tenderling_acf_op_init() {
 
     // Check function exists.
@@ -144,4 +145,3 @@ function tenderling_acf_op_init() {
         ));
     }
 }
-add_action('acf/init', 'tenderling_acf_op_init');
