@@ -111,9 +111,9 @@ tend_add_puc();
  * Require Folder Loop
  **/
 function tend_require_folder($folder) {
-    foreach (glob(get_stylesheet_directory().'/realadvantage/'.$folder.'/*.php') as $function) {
+    foreach (glob(get_stylesheet_directory().'/'.$folder.'/*.php') as $function) {
         $function = basename($function);
-        require get_stylesheet_directory().'/realadvantage/'.$folder.'/'.$function;
+        require get_stylesheet_directory().'/'.$folder.'/'.$function;
     }
 }
 
