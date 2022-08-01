@@ -109,6 +109,11 @@ function tenderling_add_puc() {
 }
 tenderling_add_puc();
 
+/**
+ * Add Disable Posts
+ **/
+include "inc/disableposts.php";
+
 
 /**
  * Require Folder Loop
