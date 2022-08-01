@@ -116,6 +116,26 @@ include "inc/disable-posts.php";
 
 
 /**
+* Remove page templates inherited from the parent theme.
+*
+* @param array $page_templates List of currently active page templates.
+*
+* @return array Modified list of page templates.
+*/
+add_filter( 'theme_page_templates', 'tenderling_remove_page_template' );
+function tenderling_remove_page_template( $page_templates ) {
+	unset( $page_templates['blank.php'] );
+	unset( $page_templates['both-sidebarspage.php'] );
+	unset( $page_templates['empty.php'] );
+	unset( $page_templates['fullwidthpage.php'] );
+	unset( $page_templates['left-sidebarspage.php'] );
+	unset( $page_templates['right-sidebarspage.php'] );
+
+	return $page_templates;
+}
+
+
+/**
  * Require Folder Loop
  **/
 function tenderling_require_folder($folder) {
@@ -142,6 +162,7 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'    => __('Site Options'),
         'menu_slug'     => 'theme-site-options',
         'capability'    => 'edit_posts',
-        'redirect'      => false
+        'redirect'      => false,
+        'position' => '5',
     ));
 }
