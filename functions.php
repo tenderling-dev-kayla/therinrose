@@ -124,8 +124,8 @@ include "inc/disable-posts.php";
 */
 add_filter( 'theme_page_templates', 'tenderling_remove_page_template' );
 function tenderling_remove_page_template( $page_templates ) {
-	unset( $page_templates['blank.php'] );
-	unset( $page_templates['both-sidebarspage.php'] );
+	unset( $page_templates['page-templates/blank.php'] );
+	unset( $page_templates['page-templates/both-sidebarspage.php'] );
 	unset( $page_templates['empty.php'] );
 	unset( $page_templates['fullwidthpage.php'] );
 	unset( $page_templates['left-sidebarspage.php'] );
