@@ -128,8 +128,8 @@ function tenderling_remove_page_template( $page_templates ) {
 	unset( $page_templates['page-templates/both-sidebarspage.php'] );
 	unset( $page_templates['page-templates/empty.php'] );
 	unset( $page_templates['page-templates/fullwidthpage.php'] );
-	unset( $page_templates['page-templates/left-sidebarspage.php'] );
-	unset( $page_templates['page-templates/right-sidebarspage.php'] );
+	unset( $page_templates['page-templates/left-sidebarpage.php'] );
+	unset( $page_templates['page-templates/right-sidebarpage.php'] );
 
 	return $page_templates;
 }
