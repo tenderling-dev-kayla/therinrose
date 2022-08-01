@@ -1,6 +1,6 @@
 <?php
 /**
- * Understrap Child Theme functions and definitions
+ * Tenderling Understrap Child Theme functions and definitions
  *
  * @package UnderstrapChild
  */
@@ -52,7 +52,7 @@ add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
  * Load the child theme's text domain
  */
 function add_child_theme_textdomain() {
-	load_child_theme_textdomain( 'understrap-child', get_stylesheet_directory() . '/languages' );
+	load_child_theme_textdomain( 'tenderling', get_stylesheet_directory() . '/languages' );
 }
 add_action( 'after_setup_theme', 'add_child_theme_textdomain' );
 
@@ -92,7 +92,7 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
 /**
  * Add PUC for updates
  */
-function tend_add_puc() {
+function tenderling_add_puc() {
 	require 'inc/plugin-update-checker/plugin-update-checker.php';
 	$repo = 'therinrose';
 	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
@@ -101,16 +101,19 @@ function tend_add_puc() {
 		$repo
 	);
 
+	//Set authentication
+	$myUpdateChecker->setAuthentication(get_field('theme_update_token','option'));
+
 	//Set the branch that contains the stable release.
 	$myUpdateChecker->setBranch('main');
 }
-tend_add_puc();
+tenderling_add_puc();
 
 
 /**
  * Require Folder Loop
  **/
-function tend_require_folder($folder) {
+function tenderling_require_folder($folder) {
     foreach (glob(get_stylesheet_directory().'/'.$folder.'/*.php') as $function) {
         $function = basename($function);
         require get_stylesheet_directory().'/'.$folder.'/'.$function;
@@ -120,14 +123,13 @@ function tend_require_folder($folder) {
 /**
  * include CPT folder
  **/
-tend_require_folder('inc/cpt');
+tenderling_require_folder('inc/cpt');
 
 
 /**
  * add theme options pages
  **/
-add_action('acf/init', 'my_acf_op_init');
-function my_acf_op_init() {
+function tenderling_acf_op_init() {
 
     // Check function exists.
     if( function_exists('acf_add_options_page') ) {
@@ -142,3 +144,4 @@ function my_acf_op_init() {
         ));
     }
 }
+add_action('acf/init', 'tenderling_acf_op_init');
