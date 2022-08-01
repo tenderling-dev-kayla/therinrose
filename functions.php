@@ -92,16 +92,33 @@ add_action( 'customize_controls_enqueue_scripts', 'understrap_child_customize_co
 /**
  * Add PUC for updates
  */
-require 'inc/plugin-update-checker/plugin-update-checker.php';
-$repo = 'therinrose';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/tenderling-dev-kayla/therinrose/',
-	__FILE__,
-	$repo
-);
+function tend_add_puc() {
+	require 'inc/plugin-update-checker/plugin-update-checker.php';
+	$repo = 'therinrose';
+	$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+		'https://github.com/tenderling-dev-kayla/therinrose/',
+		__FILE__,
+		$repo
+	);
 
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('main');
+	//Set the branch that contains the stable release.
+	$myUpdateChecker->setBranch('main');
+}
+tend_add_puc();
 
-//Optional: If you're using a private repository, specify the access token like this:
-//$myUpdateChecker->setAuthentication('your-token-here');
+
+/**
+ * Require Folder Loop
+ **/
+function tend_require_folder($folder) {
+    foreach (glob(get_stylesheet_directory().'/realadvantage/'.$folder.'/*.php') as $function) {
+        $function = basename($function);
+        require get_stylesheet_directory().'/realadvantage/'.$folder.'/'.$function;
+    }
+}
+
+/**
+ * include CPT folder
+ **/
+tend_require_folder('inc/cpt');
+
