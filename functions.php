@@ -112,7 +112,7 @@ tenderling_add_puc();
 /**
  * Add Disable Posts
  **/
-include "inc/disableposts.php";
+include "inc/disable-posts.php";
 
 
 /**
