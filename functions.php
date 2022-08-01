@@ -167,11 +167,3 @@ if( function_exists('acf_add_options_page') ) {
         'icon_url' 		=> 'dashicons-layout',
     ));
 }
-
-/**
- * Tenderling Admin Branding
- */
-function tenderling_admin_favicon() {
-	echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_bloginfo('wpurl') . '/wp-content/themes/therinrose/inc/img/t-favicon.png" />';
-}
-add_action( 'admin_head', 'tenderling_admin_favicon' );
