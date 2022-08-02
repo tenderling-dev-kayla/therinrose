@@ -36,13 +36,6 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug' => $theme_settings_page['menu_slug'],
         'menu_slug'	  => 'theme-footer'
     ));
-    // Add modals page.
-    $modals_settings_page = acf_add_options_page(array(
-        'page_title'  => __('Modal Popup Settings'),
-        'menu_title'  => __('Popups'),
-        'parent_slug' => $theme_settings_page['menu_slug'],
-        'menu_slug'	  => 'theme-modals'
-    ));
     // Add archive settings pages to each post type.
     $gallery_archive = acf_add_options_page(array(
         'page_title'  => __('Galleries Archive Settings'),

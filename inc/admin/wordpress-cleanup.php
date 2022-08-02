@@ -19,19 +19,16 @@ function tenderling_register_custom_menu_items() {
     );
 }
 
+$adminStyle = 'tenderling';
 
-
-
-/**$tenderlingAdmin = false;
-if (!current_user_can( 'manage_options' )) :
-	$tenderlingAdmin = true;
-else :
+if (current_user_can( 'manage_options' )) :
 	$currentUser = get_current_user_id();
-	$tenderlingAdmin = !get_field('show_full_admin', 'user_'.get_current_user_id());
-endif;**/
+	$adminStyleSetting = get_field('admin_style', 'user_'.$currentUser);
+	if($adminStyleSetting == 'wp') :
+		$adminStyle = 'wp';
+	endif;
+endif;
 
-$tenderlingAdmin = true;
-
-if($tenderlingAdmin):
+if($adminStyle == 'tenderling'):
 	add_action('admin_menu', 'tenderling_register_custom_menu_items');
 endif;
