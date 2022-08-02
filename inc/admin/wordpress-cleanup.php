@@ -35,10 +35,16 @@ endif;
 
 /**Cleanup user profile**/
 function tenderling_update_contact_methods( $contactmethods ) {
-
-    unset( $contactmethods['url'] );
     unset( $contactmethods['facebook'] );
     unset( $contactmethods['instagram'] );
+    unset( $contactmethods['linkedin'] );
+    unset( $contactmethods['myspace'] );
+    unset( $contactmethods['pinterest'] );
+    unset( $contactmethods['soundcloud'] );
+    unset( $contactmethods['tumblr'] );
+    unset( $contactmethods['twitter'] );
+    unset( $contactmethods['youtube'] );
+    unset( $contactmethods['wikipedia'] );
 
     return $contactmethods;
 
