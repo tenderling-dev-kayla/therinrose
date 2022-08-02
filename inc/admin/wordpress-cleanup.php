@@ -32,3 +32,15 @@ endif;
 if($adminStyle == 'tenderling'):
 	add_action('admin_menu', 'tenderling_register_custom_menu_items');
 endif;
+
+/**Cleanup user profile**/
+function tenderling_update_contact_methods( $contactmethods ) {
+
+    unset( $contactmethods['url'] );
+    unset( $contactmethods['facebook'] );
+    unset( $contactmethods['instagram'] );
+
+    return $contactmethods;
+
+}
+add_filter( 'user_contactmethods', 'tenderling_update_contact_methods' );
