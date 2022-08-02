@@ -170,6 +170,6 @@ if( function_exists('acf_add_options_page') ) {
     $gallery_archive = acf_add_options_page(array(
         'page_title'  => __('Galleries Archive Settings'),
         'menu_title'  => __('Galleries Archive'),
-        'parent_slug' => 'post_type=gallery',
+        'parent_slug' => 'edit.php?post_type=gallery',
     ));
 }
