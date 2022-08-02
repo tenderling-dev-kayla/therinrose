@@ -157,14 +157,42 @@ tenderling_require_folder('inc/cpt');
 if( function_exists('acf_add_options_page') ) {
 
     // Register main options page.
-    $option_page = acf_add_options_page(array(
+    $theme_settings_page = acf_add_options_page(array(
         'page_title'    => __('Site Options'),
         'menu_title'    => __('Site Options'),
         'menu_slug'     => 'theme-site-options',
         'capability'    => 'edit_posts',
-        'redirect'      => false,
+        'redirect'      => true,
         'position' 		=> '5',
         'icon_url' 		=> 'dashicons-layout',
+    ));
+    // Add Authorization page.
+    $modals_settings_page = acf_add_options_page(array(
+        'page_title'  => __('Authorization Settings'),
+        'menu_title'  => __('Authorization'),
+        'parent_slug' => $theme_settings_page['menu_slug'],
+        'menu_slug'	  => 'theme-auth'
+    ));
+    // Add header page.
+    $modals_settings_page = acf_add_options_page(array(
+        'page_title'  => __('Header Settings'),
+        'menu_title'  => __('Header'),
+        'parent_slug' => $theme_settings_page['menu_slug'],
+        'menu_slug'	  => 'theme-header'
+    ));
+    // Add footer page.
+    $modals_settings_page = acf_add_options_page(array(
+        'page_title'  => __('Footer Settings'),
+        'menu_title'  => __('Footer'),
+        'parent_slug' => $theme_settings_page['menu_slug'],
+        'menu_slug'	  => 'theme-footer'
+    ));
+    // Add modals page.
+    $modals_settings_page = acf_add_options_page(array(
+        'page_title'  => __('Modal Popup Settings'),
+        'menu_title'  => __('Modals'),
+        'parent_slug' => $theme_settings_page['menu_slug'],
+        'menu_slug'	  => 'theme-modals'
     ));
     // Add archive settings pages to each post type.
     $gallery_archive = acf_add_options_page(array(
