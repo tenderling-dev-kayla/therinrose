@@ -17,23 +17,17 @@ function tenderling_register_custom_menu_items() {
         'dashicons-menu-alt2', 	//Icon
         26 				 		//Position
     );
+
+    //remove Appearrance
+    remove_menu_page('themes.php');
+
+    //remove plugin editor
+    remove_menu_page('plugin-editor.php');
 }
 
-$adminStyle = 'tenderling';
-
-if (current_user_can( 'manage_options' )) :
-	$currentUser = get_current_user_id();
-	$adminStyleSetting = get_field('admin_style', 'user_'.$currentUser);
-	if($adminStyleSetting == 'wp') :
-		$adminStyle = 'wp';
-	endif;
-endif;
-
-if($adminStyle == 'tenderling'):
-	add_action('admin_menu', 'tenderling_register_custom_menu_items');
-endif;
-
-/**Cleanup user profile**/
+/**
+ * Remove User Profile Contact Methods
+ **/
 function tenderling_update_contact_methods( $contactmethods ) {
     unset( $contactmethods['facebook'] );
     unset( $contactmethods['instagram'] );
@@ -45,12 +39,13 @@ function tenderling_update_contact_methods( $contactmethods ) {
     unset( $contactmethods['twitter'] );
     unset( $contactmethods['youtube'] );
     unset( $contactmethods['wikipedia'] );
-
     return $contactmethods;
-
 }
 add_filter( 'user_contactmethods', 'tenderling_update_contact_methods' );
 
+/**
+ * Remove User Profile and Create User form Additional Fields
+ **/
 function tenderling_update_user_fields_css() {
 	ob_start(); ?>
 	<style>
@@ -69,6 +64,30 @@ function tenderling_update_user_fields_css() {
 	</style>
 	<?php echo ob_get_clean(); 
 }
-add_action( 'admin_head-user-edit.php', 'tenderling_update_user_fields_css' );
-add_action( 'admin_head-profile.php',   'tenderling_update_user_fields_css' );
-add_action( 'admin_head-user-new.php',  'tenderling_update_user_fields_css' );
+
+
+
+/*********
+ * 
+ * Define custom tenderling admin display
+ *
+ ********/
+$adminStyle = 'tenderling';
+$userStyle = 'tenderling';
+$currentUser = get_current_user_id();
+
+if (current_user_can( 'manage_options' )) :
+	$currentUser = get_current_user_id();
+	$adminStyle = get_field('admin_style', 'user_'.$currentUser);
+	$userStyle = get_field('user_style', 'user_'.$currentUser);
+endif;
+
+if($adminStyle == 'tenderling'):
+	add_action('admin_menu', 'tenderling_register_custom_menu_items');
+endif;
+
+if($userStyle == 'tenderling'):
+	add_action( 'admin_head-user-edit.php', 'tenderling_update_user_fields_css' );
+	add_action( 'admin_head-profile.php',   'tenderling_update_user_fields_css' );
+	add_action( 'admin_head-user-new.php',  'tenderling_update_user_fields_css' );
+endif;
