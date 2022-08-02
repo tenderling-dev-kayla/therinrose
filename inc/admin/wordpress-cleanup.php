@@ -61,7 +61,8 @@ function tenderling_update_user_fields_css() {
 		form#your-profile tr.user-syntax-highlighting-wrap,
 		form#your-profile tr.user-admin-color-wrap,
 		form#your-profile div#application-passwords-section,
-		form#your-profile .yoast.yoast-settings
+		form#your-profile .yoast.yoast-settings,
+		form#your-profile tr.user-comment-shortcuts-wrap,
 		form#createuser table.form-table > tbody > tr:nth-of-type(5) { 
 			display: none; 
 		}
