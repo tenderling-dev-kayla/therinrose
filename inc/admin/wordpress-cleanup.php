@@ -114,3 +114,10 @@ function tenderling_adminfavicon() {
 	<?php echo ob_get_clean();
 }
 add_action( 'admin_head', 'tenderling_adminfavicon' );
+
+function tenderling_footer_admin () {
+	ob_start(); ?>
+	<span id="footer-thankyou">Developed by <a href="http://tenderling.com" target="_blank">Tenderling</a></span>
+	<?php echo ob_get_clean();
+}
+add_filter('admin_footer_text', 'tenderling_footer_admin');
