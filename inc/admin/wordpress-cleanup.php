@@ -6,7 +6,8 @@
 
 
 function tenderling_register_custom_menu_items() {
-	//Move Menus to top level
+	 
+	//Add Menus to top level
     add_menu_page(
         'Navigation',			//Title
         'Navigation', 			//Menu Title
@@ -21,14 +22,16 @@ function tenderling_register_custom_menu_items() {
 
 
 
-$tenderlingAdmin = true;
+/**$tenderlingAdmin = false;
 if (!current_user_can( 'manage_options' )) :
-	$tenderlingAdmin = false;
+	$tenderlingAdmin = true;
 else :
 	$currentUser = get_current_user_id();
-	$tenderlingAdmin = get_field('show_full_admin', 'user_'.get_current_user_id());
-endif;
+	$tenderlingAdmin = !get_field('show_full_admin', 'user_'.get_current_user_id());
+endif;**/
 
-if(!$tenderlingAdmin):
+$tenderlingAdmin = true;
+
+if($tenderlingAdmin):
 	add_action('admin_menu', 'tenderling_register_custom_menu_items');
 endif;
