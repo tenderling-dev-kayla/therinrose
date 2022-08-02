@@ -171,11 +171,12 @@ if( function_exists('acf_add_options_page') ) {
         'page_title'  => __('Galleries Archive Settings'),
         'menu_title'  => __('Galleries Archive'),
         'parent_slug' => 'edit.php?post_type=gallery',
-        'menu_slug'     => 'theme-site-options',
+        'menu_slug'   => 'gallery-archive-options',
     ));
     $residence_archive = acf_add_options_page(array(
         'page_title'  => __('Residences Archive Settings'),
         'menu_title'  => __('Residences Archive'),
         'parent_slug' => 'edit.php?post_type=residence',
+        'menu_slug'   => 'residence-archive-options',
     ));
 }
