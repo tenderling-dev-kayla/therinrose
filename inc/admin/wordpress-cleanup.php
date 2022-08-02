@@ -50,3 +50,9 @@ function tenderling_update_contact_methods( $contactmethods ) {
 
 }
 add_filter( 'user_contactmethods', 'tenderling_update_contact_methods' );
+
+function tenderling_update_user_fields_css() {
+    echo '<style>tr.user-url-wrap, form#your-profile > h2:nth-of-type(4), form#your-profile > h2:nth-of-type(4) + table.form-table { display: none; }</style>';
+}
+add_action( 'admin_head-user-edit.php', 'tenderling_update_user_fields_css' );
+add_action( 'admin_head-profile.php',   'tenderling_update_user_fields_css' );
