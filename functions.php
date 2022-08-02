@@ -156,7 +156,7 @@ tenderling_require_folder('inc/cpt');
  **/
 if( function_exists('acf_add_options_page') ) {
 
-    // Register options page.
+    // Register main options page.
     $option_page = acf_add_options_page(array(
         'page_title'    => __('Site Options'),
         'menu_title'    => __('Site Options'),
@@ -165,5 +165,11 @@ if( function_exists('acf_add_options_page') ) {
         'redirect'      => false,
         'position' 		=> '5',
         'icon_url' 		=> 'dashicons-layout',
+    ));
+    // Add archive settings pages to each post type.
+    $gallery_archive = acf_add_options_page(array(
+        'page_title'  => __('Galleries Archive Settings'),
+        'menu_title'  => __('Galleries Archive'),
+        'parent_slug' => 'post_type=gallery',
     ));
 }
