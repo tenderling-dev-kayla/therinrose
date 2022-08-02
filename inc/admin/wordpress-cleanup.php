@@ -91,3 +91,26 @@ if($userStyle == 'tenderling'):
 	add_action( 'admin_head-profile.php',   'tenderling_update_user_fields_css' );
 	add_action( 'admin_head-user-new.php',  'tenderling_update_user_fields_css' );
 endif;
+
+
+/**
+ * Change to Tenderling Branding
+ **/
+function tenderling_loginlogo() {
+	ob_start(); ?>
+	<link rel="Shortcut Icon" type="image/x-icon" href="<?php echo get_bloginfo('stylesheet_directory'); ?>/inc/img/tenderling-icon-square.png" />
+	<style>
+		h1 a {
+			background-image: url('<?php echo get_bloginfo('stylesheet_directory'); ?>/inc/img/tenderling-icon.png') !important; 
+		}
+	</style>
+	<?php echo ob_get_clean();
+}
+add_action('login_head', 'tenderling_loginlogo');
+
+function tenderling_adminfavicon() {
+	ob_start(); ?>
+	<link rel="Shortcut Icon" type="image/x-icon" href="<?php echo get_bloginfo('stylesheet_directory'); ?>/inc/img/tenderling-icon-square.png" />
+	<?php echo ob_get_clean();
+}
+add_action( 'admin_head', 'tenderling_adminfavicon' );
