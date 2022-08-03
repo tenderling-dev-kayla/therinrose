@@ -17,10 +17,10 @@ if( function_exists('acf_add_options_page') ) {
     ));
     // Add Authorization page.
     $modals_settings_page = acf_add_options_page(array(
-        'page_title'  => __('Authorization Settings'),
-        'menu_title'  => __('Authorization'),
+        'page_title'  => __('General Settings'),
+        'menu_title'  => __('General'),
         'parent_slug' => $theme_settings_page['menu_slug'],
-        'menu_slug'	  => 'theme-auth'
+        'menu_slug'	  => 'theme-general'
     ));
     // Add header page.
     $modals_settings_page = acf_add_options_page(array(
