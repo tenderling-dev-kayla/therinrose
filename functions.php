@@ -146,6 +146,6 @@ function tenderling_require_folder($folder) {
 tenderling_require_folder('inc/cpt');
 
 /**
- * include Admin folder for Tenderling admin cleanup
+ * include Admin folder for Tenderling admin cleanup 
  **/
 tenderling_require_folder('inc/admin');
