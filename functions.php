@@ -109,11 +109,6 @@ function tenderling_add_puc() {
 }
 tenderling_add_puc();
 
-/**
- * Add Disable Posts
- **/
-include "inc/disable-posts.php";
-
 
 /**
 * Remove page templates inherited from the parent theme.

@@ -121,3 +121,4 @@ function tenderling_footer_admin () {
 	<?php echo ob_get_clean();
 }
 add_filter('admin_footer_text', 'tenderling_footer_admin');
+
