@@ -1,4 +1,35 @@
 <?php
+/**
+ * Disable Category and Tax Taxonomies
+ */
+add_action('init', 'tenderling_remove_default_taxonomies');
+function wpsnipp_remove_default_taxonomies(){
+  global $wp_taxonomies;
+  unregister_taxonomy_for_object_type( 'category', 'post' );
+  unregister_taxonomy_for_object_type( 'post_tag', 'post' );
+  if ( taxonomy_exists( 'category'))
+    unset( $wp_taxonomies['category']);
+  if ( taxonomy_exists( 'post_tag'))
+    unset( $wp_taxonomies['post_tag']);
+  unregister_taxonomy('category');
+  unregister_taxonomy('post_tag');
+}
+
+
+/**
+ * Remove posts from menu options
+ */
+//add_filter('register_post_type_args', 'tenderling_remove_posts_from_nav_menus', 20, 2);
+function tenderling_remove_posts_from_nav_menus($args, $post_type) {
+    if($post_type == 'post') {
+        $args['show_in_nav_menus'] => false;
+    }
+    return $args;
+}
+
+
+
+
 
 /*
 Extended from WP Disable Posts by Tony Kwon
@@ -151,7 +182,7 @@ class WP_Disable_Posts {
   }
 }
 
-new WP_Disable_Posts;
+//new WP_Disable_Posts;
 
 
 
