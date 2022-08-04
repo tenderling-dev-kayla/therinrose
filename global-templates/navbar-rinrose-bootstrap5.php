@@ -16,7 +16,7 @@ defined( 'ABSPATH' ) || exit;
     	<span class="text-muted">Toggleable via the navbar brand.</span>
 	</div>
 </div>
-<nav id="main-nav" class="navbar fiex-top navbar-expand-md navbar-light bg-white" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar fiex-top navbar-light bg-white" aria-labelledby="main-nav-label">
 
 	<h2 id="main-nav-label" class="screen-reader-text">
 		<?php esc_html_e( 'Main Navigation', 'understrap' ); ?>
