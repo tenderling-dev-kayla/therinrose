@@ -75,15 +75,13 @@ function tenderling_hide_customizer_sections($wp_customize) {
 
     //Understrap
     $wp_customize->remove_section( 'understrap_theme_layout_options' );
-
-    //Understrap logo control
-    $wp_customize->remove_control('custom_logo');
 }
 
 function tenderling_customizer_css() {
 	ob_start(); ?>
 	<style>
-		ul.customize-pane-parent li#accordion-panel-widgets {
+		ul.customize-pane-parent li#accordion-panel-widgets,
+		ul.customize-pane-child li#customize-control-custom_logo {
 			display:  none!important;
 		}
 	</style>

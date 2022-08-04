@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 ?>
-<nav id="main-nav" class="navbar fixed-top navbar-light bg-white" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar sticky-top navbar-light bg-white" aria-labelledby="main-nav-label">
 	<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'tenderling' ); ?></h2>
 	<div class="container-fluid">
 		<div class="row w-100 justify-content-between">
