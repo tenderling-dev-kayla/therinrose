@@ -138,7 +138,10 @@ function tenderling_adminfavicon() {
 	<?php echo ob_get_clean();
 }
 add_action('admin_head', 'tenderling_adminfavicon');
-add_action('admin_init', 'tenderling_adminfavicon');
+
+if(is_customize_preview()) :
+	add_action('admin_init', 'tenderling_adminfavicon');
+endif;
 
 
 function tenderling_footer_admin () {
