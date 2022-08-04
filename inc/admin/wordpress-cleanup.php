@@ -91,7 +91,7 @@ endif;
 
 if($adminStyle == 'tenderling'):
 	add_action('admin_menu', 'tenderling_register_custom_menu_items');
-	add_action( 'customize_register', 'tenderling_hide_customizer_sections');
+	add_action( 'customize_register', 'tenderling_hide_customizer_sections', 99);
 endif;
 
 if($userStyle == 'tenderling'):
