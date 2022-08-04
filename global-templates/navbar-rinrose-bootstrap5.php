@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 
 ?>
-<nav id="main-nav" class="navbar fix-top navbar-light bg-white" aria-labelledby="main-nav-label">
+<nav id="main-nav" class="navbar fixed-top navbar-light bg-white" aria-labelledby="main-nav-label">
 	<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'tenderling' ); ?></h2>
 	<div class="container-fluid">
 		<div class="row w-100 justify-content-between">
@@ -41,7 +41,7 @@ defined( 'ABSPATH' ) || exit;
       		</div>
       	</div>
 	</div><!-- .container(-fluid) -->
-	<div class="collapse" id="navbarToggleExternalContent">
+	<div class="collapse fixed-top w-100" id="navbarToggleExternalContent">
 	 	<div class="bg-dark p-4">
 	    	<h5 class="text-white h4">Collapsed content</h5>
 	    	<span class="text-muted">Toggleable via the navbar brand.</span>
