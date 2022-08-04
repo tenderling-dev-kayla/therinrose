@@ -41,7 +41,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		<!-- end custom logo -->
 
 		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-			<span class="navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon tenderling-class-test"></span>
 		</button>
 
 		<div class="offcanvas offcanvas-end bg-primary" tabindex="-1" id="navbarNavOffcanvas">
