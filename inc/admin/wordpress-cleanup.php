@@ -77,6 +77,16 @@ function tenderling_hide_customizer_sections($wp_customize) {
     $wp_customize->remove_section( 'understrap_theme_layout_options' );
 }
 
+function tenderling_hideWidgets() {
+	ob_start(); ?>
+	<style>
+		ul.customize-pane-parent li#accordion-panel-widgets {
+			display:  none!important;
+		}
+	</style>
+	<?php echo ob_get_clean();
+}
+
 
 
 /*********
@@ -97,6 +107,7 @@ endif;
 if($adminStyle == 'tenderling'):
 	add_action('admin_menu', 'tenderling_register_custom_menu_items');
 	add_action( 'customize_register', 'tenderling_hide_customizer_sections', 99);
+	add_action('admin_init', 'tenderling_hideWidgets');
 endif;
 
 if($userStyle == 'tenderling'):
@@ -128,6 +139,7 @@ function tenderling_adminfavicon() {
 }
 add_action('admin_head', 'tenderling_adminfavicon');
 add_action('admin_init', 'tenderling_adminfavicon');
+
 
 function tenderling_footer_admin () {
 	ob_start(); ?>
