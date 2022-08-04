@@ -126,7 +126,8 @@ function tenderling_adminfavicon() {
 	<link rel="Shortcut Icon" type="image/x-icon" href="<?php echo get_bloginfo('stylesheet_directory'); ?>/inc/img/tenderling-icon-square.png" />
 	<?php echo ob_get_clean();
 }
-add_action( 'admin_head', 'tenderling_adminfavicon' );
+add_action('admin_head', 'tenderling_adminfavicon');
+add_action('admin_init', 'tenderling_adminfavicon');
 
 function tenderling_footer_admin () {
 	ob_start(); ?>
