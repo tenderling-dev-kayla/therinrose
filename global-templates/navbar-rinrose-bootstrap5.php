@@ -25,12 +25,8 @@ defined( 'ABSPATH' ) || exit;
 
 	<div class="container-fluid">
 
-		<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavOffcanvas" aria-controls="navbarNavOffcanvas" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'understrap' ); ?>">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      		<span class="navbar-toggler-icon"></span>
+    		<span class="navbar-toggler-icon"></span>
     	</button>
 
 		<span class="navbar-text">
