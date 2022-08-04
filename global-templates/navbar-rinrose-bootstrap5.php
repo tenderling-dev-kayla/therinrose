@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 	<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'tenderling' ); ?></h2>
 	<div class="container-fluid">
 		<div class="row w-100 justify-content-between">
-			<div id="rinrose_header_nav-left" class="col-5">
+			<div id="rinrose_header_nav-left" class="col-5 justify-content-start">
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
     				<span class="navbar-toggler-icon"></span>
     			</button>
@@ -28,7 +28,7 @@ defined( 'ABSPATH' ) || exit;
         			<a class="btn btn-link" href="#">Residents</a>
       			</span>
       		</div>
-      		<div id="rinrose_header_nav-mind" class="col-2">
+      		<div id="rinrose_header_nav-mind" class="col-2 justify-content-center">
 				<!-- Your site title as branding in the menu -->
 				<?php if (get_field('logo', 'option')) : ?>
 					<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
@@ -37,7 +37,7 @@ defined( 'ABSPATH' ) || exit;
 				<?php endif; ?>
 				<!-- end custom logo -->
 			</div>
-			<div id="rinrose_header_nav-right" class="col-5">
+			<div id="rinrose_header_nav-right" class="col-5 justify-content-end">
 				<span class="navbar-text">
         			<a class="btn btn-link" href="#">Tours</a>
       			</span>
