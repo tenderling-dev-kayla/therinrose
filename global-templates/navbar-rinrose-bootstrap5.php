@@ -36,7 +36,7 @@ defined( 'ABSPATH' ) || exit;
 		<!-- Your site title as branding in the menu -->
 		<?php if (get_field('logo', 'option')) : ?>
 			<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
-				<?php echo wp_get_attachment_image( get_field('logo', 'option'), 'full', "", array( "class" => "img-responsive", "alt" => bloginfo( 'name' ) ) ); ?>
+				<?php echo wp_get_attachment_image( get_field('logo', 'option'), 'full', "", array( "class" => "img-responsive", "alt" => get_bloginfo( 'name' ) ) ); ?>
 			</a>
 		<?php endif; ?>
 		<!-- end custom logo -->
