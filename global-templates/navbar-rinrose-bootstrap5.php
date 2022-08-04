@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 <nav id="main-nav" class="navbar fix-top navbar-light bg-white" aria-labelledby="main-nav-label">
 	<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'tenderling' ); ?></h2>
 	<div class="container-fluid">
-		<div class="row">
+		<div class="row w-100 justify-content-between">
 			<div id="rinrose_header_nav-left" class="col-5">
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
     				<span class="navbar-toggler-icon"></span>
