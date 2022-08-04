@@ -68,11 +68,10 @@ function tenderling_update_user_fields_css() {
 /* Hide sections from WordPress customizer */
 function tenderling_hide_customizer_sections($wp_customize) {
 
-	//WP Standard
-	$wp_customize->remove_section('colors');
-	$wp_customize->remove_section('background_image');
-	$wp_customize->remove_panel('widgets');
+	//WP Standard Panels
 	$wp_customize->remove_section('static_front_page');
+	$wp_customize->remove_section('background_image');
+	$wp_customize->remove_section('colors');
 
     //Understrap
     $wp_customize->remove_section( 'understrap_theme_layout_options' );
