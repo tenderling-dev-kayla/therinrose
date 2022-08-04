@@ -75,9 +75,12 @@ function tenderling_hide_customizer_sections($wp_customize) {
 
     //Understrap
     $wp_customize->remove_section( 'understrap_theme_layout_options' );
+
+    //Understrap logo control
+    $wp_customize->remove_control('custom_logo');
 }
 
-function tenderling_hideWidgets() {
+function tenderling_customizer_css() {
 	ob_start(); ?>
 	<style>
 		ul.customize-pane-parent li#accordion-panel-widgets {
@@ -107,7 +110,9 @@ endif;
 if($adminStyle == 'tenderling'):
 	add_action('admin_menu', 'tenderling_register_custom_menu_items');
 	add_action( 'customize_register', 'tenderling_hide_customizer_sections', 99);
-	add_action('admin_init', 'tenderling_hideWidgets');
+	if(is_customize_preview()) :
+		add_action('admin_init', 'tenderling_customizer_css');
+	endif;
 endif;
 
 if($userStyle == 'tenderling'):
