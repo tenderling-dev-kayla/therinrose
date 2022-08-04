@@ -25,7 +25,7 @@ defined( 'ABSPATH' ) || exit;
     				<span class="navbar-toggler-icon"></span>
     			</button>
 				<span class="navbar-text">
-        			<a href="#">Residents</a>
+        			<a class="btn btn-link" href="#">Residents</a>
       			</span>
       		</div>
       		<div id="rinrose_header_nav-mind" class="col-2">
@@ -39,10 +39,10 @@ defined( 'ABSPATH' ) || exit;
 			</div>
 			<div id="rinrose_header_nav-right" class="col-5">
 				<span class="navbar-text">
-        			<a href="#">Tours</a>
+        			<a class="btn btn-link" href="#">Tours</a>
       			</span>
       			<span class="navbar-text">
-        			<a href="#">Apply</a>
+        			<a class="btn btn-outline-primary" href="#">Apply</a>
       			</span>
       		</div>
       	</div>
