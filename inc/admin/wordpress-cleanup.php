@@ -67,12 +67,6 @@ function tenderling_update_user_fields_css() {
 
 /* Hide sections from WordPress customizer */
 function tenderling_hide_customizer_sections( $wp_customize ) {
-    $wp_customize->remove_section( 'static_front_page' ); // Homepage settings
-    $wp_customize->remove_section( 'colors' ); // Colors
-    $wp_customize->remove_panel( 'widgets' ); // Widgets
-    $wp_customize->remove_section( 'header_image' ); // Header image
-    $wp_customize->remove_section( 'background_image' ); // Background image
-    $wp_customize->remove_control( 'custom_css' ); // Custom CSS 
 
     //Understrap
     $wp_customize->remove_section( 'understrap_theme_layout_options' );
@@ -97,7 +91,7 @@ endif;
 
 if($adminStyle == 'tenderling'):
 	add_action('admin_menu', 'tenderling_register_custom_menu_items');
-	add_action( 'customize_register', 'tenderling_hide_customizer_sections', 30);
+	add_action( 'customize_register', 'tenderling_hide_customizer_sections');
 endif;
 
 if($userStyle == 'tenderling'):
