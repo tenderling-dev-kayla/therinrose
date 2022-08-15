@@ -114,10 +114,10 @@ get_header();
 							<div id="rinrose_home_location-banner_image">
 								<?php echo wp_get_attachment_image( get_sub_field('banner'), 'full', "", array( "class" => "img-responsive" ) ); ?>
 							</div>
-							<h2 id="rinrose_home_location-banner_title"><?php the_sub_field('title'); ?></h2>
+							<h3 id="rinrose_home_location-banner_text"><?php the_sub_field('banner_text'); ?></h3>
 						</div>
 						<div id="rinrose_home_location-content">
-							<h3 id="rinrose_home_location-content_title"><?php the_sub_field('title'); ?></h3>
+							<h2 id="rinrose_home_location-content_title"><?php the_sub_field('title'); ?></h2>
 							<div id="rinrose_home_location-content_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 						</div>
 						<div id="rinrose_home_location-map">
