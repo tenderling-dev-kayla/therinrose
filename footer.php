@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 
 <section id="rinrose_footer">
 	<footer class="site-footer" id="colophon">
-		<?php get_template_part( 'global-templates/footer', 'rinrose' ); ?>
+		<?php //get_template_part( 'global-templates/footer', 'rinrose' ); ?>
 	</footer><!-- #colophon -->
 </div><!-- wrapper end -->
 
