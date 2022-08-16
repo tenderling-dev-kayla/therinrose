@@ -148,6 +148,7 @@ function tenderling_unregister_sidebars() {
 	unregister_sidebar('statichero');
 	unregister_sidebar('footerfull');
 }
+add_action( 'widgets_init', 'tenderling_unregister_sidebars', 11 );
 
 
 /**
