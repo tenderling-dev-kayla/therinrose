@@ -446,20 +446,20 @@ progress {
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
   --bs-primary: #0C2939;
-  --bs-secondary: #6c757d;
+  --bs-secondary: #A6BAC8;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
-  --bs-light: #f8f9fa;
+  --bs-light: #ffffff;
   --bs-dark: #212529;
   --bs-primary-rgb: 12, 41, 57;
-  --bs-secondary-rgb: 108, 117, 125;
+  --bs-secondary-rgb: 166, 186, 200;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
   --bs-warning-rgb: 255, 193, 7;
   --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 248, 249, 250;
+  --bs-light-rgb: 255, 255, 255;
   --bs-dark-rgb: 33, 37, 41;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
@@ -554,15 +554,15 @@ progress {
 }
 
 .table-secondary {
-  --bs-table-bg: #e2e3e5;
-  --bs-table-striped-bg: #d7d8da;
+  --bs-table-bg: #edf1f4;
+  --bs-table-striped-bg: #e1e5e8;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cbccce;
+  --bs-table-active-bg: #d5d9dc;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d1d2d4;
+  --bs-table-hover-bg: #dbdfe2;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #cbccce;
+  border-color: #d5d9dc;
 }
 
 .table-success {
@@ -614,15 +614,15 @@ progress {
 }
 
 .table-light {
-  --bs-table-bg: #f8f9fa;
-  --bs-table-striped-bg: #ecedee;
+  --bs-table-bg: #ffffff;
+  --bs-table-striped-bg: #f2f2f2;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #dfe0e1;
+  --bs-table-active-bg: #e6e6e6;
   --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e5e6e7;
+  --bs-table-hover-bg: #ececec;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #dfe0e1;
+  border-color: #e6e6e6;
 }
 
 .table-dark {
@@ -681,7 +681,7 @@ progress {
   padding: 0.25rem;
   background-color: #fff;
   border: 1px solid #dee2e6;
-  border-radius: 0.25rem;
+  border-radius: 0;
   max-width: 100%;
   height: auto;
 }
@@ -953,12 +953,12 @@ progress {
 
 .has-secondary-color,
 .has-secondary-color:visited {
-  color: #6c757d;
+  color: #A6BAC8;
 }
 
 .has-secondary-background-color {
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #A6BAC8;
+  border-color: #A6BAC8;
 }
 
 .has-success-color,
@@ -1003,12 +1003,12 @@ progress {
 
 .has-light-color,
 .has-light-color:visited {
-  color: #f8f9fa;
+  color: #ffffff;
 }
 
 .has-light-background-color {
-  background-color: #f8f9fa;
-  border-color: #f8f9fa;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 
 .has-dark-color,
@@ -1141,7 +1141,7 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
 .wp-block-buttons .wp-block-button .wp-block-button__link {
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
-  border-radius: 0.25rem;
+  border-radius: 0;
 }
 .wp-block-buttons .wp-block-button:not(.is-style-outline) .wp-block-button__link {
   border: 1px solid transparent;

@@ -59,7 +59,7 @@ if(have_rows('header', 'option')) :
 		      		</div>
 		      	</div>
 			</div><!-- .container(-fluid) -->
-			<div class="collapse fixed-top w-100 bg-dark" id="rinrose_header-expand">			 	
+			<div class="collapse fixed-top w-100 h-100 bg-primary" id="rinrose_header-expand">			 	
 		 		<div id="rinrose_header-expand_top" class="row w-100 justify-content-between">
 					<div id="rinrose_header-expand_toggle" class="col-5 justify-content-start d-flex">
 						<button id="rinrose_header-expand_toggle-btn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rinrose_header-expand" aria-controls="rinrose_header-expand" aria-expanded="false" aria-label="Toggle navigation">
