@@ -137,6 +137,18 @@ function tenderling_remove_page_template( $page_templates ) {
 	return $page_templates;
 }
 
+/**
+ * Remove sidebars inherited from th eparent theme
+ **/
+function tenderling_unregister_sidebars() {
+	unregister_sidebar('right-sidebar');
+	unregister_sidebar('left-sidebar');
+	unregister_sidebar('hero');
+	unregister_sidebar('herocanvas');
+	unregister_sidebar('statichero');
+	unregister_sidebar('footerfull');
+}
+
 
 /**
  * Require Folder Loop
