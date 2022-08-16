@@ -6,7 +6,7 @@
 
 
 if(have_rows('footer', 'option')) :
-	while(have_rows('footer','option'): the_row(); ?>
+	while(have_rows('footer','option')): the_row(); ?>
 		<div class="row">
 			<div class="col">
 				<div id="rinrose_footer_contact">
