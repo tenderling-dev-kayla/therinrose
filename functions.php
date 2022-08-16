@@ -43,6 +43,7 @@ function theme_enqueue_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	wp_enqueue_script( 'fontawsome-js', '//kit.fontawesome.com/5da03cc087.js', null, null, true);
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
@@ -170,3 +171,15 @@ tenderling_require_folder('inc/cpt');
  * include Admin folder for Tenderling admin cleanup 
  **/
 tenderling_require_folder('inc/admin');
+
+
+/**
+ * Register Nav Menus
+ **/
+function tenderling_register_nav_menus(){
+    register_nav_menus( array(
+        'footer_links'  => __( 'Footer Links', 'text_domain' ),
+        'footer_legal'  => __( 'Footer Legal', 'text_domain' ),
+    ) );
+}
+add_action( 'after_setup_theme', 'tenderling_register_nav_menus', 0 );
