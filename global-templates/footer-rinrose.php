@@ -41,7 +41,7 @@ if(have_rows('footer', 'option')) :
 					    'menu_class'        => "rinrose_footer-menu",
 					    'menu_id'           => "rinrose_footer_links-menu",
 					    'container'         => false,
-					    'theme_location'    => "footer-links",
+					    'theme_location'    => "footer_links",
 					);
 					wp_nav_menu($footer_links_args); 
 
@@ -74,7 +74,7 @@ if(have_rows('footer', 'option')) :
 					    'menu_class'        => "rinrose_footer-menu",
 					    'menu_id'           => "rinrose_footer_legal-menu",
 					    'container'         => false,
-					    'theme_location'    => "footer-legal",
+					    'theme_location'    => "footer_legal",
 					);
 					wp_nav_menu($footer_legal_args); ?>
 				</div>
