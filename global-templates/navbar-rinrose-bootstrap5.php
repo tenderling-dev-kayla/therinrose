@@ -8,7 +8,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-function tenderling_rinrose_header_bar($base) {
+function tenderling_rinrose_header_bar($base, $button) {
 	ob_start(); ?>
 	<div id="<?php echo $base; ?>_top" class="row w-100 justify-content-between">
 		<div id="<?php echo $base; ?>_toggle" class="col-5 justify-content-start d-flex align-items-center">
@@ -42,7 +42,7 @@ function tenderling_rinrose_header_bar($base) {
   			endif; ?>
   			<?php if (have_rows('right_button')):
 				while(have_rows('right_button')): the_row(); ?>
-   					<a id="<?php echo $base; ?>_ctas-btn" class="btn btn-outline-light text-uppercase" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
+   					<a id="<?php echo $base; ?>_ctas-btn" class="btn text-uppercase btn-outline-<?php echo $button; ?>" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
    						<?php the_sub_field('text'); ?>
    					</a>
   				<?php endwhile;
@@ -59,11 +59,11 @@ if(have_rows('header', 'option')) :
 		<nav id="rinrose_header" class="navbar sticky-top bg-white" aria-labelledby="main-nav-label">
 			<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'tenderling' ); ?></h2>
 			<div class="container-fluid navbar-light" id="rinrose_header-collapsed">
-				<?php echo tenderling_rinrose_header_bar('rinrose_header-collapsed'); ?>
+				<?php echo tenderling_rinrose_header_bar('rinrose_header-collapsed', 'primary'); ?>
 			</div><!-- .container(-fluid) -->
 			<div class="collapse fixed-top w-100 bg-primary navbar-dark" id="rinrose_header-expanded">
 				<div id="rinrose_header-expand" class="container-fluid">	
-					<?php echo tenderling_rinrose_header_bar('rinrose_header-expand'); ?>		 	
+					<?php echo tenderling_rinrose_header_bar('rinrose_header-expand', 'light'); ?>		 	
 		      		<div id="rinrose_header-expand_nav">
 		      			<?php $header_menu_args = array(
 						    'menu_class'        => "rinrose_header-menu",
