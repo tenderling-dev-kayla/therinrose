@@ -17,11 +17,9 @@ function tenderling_rinrose_header_bar($base) {
 			</button>
 			<?php if (have_rows('left_link')):
 				while(have_rows('left_link')): the_row(); ?>
-					<span class="navbar-text" id="<?php echo $base; ?>_toggle-link">
-    					<a class="btn btn-link" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-    						<?php the_sub_field('text'); ?>
-    					</a>
-  					</span>
+					<a id="<?php echo $base; ?>_toggle-link" class="btn btn-link text-decoration-none text-uppercase" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
+    					<?php the_sub_field('text'); ?>
+    				</a>
   				<?php endwhile;
   			endif; ?>
   		</div>
@@ -37,20 +35,16 @@ function tenderling_rinrose_header_bar($base) {
 		<div id="<?php echo $base; ?>_ctas" class="col-5 justify-content-end d-flex align-items-center">
 			<?php if (have_rows('right_link')):
 				while(have_rows('right_link')): the_row(); ?>
-					<span class="navbar-text" id="<?php echo $base; ?>_ctas-link">
-    					<a class="btn btn-link" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-    						<?php the_sub_field('text'); ?>
-    					</a>
-  					</span>
+   					<a id="<?php echo $base; ?>_ctas-link" class="btn btn-link text-decoration-none text-uppercase" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
+   						<?php the_sub_field('text'); ?>
+   					</a>
   				<?php endwhile;
   			endif; ?>
   			<?php if (have_rows('right_button')):
 				while(have_rows('right_button')): the_row(); ?>
-					<span class="navbar-text" id="<?php echo $base; ?>_ctas-btn">
-    					<a class="btn btn-outline-light" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-    						<?php the_sub_field('text'); ?>
-    					</a>
-  					</span>
+   					<a id="<?php echo $base; ?>_ctas-btn" class="btn btn-outline-light text-uppercase" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
+   						<?php the_sub_field('text'); ?>
+   					</a>
   				<?php endwhile;
   			endif; ?>
   		</div>
