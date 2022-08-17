@@ -1,8 +1,12 @@
+#rinrose_header-offcanvas_content {
+    height: 100vh;
+}
 .admin-bar {
     #rinrose_header {
         top: 32px!important;
     }
-    #rinrose_header-offcanvas_header {
+    #rinrose_header-offcanvas_content {
         margin-top: 32px!important;
+        max-height: calc(100vh - 32px)!important;
     }
 }
