@@ -15598,11 +15598,15 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
+div#rinrose_header-expand {
+  height: 100vh !important;
+}
+
 body.admin-bar div#rinrose_header-expanded {
   top: 32px !important;
 }
 body.admin-bar div#rinrose_header-expand {
-  max-height: calc(100% - 32px) !important;
+  max-height: calc(100vh - 32px) !important;
 }
 
 .has-blue-color,
