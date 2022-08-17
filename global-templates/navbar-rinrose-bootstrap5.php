@@ -18,10 +18,10 @@ if(have_rows('header', 'option')) :
 						<button id="rinrose_header-main_toggle-btn" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#rinrose_header-offcanvas" aria-controls="rinrose_header-offcanvas" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
-						<div class="offcanvas offcanvas-end" tabindex="-1" id="rinrose_header-offcanvas" aria-labelledby="rinrose_header-offcanvas_label">
+						<div class="offcanvas offcanvas-end text-bg-dark bg-primary" tabindex="-1" id="rinrose_header-offcanvas" aria-labelledby="rinrose_header-offcanvas_label">
 				    		<div id="rinrose_header-offcanvas_header" class="row w-100 justify-content-between">
 								<div id="rinrose_header-offcanvas_header-action" class="col-5 justify-content-start d-flex align-items-center">
-									<button id="rinrose_header-offcanvas_header-action_btn" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+									<button id="rinrose_header-offcanvas_header-action_btn" type="button" class="btn-close btn-close-white" data-bs-dismiss="rinrose_header-offcanvas" aria-label="Close"></button>
 									<?php if (have_rows('left_link')):
 										while(have_rows('left_link')): the_row(); ?>
 											<a id="rinrose_header-offcanvas_header-action_link" class="btn btn-link text-decoration-none text-uppercase" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
