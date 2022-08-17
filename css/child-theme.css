@@ -15601,6 +15601,9 @@ figure.woocommerce-product-gallery__wrapper {
 .admin-bar #rinrose_header {
   top: 32px !important;
 }
+.admin-bar #rinrose_header-offcanvas_header {
+  margin-top: 32px !important;
+}
 
 .has-blue-color,
 .has-blue-color:visited {
