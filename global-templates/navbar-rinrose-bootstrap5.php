@@ -14,7 +14,7 @@ if(have_rows('header', 'option')) :
 			<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'tenderling' ); ?></h2>
 			<div class="container-fluid navbar-light" id="rinrose_header-collapsed">
 				<div class="row w-100 justify-content-between">
-					<div id="rinrose_header-collapsed_toggle" class="col-5 justify-content-start d-flex">
+					<div id="rinrose_header-collapsed_toggle" class="col-5 justify-content-start d-flex align-items-center">
 						<button id="rinrose_header-collapsed_toggle-btn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rinrose_header-expanded" aria-controls="rinrose_header-expanded" aria-expanded="false" aria-label="Toggle navigation">
 		    				<span class="navbar-toggler-icon"></span>
 		    			</button>
@@ -28,7 +28,7 @@ if(have_rows('header', 'option')) :
 		      				<?php endwhile;
 		      			endif; ?>
 		      		</div>
-		      		<div id="rinrose_header-collapsed_brand" class="col-2 justify-content-center d-flex">
+		      		<div id="rinrose_header-collapsed_brand" class="col-2 justify-content-center d-flex align-items-center">
 						<!-- Your site title as branding in the menu -->
 						<?php if (get_sub_field('logo')) : ?>
 							<a id="rinrose_header-collapsed_brand-logo" class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
@@ -37,7 +37,7 @@ if(have_rows('header', 'option')) :
 						<?php endif; ?>
 						<!-- end custom logo -->
 					</div>
-					<div id="rinrose_header-collapsed_ctas" class="col-5 justify-content-end d-flex">
+					<div id="rinrose_header-collapsed_ctas" class="col-5 justify-content-end d-flex align-items-center">
 						<?php if (have_rows('right_link')):
 		    				while(have_rows('right_link')): the_row(); ?>
 								<span class="navbar-text" id="rinrose_header-collapsed_ctas-link">
@@ -60,9 +60,9 @@ if(have_rows('header', 'option')) :
 		      	</div>
 			</div><!-- .container(-fluid) -->
 			<div class="collapse fixed-top w-100 bg-primary navbar-dark" id="rinrose_header-expanded">
-				<div id="rinrose_header-expand" class="w-100">			 	
+				<div id="rinrose_header-expand" class="container-fluid">			 	
 			 		<div id="rinrose_header-expand_top" class="row w-100 justify-content-between">
-						<div id="rinrose_header-expand_toggle" class="col-5 justify-content-start d-flex">
+						<div id="rinrose_header-expand_toggle" class="col-5 justify-content-start d-flex align-items-center">
 							<button id="rinrose_header-expand_toggle-btn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rinrose_header-expanded" aria-controls="rinrose_header-expanded" aria-expanded="false" aria-label="Toggle navigation">
 			    				<span class="navbar-toggler-icon"></span>
 			    			</button>
@@ -76,7 +76,7 @@ if(have_rows('header', 'option')) :
 			      				<?php endwhile;
 			      			endif; ?>
 			      		</div>
-			      		<div id="rinrose_header-expand_brand" class="col-2 justify-content-center d-flex">
+			      		<div id="rinrose_header-expand_brand" class="col-2 justify-content-center d-flex align-items-center">
 							<!-- Your site title as branding in the menu -->
 							<?php if (get_sub_field('logo')) : ?>
 								<a id="rinrose_header-expand_brand-logo" class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
@@ -85,7 +85,7 @@ if(have_rows('header', 'option')) :
 							<?php endif; ?>
 							<!-- end custom logo -->
 						</div>
-						<div id="rinrose_header-expand_ctas" class="col-5 justify-content-end d-flex">
+						<div id="rinrose_header-expand_ctas" class="col-5 justify-content-end d-flex align-items-center">
 							<?php if (have_rows('right_link')):
 			    				while(have_rows('right_link')): the_row(); ?>
 									<span class="navbar-text" id="rinrose_header-expand_ctas-link">
