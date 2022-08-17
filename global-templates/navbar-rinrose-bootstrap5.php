@@ -13,7 +13,7 @@ if(have_rows('header', 'option')) :
 		<nav id="rinrose_header" class="navbar fixed-top bg-light" aria-labelledby="main-nav-label">
 			<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'tenderling' ); ?></h2>
 			<div class="container-fluid navbar-light" id="rinrose_header-main">
-				<div id="rinrose_header-main_top" class="row w-100 justify-content-between">
+				<div id="rinrose_header-main_inner" class="row w-100 justify-content-between">
 					<div id="rinrose_header-main_toggle" class="col-5 justify-content-start d-flex align-items-center">
 						<button id="rinrose_header-main_toggle-btn" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#rinrose_header-offcanvas" aria-controls="rinrose_header-offcanvas" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
