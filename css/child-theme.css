@@ -15598,8 +15598,10 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
-body.admin-bar div#rinrose_header-expand {
+body.admin-bar div#rinrose_header-expanded {
   top: 32px !important;
+}
+body.admin-bar div#rinrose_header-expand {
   max-height: calc(100% - 32px) !important;
 }
 
