@@ -10,9 +10,9 @@ defined( 'ABSPATH' ) || exit;
 
 if(have_rows('header', 'option')) :
 	while(have_rows('header', 'option')): the_row(); ?>
-		<nav id="rinrose_header" class="navbar sticky-top navbar-light bg-white" aria-labelledby="main-nav-label">
+		<nav id="rinrose_header" class="navbar sticky-top bg-white" aria-labelledby="main-nav-label">
 			<h2 id="main-nav-label" class="screen-reader-text"><?php esc_html_e( 'Main Navigation', 'tenderling' ); ?></h2>
-			<div class="container-fluid" id="rinrose_header-collapsed">
+			<div class="container-fluid navbar-light" id="rinrose_header-collapsed">
 				<div class="row w-100 justify-content-between">
 					<div id="rinrose_header-collapsed_toggle" class="col-5 justify-content-start d-flex">
 						<button id="rinrose_header-collapsed_toggle-btn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rinrose_header-expanded" aria-controls="rinrose_header-expanded" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@ if(have_rows('header', 'option')) :
 		      		</div>
 		      	</div>
 			</div><!-- .container(-fluid) -->
-			<div class="collapse fixed-top w-100 bg-primary" id="rinrose_header-expanded">
+			<div class="collapse fixed-top w-100 bg-primary navbar-dark" id="rinrose_header-expanded">
 				<div id="rinrose_header-expand" class="w-100">			 	
 			 		<div id="rinrose_header-expand_top" class="row w-100 justify-content-between">
 						<div id="rinrose_header-expand_toggle" class="col-5 justify-content-start d-flex">
