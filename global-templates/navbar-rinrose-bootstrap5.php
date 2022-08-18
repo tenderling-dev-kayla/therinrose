@@ -57,16 +57,14 @@ if(have_rows('header', 'option')) :
 							  			endif; ?>
 								  	</div>
 								</div>
-					      		<div id="rinrose_header-offcanvas_body" class="offcanvas-body flex-grow-1">
-					      			<div id="rinrose_header-offcanvas_body-nav" class="pe-3 navbar-dark">
-						      			<?php $header_menu_args = array(
-										    'menu_class'        => "navbar-nav text-center d-flex flex-column align-items-center justify-content-center",
-										    'menu_id'           => "rinrose_header-offcanvas_body-nav_menu",
-										    'container'         => false,
-										    'theme_location'    => "primary",
-										);
-										wp_nav_menu($header_menu_args); ?>
-									</div>
+					      		<div id="rinrose_header-offcanvas_body" class="offcanvas-body flex-grow-1 pe-3 h-100">
+					      			<?php $header_menu_args = array(
+									    'menu_class'        => "navbar-nav text-center d-flex flex-column align-items-center justify-content-center h-100",
+									    'menu_id'           => "rinrose_header-offcanvas_body-nav",
+									    'container'         => false,
+									    'theme_location'    => "primary",
+									);
+									wp_nav_menu($header_menu_args); ?>
 								</div>
 								<div id="rinrose_header-offcanvas_footer">
 									<?php if (have_rows('menu_bottom_link')):
