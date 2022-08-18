@@ -15610,6 +15610,10 @@ figure.woocommerce-product-gallery__wrapper {
   height: 127px;
 }
 
+.btn-link {
+  font-weight: 500;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

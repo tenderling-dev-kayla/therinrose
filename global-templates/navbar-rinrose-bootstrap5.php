@@ -58,9 +58,9 @@ if(have_rows('header', 'option')) :
 								  	</div>
 								</div>
 					      		<div id="rinrose_header-offcanvas_body" class="offcanvas-body">
-					      			<div id="rinrose_header-offcanvas_body-nav" class="justify-content-end flex-grow-1 pe-3">
+					      			<div id="rinrose_header-offcanvas_body-nav" class="justify-content-end flex-grow-1 pe-3 navbar-dark">
 						      			<?php $header_menu_args = array(
-										    'menu_class'        => "navbar-nav",
+										    'menu_class'        => "navbar-nav text-white text-uppercase text-center text-decoration-none d-flex flex-column",
 										    'menu_id'           => "rinrose_header-offcanvas_body-nav_menu",
 										    'container'         => false,
 										    'theme_location'    => "primary",
@@ -71,7 +71,7 @@ if(have_rows('header', 'option')) :
 										<?php if (have_rows('menu_bottom_link')):
 						    				while(have_rows('menu_bottom_link')): the_row(); ?>
 												<span class="navbar-text" id="rinrose_header-offcanvas_body-footer_link">
-						        					<a class="btn btn-link" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
+						        					<a class="btn btn-link text-uppercase" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
 						        						<?php the_sub_field('text'); ?>
 						        					</a>
 						      					</span>
