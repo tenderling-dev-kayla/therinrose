@@ -19,7 +19,7 @@ if(have_rows('header', 'option')) :
 							<span class="navbar-toggler-icon"></span>
 						</button>
 						<div class="offcanvas offcanvas-top text-bg-dark bg-primary" tabindex="-1" id="rinrose_header-offcanvas" aria-labelledby="rinrose_header-offcanvas_label">
-							<div id="rinrose_header-offcanvas_content" class="container-fluid d-flex flex-column justify-content-between">
+							<div id="rinrose_header-offcanvas_content" class="container-fluid d-flex flex-column justify-content-between align-items-between">
 					    		<div id="rinrose_header-offcanvas_header" class="row w-100 justify-content-between">
 									<div id="rinrose_header-offcanvas_header-action" class="col-5 justify-content-start d-flex align-items-center">
 										<button id="rinrose_header-offcanvas_header-action_btn" type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -72,7 +72,7 @@ if(have_rows('header', 'option')) :
 									<?php if (have_rows('menu_bottom_link')):
 					    				while(have_rows('menu_bottom_link')): the_row(); ?>
 											<span class="navbar-text" id="rinrose_header-offcanvas_footer-link">
-						        				<a class="btn btn-link text-uppercase text-light" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
+						        				<a class="btn btn-link text-uppercase text-light text-decoration-none" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
 						        					<?php the_sub_field('text'); ?>
 						        				</a>
 						      				</span>
