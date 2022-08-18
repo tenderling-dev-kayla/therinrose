@@ -43,7 +43,12 @@ function theme_enqueue_styles() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	//Add Font Awesome
 	wp_enqueue_script( 'fontawsome-js', '//kit.fontawesome.com/5da03cc087.js', null, null, true);
+
+	//Add Montserrat
+	wp_enqueue_style('gfonts-css', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap', false);
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
