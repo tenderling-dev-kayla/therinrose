@@ -6431,7 +6431,7 @@ textarea.form-control-lg {
   height: 50px;
   padding: 0 0;
   color: #000000;
-  background: transparent url("data:image/svg+xml,%3csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3ccircle cx='25' cy='25' r='24.5' stroke='%23000000' /%3e%3cpath d='M14 36.5L35.5 15' stroke='%23000000'/%3e%3cpath d='M14 36.5L35.5 15' stroke='%23000000' /%3e%3cpath d='M14 15L35.5 36.5' stroke='%23000000'/%3e%3cpath d='M14 15L35.5 36.5' stroke='%23000000' /%3e%3c/svg%3e") center/50px auto no-repeat;
+  background: transparent url("data:image/svg+xml,%3csvg width='52' height='52' viewBox='0 0 52 52' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15 37.5L36.5 16M15 16L36.5 37.5M51 26C51 39.8071 39.8071 51 26 51C12.1929 51 1 39.8071 1 26C1 12.1929 12.1929 1 26 1C39.8071 1 51 12.1929 51 26Z' stroke='%23000000' stroke-width='2'/%3e%3cpath d='M15 37.5L36.5 16M15 16L36.5 37.5M51 26C51 39.8071 39.8071 51 26 51C12.1929 51 1 39.8071 1 26C1 12.1929 12.1929 1 26 1C39.8071 1 51 12.1929 51 26Z' stroke='%23000000' stroke-width='2'/%3e%3c/svg%3e") center/50px auto no-repeat;
   border: 0;
   border-radius: 0;
   opacity: 1;
