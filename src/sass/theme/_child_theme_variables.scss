@@ -6,11 +6,15 @@
 $purple: #5533ff; // Thats a sample how you could change a BootStrap variable.
 $primary: $purple;  // Once we've changed the value, we'll also make it the primary brand color.
 
-
-$primary: #0C2939;
-$secondary: #A6BAC8;
+$font-family-base: 'Montserrat', sans-serif;
+$rinrose: #0C2939;
+$rinrose_2: #A6BAC8;
+$primary: $rinrose;
+$secondary: $rinrose_2;
 $border-radius: 0;
-$light: #ffffff;
+$white: #ffffff;
+$light: $white;
+$black: #000000;
 $navbar-dark-toggler-border-color: transparent;
 $navbar-light-toggler-border-color: transparent;
 $navbar-dark-color: $light;
@@ -23,4 +27,7 @@ $offcanvas-vertical-height: 100vh;
 $btn-close-opacity: 1;
 $btn-close-hover-opacity: .5;
 $btn-close-padding-x: .45em;
-$font-family-base: 'Montserrat', sans-serif;
+$btn-close-color: $black;
+$btn-close-bg: url("data:image/svg+xml,<svg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='25' cy='25' r='24.5' stroke='#{$btn-close-color}' /><path d='M14 36.5L35.5 15' stroke='#{$btn-close-color}'/><path d='M14 36.5L35.5 15' stroke='#{$btn-close-color}' /><path d='M14 15L35.5 36.5' stroke='#{$btn-close-color}'/><path d='M14 15L35.5 36.5' stroke='#{$btn-close-color}' /></svg>");
+
+

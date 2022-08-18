@@ -217,7 +217,7 @@ a > code {
 kbd {
   padding: 0.2rem 0.4rem;
   font-size: 0.875em;
-  color: #fff;
+  color: #ffffff;
   background-color: #212529;
   border-radius: 0.2rem;
 }
@@ -433,7 +433,7 @@ progress {
   --bs-green: #198754;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
-  --bs-white: #fff;
+  --bs-white: #ffffff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
   --bs-gray-100: #f8f9fa;
@@ -473,7 +473,7 @@ progress {
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
-  --bs-body-bg: #fff;
+  --bs-body-bg: #ffffff;
 }
 
 .table, .wp-block-table table {
@@ -544,96 +544,96 @@ progress {
 .table-primary {
   --bs-table-bg: #ced4d7;
   --bs-table-striped-bg: #c4c9cc;
-  --bs-table-striped-color: #000;
+  --bs-table-striped-color: #000000;
   --bs-table-active-bg: #b9bfc2;
-  --bs-table-active-color: #000;
+  --bs-table-active-color: #000000;
   --bs-table-hover-bg: #bfc4c7;
-  --bs-table-hover-color: #000;
-  color: #000;
+  --bs-table-hover-color: #000000;
+  color: #000000;
   border-color: #b9bfc2;
 }
 
 .table-secondary {
   --bs-table-bg: #edf1f4;
   --bs-table-striped-bg: #e1e5e8;
-  --bs-table-striped-color: #000;
+  --bs-table-striped-color: #000000;
   --bs-table-active-bg: #d5d9dc;
-  --bs-table-active-color: #000;
+  --bs-table-active-color: #000000;
   --bs-table-hover-bg: #dbdfe2;
-  --bs-table-hover-color: #000;
-  color: #000;
+  --bs-table-hover-color: #000000;
+  color: #000000;
   border-color: #d5d9dc;
 }
 
 .table-success {
   --bs-table-bg: #d1e7dd;
   --bs-table-striped-bg: #c7dbd2;
-  --bs-table-striped-color: #000;
+  --bs-table-striped-color: #000000;
   --bs-table-active-bg: #bcd0c7;
-  --bs-table-active-color: #000;
+  --bs-table-active-color: #000000;
   --bs-table-hover-bg: #c1d6cc;
-  --bs-table-hover-color: #000;
-  color: #000;
+  --bs-table-hover-color: #000000;
+  color: #000000;
   border-color: #bcd0c7;
 }
 
 .table-info {
   --bs-table-bg: #cff4fc;
   --bs-table-striped-bg: #c5e8ef;
-  --bs-table-striped-color: #000;
+  --bs-table-striped-color: #000000;
   --bs-table-active-bg: #badce3;
-  --bs-table-active-color: #000;
+  --bs-table-active-color: #000000;
   --bs-table-hover-bg: #bfe2e9;
-  --bs-table-hover-color: #000;
-  color: #000;
+  --bs-table-hover-color: #000000;
+  color: #000000;
   border-color: #badce3;
 }
 
 .table-warning {
   --bs-table-bg: #fff3cd;
   --bs-table-striped-bg: #f2e7c3;
-  --bs-table-striped-color: #000;
+  --bs-table-striped-color: #000000;
   --bs-table-active-bg: #e6dbb9;
-  --bs-table-active-color: #000;
+  --bs-table-active-color: #000000;
   --bs-table-hover-bg: #ece1be;
-  --bs-table-hover-color: #000;
-  color: #000;
+  --bs-table-hover-color: #000000;
+  color: #000000;
   border-color: #e6dbb9;
 }
 
 .table-danger {
   --bs-table-bg: #f8d7da;
   --bs-table-striped-bg: #eccccf;
-  --bs-table-striped-color: #000;
+  --bs-table-striped-color: #000000;
   --bs-table-active-bg: #dfc2c4;
-  --bs-table-active-color: #000;
+  --bs-table-active-color: #000000;
   --bs-table-hover-bg: #e5c7ca;
-  --bs-table-hover-color: #000;
-  color: #000;
+  --bs-table-hover-color: #000000;
+  color: #000000;
   border-color: #dfc2c4;
 }
 
 .table-light {
   --bs-table-bg: #ffffff;
   --bs-table-striped-bg: #f2f2f2;
-  --bs-table-striped-color: #000;
+  --bs-table-striped-color: #000000;
   --bs-table-active-bg: #e6e6e6;
-  --bs-table-active-color: #000;
+  --bs-table-active-color: #000000;
   --bs-table-hover-bg: #ececec;
-  --bs-table-hover-color: #000;
-  color: #000;
+  --bs-table-hover-color: #000000;
+  color: #000000;
   border-color: #e6e6e6;
 }
 
 .table-dark {
   --bs-table-bg: #212529;
   --bs-table-striped-bg: #2c3034;
-  --bs-table-striped-color: #fff;
+  --bs-table-striped-color: #ffffff;
   --bs-table-active-bg: #373b3e;
-  --bs-table-active-color: #fff;
+  --bs-table-active-color: #ffffff;
   --bs-table-hover-bg: #323539;
-  --bs-table-hover-color: #fff;
-  color: #fff;
+  --bs-table-hover-color: #ffffff;
+  color: #ffffff;
   border-color: #373b3e;
 }
 
@@ -679,7 +679,7 @@ progress {
 
 .img-thumbnail {
   padding: 0.25rem;
-  background-color: #fff;
+  background-color: #ffffff;
   border: 1px solid #dee2e6;
   border-radius: 0;
   max-width: 100%;
@@ -913,12 +913,12 @@ progress {
 
 .has-white-color,
 .has-white-color:visited {
-  color: #fff;
+  color: #ffffff;
 }
 
 .has-white-background-color {
-  background-color: #fff;
-  border-color: #fff;
+  background-color: #ffffff;
+  border-color: #ffffff;
 }
 
 .has-gray-color,
