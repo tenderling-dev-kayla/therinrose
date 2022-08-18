@@ -19,7 +19,7 @@ if(have_rows('header', 'option')) :
 							<span class="navbar-toggler-icon"></span>
 						</button>
 						<div class="offcanvas offcanvas-top text-bg-dark bg-primary" tabindex="-1" id="rinrose_header-offcanvas" aria-labelledby="rinrose_header-offcanvas_label">
-							<div id="rinrose_header-offcanvas_content" class="container-fluid d-flex flex-column justify-content-between align-items-between">
+							<div id="rinrose_header-offcanvas_content" class="container-fluid d-flex flex-column justify-content-between align-items-between h-100 pb-5">
 					    		<div id="rinrose_header-offcanvas_header" class="row w-100 justify-content-between">
 									<div id="rinrose_header-offcanvas_header-action" class="col-5 justify-content-start d-flex align-items-center">
 										<button id="rinrose_header-offcanvas_header-action_btn" type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>

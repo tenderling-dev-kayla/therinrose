@@ -15606,6 +15606,11 @@ figure.woocommerce-product-gallery__wrapper {
   max-height: calc(100vh - 32px) !important;
 }
 
+#rinrose_header .container-fluid, #rinrose_header .container-sm, #rinrose_header .container-md, #rinrose_header .container-lg, #rinrose_header .container-xl, #rinrose_header .container-xxl {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 #wrapper-navbar {
   height: 127px;
 }

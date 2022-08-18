@@ -7,6 +7,12 @@
         max-height: calc(100vh - 32px)!important;
     }
 }
+#rinrose_header {
+    .container-fluid {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
 #wrapper-navbar {
     height: 127px;
 }
@@ -16,7 +22,7 @@
 ul#rinrose_header-offcanvas_body-nav_menu {
     .menu-item {
         padding: 40px;
-        
+
         a {
             color: $white;
             text-transform: uppercase;
