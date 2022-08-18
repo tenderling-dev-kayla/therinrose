@@ -71,7 +71,7 @@ if(have_rows('header', 'option')) :
 										<?php if (have_rows('menu_bottom_link')):
 						    				while(have_rows('menu_bottom_link')): the_row(); ?>
 												<span class="navbar-text" id="rinrose_header-offcanvas_body-footer_link">
-						        					<a class="btn btn-link text-uppercase" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
+						        					<a class="btn btn-link text-uppercase text-light" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
 						        						<?php the_sub_field('text'); ?>
 						        					</a>
 						      					</span>

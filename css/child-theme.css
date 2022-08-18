@@ -15614,11 +15614,16 @@ figure.woocommerce-product-gallery__wrapper {
   font-weight: 500;
 }
 
+ul#rinrose_header-offcanvas_body-nav_menu .menu-item {
+  padding: 40px;
+}
 ul#rinrose_header-offcanvas_body-nav_menu .menu-item a {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 43px;
+  text-decoration: none;
+  line-height: 52px;
 }
 
 .has-blue-color,
