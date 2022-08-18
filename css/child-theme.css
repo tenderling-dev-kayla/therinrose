@@ -15606,6 +15606,11 @@ figure.woocommerce-product-gallery__wrapper {
   max-height: calc(100vh - 32px) !important;
 }
 
+.btn-close {
+  border: 1px solid #000;
+  border-radius: 50%;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;
