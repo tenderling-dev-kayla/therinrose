@@ -58,9 +58,9 @@ if(have_rows('header', 'option')) :
 								  	</div>
 								</div>
 					      		<div id="rinrose_header-offcanvas_body" class="offcanvas-body">
-					      			<div id="rinrose_header-offcanvas_body-nav">
+					      			<div id="rinrose_header-offcanvas_body-nav" class="justify-content-end flex-grow-1 pe-3">
 						      			<?php $header_menu_args = array(
-										    'menu_class'        => "navbar-nav justify-content-end flex-grow-1 pe-3",
+										    'menu_class'        => "navbar-nav",
 										    'menu_id'           => "rinrose_header-offcanvas_body-nav_menu",
 										    'container'         => false,
 										    'theme_location'    => "primary",
