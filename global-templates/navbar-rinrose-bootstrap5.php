@@ -19,7 +19,7 @@ if(have_rows('header', 'option')) :
 							<span class="navbar-toggler-icon"></span>
 						</button>
 						<div class="offcanvas offcanvas-top text-bg-dark bg-primary" tabindex="-1" id="rinrose_header-offcanvas" aria-labelledby="rinrose_header-offcanvas_label">
-							<div id="rinrose_header-offcanvas_content" class="container-fluid">
+							<div id="rinrose_header-offcanvas_content" class="container-fluid d-flex flex-column justify-content-between">
 					    		<div id="rinrose_header-offcanvas_header" class="row w-100 justify-content-between">
 									<div id="rinrose_header-offcanvas_header-action" class="col-5 justify-content-start d-flex align-items-center">
 										<button id="rinrose_header-offcanvas_header-action_btn" type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -57,8 +57,8 @@ if(have_rows('header', 'option')) :
 							  			endif; ?>
 								  	</div>
 								</div>
-					      		<div id="rinrose_header-offcanvas_body" class="offcanvas-body">
-					      			<div id="rinrose_header-offcanvas_body-nav" class="justify-content-end flex-grow-1 pe-3 navbar-dark">
+					      		<div id="rinrose_header-offcanvas_body" class="offcanvas-body flex-grow-1">
+					      			<div id="rinrose_header-offcanvas_body-nav" class="pe-3 navbar-dark">
 						      			<?php $header_menu_args = array(
 										    'menu_class'        => "navbar-nav text-white text-uppercase text-center text-decoration-none d-flex flex-column",
 										    'menu_id'           => "rinrose_header-offcanvas_body-nav_menu",
@@ -67,17 +67,17 @@ if(have_rows('header', 'option')) :
 										);
 										wp_nav_menu($header_menu_args); ?>
 									</div>
-									<div id="rinrose_header-offcanvas_body-footer">
-										<?php if (have_rows('menu_bottom_link')):
-						    				while(have_rows('menu_bottom_link')): the_row(); ?>
-												<span class="navbar-text" id="rinrose_header-offcanvas_body-footer_link">
-						        					<a class="btn btn-link text-uppercase text-light" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-						        						<?php the_sub_field('text'); ?>
-						        					</a>
-						      					</span>
-						      				<?php endwhile;
-						      			endif; ?>
-						      		</div>
+								</div>
+								<div id="rinrose_header-offcanvas_footer">
+									<?php if (have_rows('menu_bottom_link')):
+					    				while(have_rows('menu_bottom_link')): the_row(); ?>
+											<span class="navbar-text" id="rinrose_header-offcanvas_footer-link">
+						        				<a class="btn btn-link text-uppercase text-light" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
+						        					<?php the_sub_field('text'); ?>
+						        				</a>
+						      				</span>
+						      			<?php endwhile;
+						      		endif; ?>
 					      		</div>
 					      	</div>
 				    	</div>
