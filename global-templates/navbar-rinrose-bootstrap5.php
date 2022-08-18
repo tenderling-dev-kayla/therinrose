@@ -60,7 +60,7 @@ if(have_rows('header', 'option')) :
 					      		<div id="rinrose_header-offcanvas_body" class="offcanvas-body flex-grow-1">
 					      			<div id="rinrose_header-offcanvas_body-nav" class="pe-3 navbar-dark">
 						      			<?php $header_menu_args = array(
-										    'menu_class'        => "navbar-nav text-white text-uppercase text-center text-decoration-none d-flex flex-column",
+										    'menu_class'        => "navbar-nav text-center d-flex flex-column align-items-center justify-content-center",
 										    'menu_id'           => "rinrose_header-offcanvas_body-nav_menu",
 										    'container'         => false,
 										    'theme_location'    => "primary",
