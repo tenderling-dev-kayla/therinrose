@@ -73,10 +73,10 @@ get_header();
 								<?php endwhile;
 							endif; ?>
 						</div>
-						<div id="rinrose_home-amenities_footer" class="w-100 d-flex justify-content-end">
-							<div id="rinrose_home-amenities_footer-image" class="w-40 px-5">
-								<?php echo wp_get_attachment_image( get_sub_field('right_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_footer-image_img" ) ); ?>
-							</div>
+					</div>
+					<div id="rinrose_home-amenities_footer" class="w-100 d-flex justify-content-end">
+						<div id="rinrose_home-amenities_footer-image" class="w-40 px-5">
+							<?php echo wp_get_attachment_image( get_sub_field('right_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_footer-image_img" ) ); ?>
 						</div>
 					</div>
 				</section>
