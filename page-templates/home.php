@@ -97,20 +97,20 @@ get_header();
 							<?php the_sub_field('title'); ?>
 						</h2>
 					</div>
-					<div id="rinrose_home-residences_blurb" class="d-flex p-5">
+					<div id="rinrose_home-residences_blurb" class="d-flex p-5 mb-5">
 						<div id="rinrose_home-residences_blurb-content" class="w-50 px-5">
 							<?php echo do_shortcode(get_sub_field('blurb')); ?>
 						</div>
 					</div>
-					<div id="rinrise_home_residences-grid" class="container">
-						<h3 id="rinrose_home_residences-grid_title" class="text-center text-primary text-uppercase"><?php the_sub_field('grid_title'); ?></h3>
-						<div id="rinrise_home_residences-grid_display">
+					<div id="rinrise_home_residences-grid" class="container py-5">
+						<h3 id="rinrose_home_residences-grid_title" class="text-center text-primary text-uppercase pb-5"><?php the_sub_field('grid_title'); ?></h3>
+						<div id="rinrise_home_residences-grid_display" class="py-5">
 							<!--Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button) -->
 							<img src="/wp-content/themes/therinrose-tenderling/inc/img/rinrose-floorplans_placeholder.jpg" class="img-fluid" />
 						</div>
 						<?php if(have_rows('button')):
 							while(have_rows('button')): the_row(); ?>
-								<div id="rinrose_home_residences-grid_button" class="text-center">
+								<div id="rinrose_home_residences-grid_button" class="text-center py-5">
 									<a class="btn btn-outline-primary text-uppercase" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
 								</div>
 							<?php endwhile;
