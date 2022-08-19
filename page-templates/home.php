@@ -66,7 +66,7 @@ get_header();
 							<?php echo wp_get_attachment_image( get_sub_field('left_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_body-left_img", ) ); ?>
 						</div>
 						<div id="rinrose_home-amenities_body-right" class="w-40 p-5">
-							<div id="rinrose_home_amenities_body-right_content" class="mb-5 pb-5">
+							<div id="rinrose_home_amenities_body-right_content">
 								<h2 id="rinrose_home_amenities_body-right_content-title" class="display-1 text-primary pb-3"><?php the_sub_field('title'); ?></h2>
 								<?php if(have_rows('button')):
 									while(have_rows('button')): the_row(); ?>

@@ -16038,6 +16038,10 @@ ul#rinrose_header-offcanvas_body-nav .menu-item a {
   margin-top: -15rem;
 }
 
+#rinrose_home_amenities_body-right_content {
+  transform: translateY(-10rem);
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

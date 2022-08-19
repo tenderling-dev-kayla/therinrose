@@ -62,3 +62,6 @@ ul#rinrose_header-offcanvas_body-nav {
 #rinrose_home-amenities_footer {
     margin-top: $spacer * -15;
 }
+#rinrose_home_amenities_body-right_content {
+    transform: translateY($spacer * -10);
+}
