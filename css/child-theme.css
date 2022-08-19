@@ -16326,6 +16326,12 @@ ul#rinrose_header-offcanvas_body-nav .menu-item a {
   transform: translateY(-100%);
 }
 
+div#rinrose_home-residences_banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;
