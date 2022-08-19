@@ -67,7 +67,7 @@ get_header();
 						</div>
 						<div id="rinrose_home-amenities_body-right" class="w-40 px-5">
 							<div id="rinrose_home-amenities_body-right_content" class="py-5">
-								<h2 id="rinrose_home_amenities_body-right_content-title" class="display-2 text-primary"><?php the_sub_field('title'); ?></h2>
+								<h2 id="rinrose_home_amenities_body-right_content-title" class="display-1 text-primary"><?php the_sub_field('title'); ?></h2>
 								<?php if(have_rows('button')):
 									while(have_rows('button')): the_row(); ?>
 										<a id="rinrose_home-amenities_body-right_content-button" class="btn btn-outline-primary text-uppercase" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
