@@ -21,10 +21,12 @@ get_header();
 		    	//Mobile Video = the_sub_field('mobile_video');
 		    	?>
 				<section id="rinrose_home-splash">
-					<div class="ratio ratio-16x9">
-						<video loop="loop" autoplay="" playsinline="" muted="" id="rinrose_home-splash_video" preload="none" src="<?php the_sub_field('video'); ?>"> 
-							<source type="video/mp4" src="<?php the_sub_field('video'); ?>">
-						</video>
+					<div id="rinrose_home-splash_video">
+						<div class="ratio ratio-16x9" id="rinrose_home-splash_video-sizing">
+							<video loop="loop" autoplay="" playsinline="" muted="" id="rinrose_home-splash_video-file" preload="none" src="<?php the_sub_field('video'); ?>"> 
+								<source type="video/mp4" src="<?php the_sub_field('video'); ?>">
+							</video>
+						</div>
 					</div>
 				</section>
 			<?php endwhile;

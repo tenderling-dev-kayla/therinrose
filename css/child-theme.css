@@ -15598,12 +15598,29 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
+#rinrose_home-splash {
+  height: calc(100vh - 127px);
+  position: relative;
+}
+
+#rinrose_home-splash_video {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translateY(-50%);
+}
+
 .admin-bar #rinrose_header {
   top: 32px !important;
 }
 .admin-bar #rinrose_header-offcanvas {
   margin-top: 32px !important;
   max-height: calc(100vh - 32px) !important;
+}
+.admin-bar #rinrose_home-splash {
+  height: calc(100vh - 159px);
 }
 
 #rinrose_header .container-fluid, #rinrose_header .container-sm, #rinrose_header .container-md, #rinrose_header .container-lg, #rinrose_header .container-xl, #rinrose_header .container-xxl {
