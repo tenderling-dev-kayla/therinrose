@@ -16326,7 +16326,7 @@ ul#rinrose_header-offcanvas_body-nav .menu-item a {
   transform: translateY(-100%);
 }
 
-div#rinrose_home-residences_banner {
+.panorama {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -92,7 +92,7 @@ get_header();
 		    while( have_rows('residences') ): the_row(); ?>
 				<section id="rinrose_home-residences">
 					<?php $resBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
-					<div id="rinrose_home-residences_banner" class="vh-80 d-flex align-items-end p-5" style="background-image:  url('<?php echo $resBg[0]; ?>')">
+					<div id="rinrose_home-residences_banner" class="vh-80 d-flex align-items-end p-5 panorama" style="background-image:  url('<?php echo $resBg[0]; ?>')">
 						<h2 id="rinrose_home_residences-title" class="display-1 text-white px-5">
 							<?php the_sub_field('title'); ?>
 						</h2>
@@ -125,18 +125,18 @@ get_header();
 		 **/
 		if( have_rows('location') ):
 		    while( have_rows('location') ): the_row(); ?>
-				<section id="rinrose_home_location">
-					<div class="container-fluid">
-						<div id="rinrose_home_location-banner">
-							<div id="rinrose_home_location-banner_image">
-								<?php echo wp_get_attachment_image( get_sub_field('banner'), 'full', "", array( "class" => "img-responsive" ) ); ?>
-							</div>
-							<h3 id="rinrose_home_location-banner_text"><?php the_sub_field('banner_text'); ?></h3>
+				<section id="rinrose_home-location">
+					<?php $locationBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
+					<div id="rinrose_home-location_banner" class="panorama container vh-80 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $locationBg; ?>')">
+						<div id="rinrose_home-location_banner-content" class="py-5 w-50">
+							<h2 id="rinrose_home-location_banner-content_text" class="display-1 text-white text-center"><?php the_sub_field('banner_text'); ?></h2>
 						</div>
-						<div id="rinrose_home_location-content">
-							<h2 id="rinrose_home_location-content_title"><?php the_sub_field('title'); ?></h2>
+					</div>
+					<div id="rinrose_home_location-info" class="container py-5 my-5 d-flex justify-content-center">
+						<div id="rinrose_home_location-info_content" class="w-50 text-center">
+							<h3 id="rinrose_home_location-content_title" class="text-primary text-uppercase"><?php the_sub_field('title'); ?></h3>
 							<div id="rinrose_home_location-content_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
-						</div>
+					</div>
 						<div id="rinrose_home_location-map">
 							<p>Google Map with rinrose iconography and possible styling here</p>
 							<p>Address: <?php the_sub_field('address'); ?></p>
