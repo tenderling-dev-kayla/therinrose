@@ -127,20 +127,25 @@ get_header();
 		    while( have_rows('location') ): the_row(); ?>
 				<section id="rinrose_home-location">
 					<?php $locationBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
-					<div id="rinrose_home-location_banner" class="panorama container vh-80 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $locationBg; ?>')">
+					<div id="rinrose_home-location_banner" class="panorama container vh-80 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $locationBg[0]; ?>')">
 						<div id="rinrose_home-location_banner-content" class="py-5 w-50">
-							<h2 id="rinrose_home-location_banner-content_text" class="display-1 text-white text-center"><?php the_sub_field('banner_text'); ?></h2>
+							<h2 id="rinrose_home-location_banner-content_title" class="display-1 text-white text-center"><?php the_sub_field('banner_text'); ?></h2>
 						</div>
 					</div>
 					<div id="rinrose_home_location-info" class="container py-5 my-5 d-flex justify-content-center">
 						<div id="rinrose_home_location-info_content" class="w-50 text-center">
 							<h3 id="rinrose_home_location-content_title" class="text-primary text-uppercase"><?php the_sub_field('title'); ?></h3>
-							<div id="rinrose_home_location-content_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
-					</div>
-						<div id="rinrose_home_location-map">
-							<p>Google Map with rinrose iconography and possible styling here</p>
-							<p>Address: <?php the_sub_field('address'); ?></p>
+							<div id="rinrose_home_location-content_blurb">
+								<?php echo do_shortcode(get_sub_field('blurb')); ?>
+							</div>
 						</div>
+					</div>
+					<div id="rinrose_home_location-map">
+					<?php $displayFooter = get_field('footer', 'option');
+					$address = $displayFooter['address'];
+					?>
+						<p>Google Map with rinrose iconography and possible styling here</p>
+						<p>Address: <?php echo $address; ?></p>
 					</div>
 				</section>
 			<?php endwhile;
@@ -151,14 +156,14 @@ get_header();
 		 **/
 		if( have_rows('wellness') ):
 		    while( have_rows('wellness') ): the_row(); ?>
-		    	<section id="rinrose_home_wellness">
+		    	<section id="rinrose_home-wellness">
 		    		<a id="wellness" class="d-none anchorPin"></a>
-					<div id="rinrose_home_wellness-banner" class="container-fluid">
-						<div id="rinrose_home_wellness-banner_image">
-							<?php echo wp_get_attachment_image( get_sub_field('banner'), 'full', "", array( "class" => "img-responsive" ) ); ?>
+		    		<?php $wellnessBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
+					<div id="rinrose_home-wellness_banner" class="panorama container vh-80 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $wellnessBg[0]; ?>')">
+						<div id="rinrose_home-wellness_banner-content" class="py-5 w-50">
+							<h2 id="rinrose_home-wellness_banner-content_title" class="h3 text-white text-center text-uppercase"><?php the_sub_field('title'); ?></h2>
+							<div id="rinrose_home-wellness_banner-content_blurb" class="text-white text-center"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 						</div>
-						<h2 id="rinrose_home_wellness-banner_title"><?php the_sub_field('title'); ?></h2>
-						<div id="rinrose_home_wellness-banner_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 					</div>
 				</section>
 			<?php endwhile;
