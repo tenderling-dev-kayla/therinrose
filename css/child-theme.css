@@ -16035,11 +16035,7 @@ ul#rinrose_header-offcanvas_body-nav .menu-item a {
 }
 
 #rinrose_home-amenities_footer {
-  margin-top: -6rem;
-}
-
-#rinrose_home-amenities_footer-image {
-  transform: translateY(-6rem);
+  margin-top: -15rem;
 }
 
 .has-blue-color,
