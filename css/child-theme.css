@@ -15626,6 +15626,10 @@ figure.woocommerce-product-gallery__wrapper {
   font-weight: 500;
 }
 
+.wrapper {
+  padding: 0;
+}
+
 ul#rinrose_header-offcanvas_body-nav .menu-item {
   padding: 40px;
 }
