@@ -41,10 +41,10 @@ get_header();
 					<div class="container py-5 text-center">
 						<div class="row justify-content-center">
 							<div class="col-12 col-lg-8">
-								<h1 id="rinrose_home-intro_title" class="px-5 text-primary display-1 mb-5"><?php the_sub_field('title'); ?></h1>
+								<h1 id="rinrose_home-intro_title" class="px-5 text-primary display-1 mb-3"><?php the_sub_field('title'); ?></h1>
 							</div>
 							<div class="col-12 col-lg-9">
-								<div id="rinrose_home-intro_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
+								<div id="rinrose_home-intro_blurb" class="px-2"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 							</div>
 						</div>
 					</div>
@@ -58,14 +58,14 @@ get_header();
 		if( have_rows('amenities') ):
 		    while( have_rows('amenities') ): the_row(); ?>
 				<section id="rinrose_home-amenities">					
-					<div id="rinrose_home-amenities_banner">
+					<div id="rinrose_home-amenities_banner" class="mb-5">
 						<?php echo wp_get_attachment_image( get_sub_field('banner'), 'full', "", array( "class" => "img-fluid" ) ); ?>
 					</div>
-					<div id="rinrose_home-amenities_body">
-						<div id="rinrose_home-amenities_body-left">
+					<div id="rinrose_home-amenities_body" class="d-flex justify-content-between">
+						<div id="rinrose_home-amenities_body-left" class="w-60">
 							<?php echo wp_get_attachment_image( get_sub_field('left_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_body-left_img", ) ); ?>
 						</div>
-						<div id="rinrose_home-amenities_body-right">
+						<div id="rinrose_home-amenities_body-right" class="w-40">
 							<div id="rinrose_home-amenities_body-right_content">
 								<h2 id="rinrose_home_amenities_body-right_content-title"><?php the_sub_field('title'); ?></h2>
 								<?php if(have_rows('button')):
