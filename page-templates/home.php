@@ -164,7 +164,7 @@ get_header();
 					<div id="rinrose_home-wellness_banner" class="panorama vh-80 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $wellnessBg[0]; ?>')">
 						<div id="rinrose_home-wellness_banner-content" class="container d-flex justify-content-center">
 							<div id="rinrose_home-wellness_banner-content_body" class="py-5 w-50">
-								<h2 id="rinrose_home-wellness_banner-content_body-title" class="h3 text-white text-center text-uppercase"><?php the_sub_field('title'); ?></h2>
+								<h2 id="rinrose_home-wellness_banner-content_body-title" class="h3 text-white text-center text-uppercase pb-3"><?php the_sub_field('title'); ?></h2>
 								<div id="rinrose_home-wellness_banner-content_body-blurb" class="text-white text-center"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 							</div>
 						</div>
