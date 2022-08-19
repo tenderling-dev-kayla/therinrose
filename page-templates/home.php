@@ -90,15 +90,15 @@ get_header();
 		 **/
 		if( have_rows('residences') ):
 		    while( have_rows('residences') ): the_row(); ?>
-				<section id="rinrose_home_residences">
+				<section id="rinrose_home-residences">
 					<?php $resBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
 					<div id="rinrose_home-residences_banner" class="vh-80 d-flex align-items-end p-5" style="background-image:  url('<?php echo $resBg[0]; ?>')">
 						<h2 id="rinrose_home_residences-title" class="display-1 text-white px-5">
 							<?php the_sub_field('title'); ?>
 						</h2>
 					</div>
-					<div class="container-fluid" class="d-flex">
-						<div id="rinrose_home_residences-blurb" class="w-40">
+					<div id="rinrose_home-residences_blurb" class="d-flex p-5">
+						<div id="rinrose_home-residences_blurb-content" class="w-50 px-5">
 							<?php echo do_shortcode(get_sub_field('blurb')); ?>
 						</div>
 					</div>
