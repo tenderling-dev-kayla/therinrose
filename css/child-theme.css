@@ -16034,6 +16034,10 @@ ul#rinrose_header-offcanvas_body-nav .menu-item a {
   line-height: 52px;
 }
 
+#rinrose_home-amenities_footer-image {
+  transform: translateX(-5rem);
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;
