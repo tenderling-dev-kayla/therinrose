@@ -102,7 +102,7 @@ get_header();
 							<?php echo do_shortcode(get_sub_field('blurb')); ?>
 						</div>
 					</div>
-					<div id="rinrise_home_residences-grid" class="container">
+					<div id="rinrise_home_residences-grid" class="container pb-5 mb-3">
 						<h3 id="rinrose_home_residences-grid_title" class="text-center text-primary text-uppercase pb-5"><?php the_sub_field('grid_title'); ?></h3>
 						<div id="rinrise_home_residences-grid_display">
 							<!--Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button) -->
