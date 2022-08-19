@@ -58,21 +58,19 @@ get_header();
 		if( have_rows('amenities') ):
 		    while( have_rows('amenities') ): the_row(); ?>
 				<section id="rinrose_home-amenities">					
-					<div id="rinrose_home-amenities_banner" class="mb-5">
+					<div id="rinrose_home-amenities_banner">
 						<?php echo wp_get_attachment_image( get_sub_field('banner'), 'full', "", array( "class" => "img-fluid" ) ); ?>
 					</div>
-					<div id="rinrose_home-amenities_body" class="d-flex justify-content-between">
+					<div id="rinrose_home-amenities_body" class="d-flex justify-content-between my-5 py-5">
 						<div id="rinrose_home-amenities_body-left" class="w-60">
 							<?php echo wp_get_attachment_image( get_sub_field('left_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_body-left_img", ) ); ?>
 						</div>
-						<div id="rinrose_home-amenities_body-right" class="w-40">
-							<div id="rinrose_home-amenities_body-right_content">
-								<h2 id="rinrose_home_amenities_body-right_content-title"><?php the_sub_field('title'); ?></h2>
+						<div id="rinrose_home-amenities_body-right" class="w-40 px-5">
+							<div id="rinrose_home-amenities_body-right_content" class="py-5">
+								<h2 id="rinrose_home_amenities_body-right_content-title" class="display-2 text-primary"><?php the_sub_field('title'); ?></h2>
 								<?php if(have_rows('button')):
 									while(have_rows('button')): the_row(); ?>
-										<div id="rinrose_home-amenities_body-right_content-button">
-											<a class="btn btn-outline-primary" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
-										</div>
+										<a id="rinrose_home-amenities_body-right_content-button" class="btn btn-outline-primary text-uppercase" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
 									<?php endwhile;
 								endif; ?>
 							</div>
