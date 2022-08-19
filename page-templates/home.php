@@ -102,8 +102,8 @@ get_header();
 							<?php echo do_shortcode(get_sub_field('blurb')); ?>
 						</div>
 					</div>
-					<div id="rinrise_home_residences-grid" class="container py-5">
-						<h3 id="rinrose_home_residences-grid_title" class="text-center text-primary text-uppercase pb-3"><?php the_sub_field('grid_title'); ?></h3>
+					<div id="rinrise_home_residences-grid" class="container">
+						<h3 id="rinrose_home_residences-grid_title" class="text-center text-primary text-uppercase pb-5"><?php the_sub_field('grid_title'); ?></h3>
 						<div id="rinrise_home_residences-grid_display">
 							<!--Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button) -->
 							<img src="/wp-content/themes/therinrose-tenderling/inc/img/rinrose-floorplans_placeholder.jpg" class="img-fluid" />
