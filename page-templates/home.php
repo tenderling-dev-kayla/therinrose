@@ -17,12 +17,14 @@ get_header();
 		 * Splash
 		 **/
 		if( have_rows('splash') ):
-		    while( have_rows('splash') ): the_row(); ?>
-				<section id="rinrose_home_splash">
-					<div class="container-fluid">
-						<p>Splash video with art</p>
-						<p>Video: <?php the_sub_field('video'); ?></p>
-						<p>Mobile Video: <?php the_sub_field('mobile_video'); ?></p>
+		    while( have_rows('splash') ): the_row(); 
+		    	//Mobile Video = the_sub_field('mobile_video');
+		    	?>
+				<section id="rinrose_home-splash">
+					<div class="ratio ratio-16x9">
+						<video loop="loop" autoplay="" playsinline="" muted="" id="rinrose_home-splash_video" preload="none" src="<?php the_sub_field('video'); ?>"> 
+							<source type="video/mp4" src="<?php the_sub_field('video'); ?>">
+						</video>
 					</div>
 				</section>
 			<?php endwhile;
@@ -33,10 +35,10 @@ get_header();
 		 **/
 		if( have_rows('intro') ):
 		    while( have_rows('intro') ): the_row(); ?>
-				<section id="rinrose_home_intro">
+				<section id="rinrose_home-intro" class="py-5">
 					<div class="container">
-						<h1 id="rinrose_home_intro-title"><?php the_sub_field('title'); ?></h1>
-						<div id="rinrose_home_intro-blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
+						<h1 id="rinrose_home-intro_title"><?php the_sub_field('title'); ?></h1>
+						<div id="rinrose_home-intro_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 					</div>
 				</section>
 			<?php endwhile;
