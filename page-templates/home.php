@@ -103,14 +103,15 @@ get_header();
 						</div>
 					</div>
 					<div id="rinrise_home_residences-grid" class="container">
-						<h3 id="rinrose_home_residences-grid_title"><?php the_sub_field('grid_title'); ?></h3>
+						<h3 id="rinrose_home_residences-grid_title" class="text-center text-primary text-uppercase"><?php the_sub_field('grid_title'); ?></h3>
 						<div id="rinrise_home_residences-grid_display">
-							<p>Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button)</p>
+							<!--Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button) -->
+							<img src="/wp-content/themes/therinrose-tenderling/inc/img/rinrose-floorplans_placeholder.jpg" class="img-fluid" />
 						</div>
 						<?php if(have_rows('button')):
 							while(have_rows('button')): the_row(); ?>
-								<div id="rinrose_home_residences-grid_button">
-									<a class="btn btn-outline-primary" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
+								<div id="rinrose_home_residences-grid_button" class="text-center">
+									<a class="btn btn-outline-primary text-uppercase" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
 								</div>
 							<?php endwhile;
 						endif; ?>
