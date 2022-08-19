@@ -39,7 +39,7 @@ get_header();
 		    while( have_rows('intro') ): the_row(); ?>
 				<section id="rinrose_home-intro" class="py-5">
 					<div class="container py-5 text-center px-5">
-						<h1 id="rinrose_home-intro_title" class="display-1"><?php the_sub_field('title'); ?></h1>
+						<h1 id="rinrose_home-intro_title" class="px-5 text-primary"><?php the_sub_field('title'); ?></h1>
 						<div id="rinrose_home-intro_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 					</div>
 				</section>
@@ -51,26 +51,26 @@ get_header();
 		 **/
 		if( have_rows('amenities') ):
 		    while( have_rows('amenities') ): the_row(); ?>
-				<section id="rinrose_home_amenities">
-					<div class="container-fluid">
-						<div id="rinrose_home_amenities-banner">
-							<?php echo wp_get_attachment_image( get_sub_field('banner'), 'full', "", array( "class" => "img-responsive" ) ); ?>
+				<section id="rinrose_home-amenities">					
+					<div id="rinrose_home-amenities_banner">
+						<?php echo wp_get_attachment_image( get_sub_field('banner'), 'full', "", array( "class" => "img-fluid" ) ); ?>
+					</div>
+					<div id="rinrose_home-amenities_body">
+						<div id="rinrose_home-amenities_body-left">
+							<?php echo wp_get_attachment_image( get_sub_field('left_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_body-left_img", ) ); ?>
 						</div>
-						<div id="rinrose_home_amenities-leftImg">
-							<?php echo wp_get_attachment_image( get_sub_field('left_image'), 'full', "", array( "class" => "img-responsive" ) ); ?>
-						</div>
-						<div id="rinrose_home_amenities-content">
-							<h2 id="rinrose_home_amenities-content_title"><?php the_sub_field('title'); ?></h2>
-							<?php if(have_rows('button')):
-								while(have_rows('button')): the_row(); ?>
-									<div id="rinrose_home_amenities-content_button">
-										<a class="btn btn-outline-primary" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
-									</div>
-								<?php endwhile;
-							endif; ?>
-						</div>
-						<div id="rinrose_home_amenities-rightImg">
-							<?php echo wp_get_attachment_image( get_sub_field('right_image'), 'full', "", array( "class" => "img-responsive" ) ); ?>
+						<div id="rinrose_home-amenities_body-right">
+							<div id="rinrose_home-amenities_body-right_content">
+								<h2 id="rinrose_home_amenities_body-right_content-title"><?php the_sub_field('title'); ?></h2>
+								<?php if(have_rows('button')):
+									while(have_rows('button')): the_row(); ?>
+										<div id="rinrose_home-amenities_body-right_content-button">
+											<a class="btn btn-outline-primary" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
+										</div>
+									<?php endwhile;
+								endif; ?>
+							</div>
+							<?php echo wp_get_attachment_image( get_sub_field('right_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_body-right_img" ) ); ?>
 						</div>
 					</div>
 				</section>
