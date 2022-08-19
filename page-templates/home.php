@@ -91,28 +91,27 @@ get_header();
 		if( have_rows('residences') ):
 		    while( have_rows('residences') ): the_row(); ?>
 				<section id="rinrose_home_residences">
+					<?php $resBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
+					<div id="rinrose_home-residences_banner" class="vh-60 d-flex align-items-end p-5" style="background-image:  url('<?php echo $resBg[0]; ?>')">
+						<h2 id="rinrose_home_residences-title" clas="display-1 text-white">
+							<?php the_sub_field('title'); ?>
+						</h2>
+					</div>
 					<div class="container-fluid">
-						<?php $resBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
-						<div id="rinrose_home-residences_banner" class="vh-60 d-flex align-items-end p-5" style="background-image:  url('<?php echo $resBg[0]; ?>')">
-							<h2 id="rinrose_home_residences-title" clas="display-1 text-white">
-								<?php the_sub_field('title'); ?>
-							</h2>
-						</div>
-						
 						<div id="rinrose_home_residences-blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
-						<div id="rinrise_home_residences-grid">
-							<h3 id="rinrose_home_residences-grid_title"><?php the_sub_field('grid_title'); ?></h3>
-							<div id="rinrise_home_residences-grid_display">
-								<p>Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button)</p>
-							</div>
-							<?php if(have_rows('button')):
-								while(have_rows('button')): the_row(); ?>
-									<div id="rinrose_home_residences-grid_button">
-										<a class="btn btn-outline-primary" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
-									</div>
-								<?php endwhile;
-							endif; ?>
+					</div>
+					<div id="rinrise_home_residences-grid" class="container">
+						<h3 id="rinrose_home_residences-grid_title"><?php the_sub_field('grid_title'); ?></h3>
+						<div id="rinrise_home_residences-grid_display">
+							<p>Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button)</p>
 						</div>
+						<?php if(have_rows('button')):
+							while(have_rows('button')): the_row(); ?>
+								<div id="rinrose_home_residences-grid_button">
+									<a class="btn btn-outline-primary" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
+								</div>
+							<?php endwhile;
+						endif; ?>
 					</div>
 				</section>
 			<?php endwhile;
