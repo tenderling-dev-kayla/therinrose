@@ -128,7 +128,7 @@ get_header();
 				<section id="rinrose_home-location">
 					<?php $locationBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
 					<div id="rinrose_home-location_banner" class="panorama vh-80 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $locationBg[0]; ?>')">
-						<div id="rinrose_home-location_banner-content" class="container">
+						<div id="rinrose_home-location_banner-content" class="container d-flex justify-content-center">
 							<div id="rinrose_home-location_banner-content_body" class="py-5 w-50">
 								<h2 id="rinrose_home-location_banner-content_body-title" class="display-1 text-white text-center"><?php the_sub_field('banner_text'); ?></h2>
 							</div>
@@ -162,7 +162,7 @@ get_header();
 		    		<a id="wellness" class="d-none anchorPin"></a>
 		    		<?php $wellnessBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
 					<div id="rinrose_home-wellness_banner" class="panorama vh-80 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $wellnessBg[0]; ?>')">
-						<div id="rinrose_home-wellness_banner-content" class="container">
+						<div id="rinrose_home-wellness_banner-content" class="container d-flex justify-content-center">
 							<div id="rinrose_home-wellness_banner-content_body" class="py-5 w-50">
 								<h2 id="rinrose_home-wellness_banner-content_body-title" class="h3 text-white text-center text-uppercase"><?php the_sub_field('title'); ?></h2>
 								<div id="rinrose_home-wellness_banner-content_body-blurb" class="text-white text-center"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
