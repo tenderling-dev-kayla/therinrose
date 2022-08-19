@@ -40,8 +40,10 @@ get_header();
 				<section id="rinrose_home-intro" class="py-5">
 					<div class="container py-5 text-center">
 						<div class="row justify-content-center">
-							<div class="col-12 col-md-8 col-lg-6">
+							<div class="col-12 col-lg-8">
 								<h1 id="rinrose_home-intro_title" class="px-5 text-primary display-1 mb-5"><?php the_sub_field('title'); ?></h1>
+							</div>
+							<div class="col-12 col-lg-9">
 								<div id="rinrose_home-intro_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 							</div>
 						</div>
