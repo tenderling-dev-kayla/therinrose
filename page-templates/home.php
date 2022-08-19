@@ -38,8 +38,8 @@ get_header();
 		if( have_rows('intro') ):
 		    while( have_rows('intro') ): the_row(); ?>
 				<section id="rinrose_home-intro" class="py-5">
-					<div class="container">
-						<h1 id="rinrose_home-intro_title"><?php the_sub_field('title'); ?></h1>
+					<div class="container py-5 text-center px-5">
+						<h1 id="rinrose_home-intro_title" class="display-1"><?php the_sub_field('title'); ?></h1>
 						<div id="rinrose_home-intro_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 					</div>
 				</section>
