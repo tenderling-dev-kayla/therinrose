@@ -12,11 +12,8 @@ defined( 'ABSPATH' ) || exit;
 
 ?>
 
-<section id="rinrose_footer">
-	<footer class="site-footer" id="colophon">
-		<?php get_template_part( 'global-templates/footer', 'rinrose' ); ?>
-	</footer><!-- #colophon -->
-</div><!-- wrapper end -->
+<?php get_template_part( 'global-templates/footer', 'rinrose' ); ?>
+
 
 </div><!-- #page we need this extra closing tag here -->
 
