@@ -8832,8 +8832,16 @@ textarea.form-control-lg {
   font-weight: 700 !important;
 }
 
+.fw-semibold {
+  font-weight: 600 !important;
+}
+
 .fw-bolder {
   font-weight: bolder !important;
+}
+
+.fw-lightbold {
+  font-weight: 500 !important;
 }
 
 .lh-1 {
