@@ -194,8 +194,8 @@ add_action( 'after_setup_theme', 'tenderling_register_nav_menus', 0 );
  * Add Menu LI class option
  **/
 function tenderling_additional_class_menu_li($classes, $item, $args) {
-    if(array_key_exists('add_li_class', $args)) {
-        $classes[] = $args['add_li_class'];
+    if(isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
     }
     return $classes;
 }
