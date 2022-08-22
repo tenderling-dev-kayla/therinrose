@@ -38,14 +38,15 @@
 					</div>
 					<div class="col">
 						<div id="rinrose_footer_links">
+							<div id="rinrose_footer_links-menu" class="list-group list-group-flush text-white text-uppercase">
 							<?php $footer_links_args = array(
-							    'menu_class'        => "rinrose_footer-menu list-group list-group-flush text-white text-uppercase",
-							    'menu_id'           => "rinrose_footer_links-menu",
-							    'container'         => false,
-							    'theme_location'    => "footer_links",
-							    'add_li_class'		=> "list-group-item",
+							    'theme_location'  => "footer_links",
+							    'container'       => false,
+								'echo'            => false,
+								'items_wrap'      => '%3$s',
+								'depth'           => 0,
 							);
-							wp_nav_menu($footer_links_args); 
+							echo strip_tags(wp_nav_menu($footer_links_args), '<a>' );
 
 							if(have_rows('inquiry_button')):
 								while(have_rows('inquiry_button')): the_row(); ?>
