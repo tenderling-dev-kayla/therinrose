@@ -39,16 +39,17 @@
 					<div class="col">
 						<div id="rinrose_footer_links">
 							<div id="rinrose_footer_links-menu" class="list-group list-group-flush text-white text-uppercase">
-							<?php $footer_links_args = array(
-							    'theme_location'  => "footer_links",
-							    'container'       => false,
-								'echo'            => false,
-								'items_wrap'      => '%3$s',
-								'depth'           => 0,
-							);
-							echo strip_tags(wp_nav_menu($footer_links_args), '<a>' );
+								<?php $footer_links_args = array(
+								    'theme_location'  => "footer_links",
+								    'container'       => false,
+									'echo'            => false,
+									'items_wrap'      => '%3$s',
+									'depth'           => 0,
+								);
+								echo strip_tags(wp_nav_menu($footer_links_args), '<a>' ); ?>
+							</div>
 
-							if(have_rows('inquiry_button')):
+							<?php if(have_rows('inquiry_button')):
 								while(have_rows('inquiry_button')): the_row(); ?>
 									<div id="rinrose_footer_links-button">
 										<a class="btn text-uppercase btn-outline-light" target="<?php the_sub_field('target'); ?>" href="<?php the_sub_field('link'); ?>">
