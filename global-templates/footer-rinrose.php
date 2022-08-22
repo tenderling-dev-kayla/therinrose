@@ -70,7 +70,7 @@
 											<?php echo wp_get_attachment_image( get_sub_field('image'), 'full', '', array( "class" => "img-fluid" ) );  ?>
 										</div>
 									<?php endwhile; ?>
-								</ul>
+								</div>
 							<?php endif;
 							$footer_legal_args = array(
 							    'menu_class'        => "rinrose_footer-menu list-group list-group-flush text-white text-uppercase",
