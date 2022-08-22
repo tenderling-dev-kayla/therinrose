@@ -38,13 +38,14 @@
 					</div>
 					<div class="col">
 						<div id="rinrose_footer_links">
-							<div id="rinrose_footer_links-menu" class="list-group list-group-flush text-white text-uppercase">
+							<div id="rinrose_footer_links-menu" class="list-group list-group-flush text-uppercase bg-primary">
 								<?php $footer_links_args = array(
 								    'theme_location'  => "footer_links",
 								    'container'       => false,
 									'echo'            => false,
 									'items_wrap'      => '%3$s',
 									'depth'           => 0,
+									'link_class'	  => 'list-group-item list-group-item-action text-white',
 								);
 								echo strip_tags(wp_nav_menu($footer_links_args), '<a>' ); ?>
 							</div>
