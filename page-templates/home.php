@@ -163,6 +163,7 @@ get_header();
 					</div>
 					<div id="rinrose_home_location-map" class="vh-80">
 						<div id="map"></div>
+						<div id="legend" class="bg-white px-3 py-2"><h3 class="visually-hidden">Legend</h3></div>
 					</div>
 				</section>
 			<?php endwhile;

@@ -16812,6 +16812,65 @@ a#rinrose_header-offcanvas_header-brand_logo img {
   height: 100%;
 }
 
+#legend {
+  transform: translateX(32px);
+}
+#legend .legend_icon {
+  width: 15px;
+  height: 15px;
+}
+#legend .legend_label {
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1em;
+  display: inline-block;
+  padding-left: 5px;
+  position: relative;
+  top: 2px;
+}
+#legend div {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+#legend .legend_label.legend_metroline {
+  color: #9EABA3;
+}
+#legend .legend_label.legend_metro {
+  color: #9EABA3;
+}
+#legend .legend_label.legend_entertainment {
+  color: #02293A;
+}
+#legend .legend_label.legend_shopping {
+  color: #B37350;
+}
+#legend .legend_label.legend_recreation {
+  color: #6A8171;
+}
+#legend .legend_label.legend_education {
+  color: #D8B9AB;
+}
+#legend .legend_label.legend_radius {
+  color: #80949C;
+}
+#legend i.legend_icon_line.legend_metroline {
+  width: 15px;
+  height: 2px;
+  border-bottom: 2px solid #9eaba3;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+#legend i.legend_icon_line.legend_radius {
+  width: 15px;
+  height: 2px;
+  border-bottom: 2px dotted #9eaba3;
+  display: inline-block;
+  position: relative;
+  top: -2px;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;

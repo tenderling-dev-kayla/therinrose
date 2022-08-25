@@ -9315,7 +9315,7 @@
 	const gmapStyles = [{
 	  "elementType": "geometry",
 	  "stylers": [{
-	    "color": "#f5f5f5"
+	    "color": "#DCE5EB"
 	  }]
 	}, {
 	  "elementType": "labels.icon",
@@ -9357,13 +9357,7 @@
 	}, {
 	  "featureType": "administrative.locality",
 	  "stylers": [{
-	    "visibility": "on"
-	  }]
-	}, {
-	  "featureType": "administrative.locality",
-	  "elementType": "labels.text.fill",
-	  "stylers": [{
-	    "color": "#919191"
+	    "visibility": "off"
 	  }]
 	}, {
 	  "featureType": "administrative.neighborhood",
@@ -9506,25 +9500,7 @@
 	}, {
 	  "featureType": "transit.station.rail",
 	  "stylers": [{
-	    "visibility": "on"
-	  }]
-	}, {
-	  "featureType": "transit.station.rail",
-	  "elementType": "geometry.fill",
-	  "stylers": [{
-	    "color": "#9EABA3"
-	  }]
-	}, {
-	  "featureType": "transit.station.rail",
-	  "elementType": "geometry.stroke",
-	  "stylers": [{
-	    "color": "#9EABA3"
-	  }]
-	}, {
-	  "featureType": "transit.station.rail",
-	  "elementType": "labels.text.fill",
-	  "stylers": [{
-	    "color": "#9EABA3"
+	    "visibility": "off"
 	  }]
 	}];
 	gmapStyles.push.apply(gmapStyles, transitStyles);
@@ -9537,6 +9513,8 @@
 	markers.push.apply(markers, poi_shopping);
 	const poi_recreation = [["Speakeasy Fitness", "39 S Altadena Dr, Pasadena, CA 91107", "34.1452797", "-118.0987556", "recreation", "fit", -50], ["Alice's Dog Park", "3026 E Orange Grove Blvd, Pasadena, CA 91107", "34.15844", "-118.087574", "recreation", "fit"], ["Victory Park", "2575 Paloma St, Pasadena, CA 91107", "34.160354", "-118.0962599", "recreation", "fit", -35], ["Eaton Canyon Golf Course", "1150 Sierra Madre Villa Ave, Pasadena, CA 91107", "34.1665102", "-118.0804784", "recreation", "fit", -62], ["Eaton Canyon Trailhead", "1999 Veranada Ave, Pasadena, CA 91107", "34.1759984", "-118.099312", "recreation", "", -60], ["Walnut Canyon Trailhead", "Unnamed Road, Pasadena, CA 91107", "34.18573842105448", "-118.09999282893223", "recreation", "", 75], ["Mt. Wilson Trailhead", "Mt Wilson Trail, Sierra Madre, CA 91024", "34.170305", "-118.049301", "recreation", "fit", 65], ["LA County Arboretum", "301 N Baldwin Ave, Arcadia, CA 91007", "34.1443566", "-118.0501603", "recreation", "fit", 65]];
 	markers.push.apply(markers, poi_recreation);
+	const poi_metro = [["Fillmore", "Pasadena", "34.13352359961214", "-118.14812336585337", "metro", "", -5], ["Del Mar", "Pasadena", "34.141982330901236", "-118.14828110409097", "metro", "", -2], ["Memorial Park", "Pasadena", "34.14798159147686", "-118.14767420257914", "metro", "", -2, -1], ["Lake", "Pasadena", "34.151824806844765", "-118.13160508386878", "metro", "", 0, -2], ["Allen", "Pasadena", "34.15243007697317", "-118.11394096924907", "metro", "", 0, -1], ["Sierra Madre Villa", "Pasadena", "34.147755031689464", "-118.08145778647173", "metro", "", 0, -2], ["Arcadia Station", "Pasadena", "34.14270540759816", "-118.02895130925587", "metro", ""]];
+	markers.push.apply(markers, poi_metro);
 
 	function initMap() {
 	  styledMapType = new google.maps.StyledMapType(gmapStyles, {
@@ -9578,8 +9556,7 @@
 	    };
 
 	    if (markers[i][4] == 'main') {
-	      icon.scaledSize = new google.maps.Size(50, 50); //origin = new google.maps.Point(10,10);
-
+	      icon.scaledSize = new google.maps.Size(50, 50);
 	      label = '';
 	      labelClass = '';
 	    } else {
@@ -9591,12 +9568,17 @@
 	        icon.labelOrigin = new google.maps.Point(50, markers[i][7]);
 	      }
 
-	      labelClass = "poi-label";
-	      label = {
-	        text: markers[i][0],
-	        color: colors[markers[i][4]],
-	        fontSize: '10px'
-	      };
+	      if (markers[i][4] == 'metro') {
+	        label = '';
+	        labelClass = '';
+	      } else {
+	        labelClass = "poi-label";
+	        label = {
+	          text: markers[i][0],
+	          color: colors[markers[i][4]],
+	          fontSize: '10px'
+	        };
+	      }
 	    }
 
 	    const marker = new google.maps.Marker({
@@ -9643,8 +9625,77 @@
 	    center: myLatLng,
 	    radius: radius
 	  });
+	  new google.maps.Marker({
+	    position: new google.maps.LatLng(34.16407236916488, -118.12144916350377),
+	    icon: {
+	      path: google.maps.SymbolPath.CIRCLE,
+	      scale: 0
+	    },
+	    title: 'Pasadena',
+	    labelClass: 'mainCity-label',
+	    label: {
+	      text: 'Pasadena',
+	      color: '#637B6E',
+	      fontSize: '32px',
+	      fontWeight: '100'
+	    },
+	    map: map
+	  });
 	  map.mapTypes.set('styled_map', styledMapType);
 	  map.setMapTypeId('styled_map');
+	  const legend = document.getElementById("legend");
+	  const iconBase = '/wp-content/themes/therinrose-tenderling/inc/img/rinrose_map_';
+	  const icons = {
+	    metroline: {
+	      name: "Metro Gold Line",
+	      icon: 'metroline'
+	    },
+	    metro: {
+	      name: "Metro Station",
+	      icon: iconBase + "metro.svg"
+	    },
+	    entertainment: {
+	      name: "Entertainment & Nightlife",
+	      icon: iconBase + "entertainment.svg"
+	    },
+	    shopping: {
+	      name: "Dining & Shopping",
+	      icon: iconBase + "shopping.svg"
+	    },
+	    recreation: {
+	      name: "Recreation",
+	      icon: iconBase + "recreation.svg"
+	    },
+	    education: {
+	      name: "Education",
+	      icon: iconBase + "education.svg"
+	    },
+	    radius: {
+	      name: "5 Mile Radius",
+	      icon: "radius"
+	    }
+	  };
+	  var legendIcon;
+	  var legendLabel;
+
+	  for (const key in icons) {
+	    const type = icons[key];
+	    const name = type.name;
+	    const icon = type.icon;
+	    const div = document.createElement("div");
+
+	    if (icon == "metroline" || icon == "radius") {
+	      legendIcon = '<i class="legend_icon_line legend_' + key + '"></i>';
+	    } else {
+	      legendIcon = '<img class="legend_icon legend_' + key + '" src="' + icon + '">';
+	    }
+
+	    legendLabel = '<span class="legend_label legend_' + key + '">' + name + '</span>';
+	    div.innerHTML = legendIcon + ' ' + legendLabel;
+	    legend.appendChild(div);
+	  }
+
+	  map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(legend);
 	}
 
 	function drawCircle(point, radius, dir) {
