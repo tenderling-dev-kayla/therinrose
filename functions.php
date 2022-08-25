@@ -148,7 +148,7 @@ function tenderling_remove_page_template( $page_templates ) {
 }
 
 /**
- * Remove sidebars inherited from th eparent theme
+ * Remove sidebars inherited from the parent theme
  **/
 function tenderling_unregister_sidebars() {
 	unregister_sidebar('right-sidebar');
@@ -215,3 +215,12 @@ function tenderling_add_menu_link_class( $atts, $item, $args ) {
   return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'tenderling_add_menu_link_class', 1, 3 );
+
+/**Add Body Class**/
+add_filter( 'body_class','tenderling_body_classes' );
+function tenderling_body_classes( $classes ) {
+    if ( is_front_page() ) {
+        $classes[] = 'rinrose_fresh_home';
+    }
+    return $classes;
+}
