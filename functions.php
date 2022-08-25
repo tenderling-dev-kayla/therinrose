@@ -49,6 +49,10 @@ function theme_enqueue_styles() {
 
 	//Add Montserrat
 	wp_enqueue_style('gfonts-css', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&display=swap', false);
+
+	//Add Google Maps
+	$google_key = get_field('theme_google_key', 'option');
+	wp_enqueue_script('gmaps-js', 'https://maps.googleapis.com/maps/api/js?key='.$google_key.'&callback=initMap&v=weekly' , array(), $the_theme->get( 'Version' ), true);
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 

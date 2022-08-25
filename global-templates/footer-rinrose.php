@@ -10,82 +10,80 @@
 	<footer class="site-footer px-5" id="colophon">
 		<?php if(have_rows('footer', 'option')) :
 			while(have_rows('footer','option')): the_row(); ?>
-				<div class="row">
-					<div class="col">
-						<div id="rinrose_footer_contact" class="mb-2">
-							<h4 id="rinrose_footer_contact-company" class="text-uppercase fw-lightbold"><?php the_sub_field('company'); ?></h4>
-							<p id="rinrose_footer_contact-address" class="mb-0"><?php the_sub_field('address'); ?></p>
-							<p id="rinrose_footer_contact-phone-email" class="mb-0">
-								<span id="rinrose_footer_contact-phone" class="pe-3"><?php the_sub_field('phone'); ?></span>
-								<span id="rinrose_footer_contact-email"><?php the_sub_field('email'); ?></span>
+				<div class="row justify-content-between">
+					<div class="col-12 col-md-4 col-lg-4">
+						<div id="rinrose_footer-contact" class="mb-4">
+							<h6 id="rinrose_footer-contact_company" class="text-uppercase fw-lightbold"><?php the_sub_field('company'); ?></h6>
+							<p id="rinrose_footer-contact_address" class="mb-0 fs-small"><?php the_sub_field('address'); ?></p>
+							<p id="rinrose_footer-contact_items" class="mb-0 fs-small">
+								<span id="rinrose_footer-contact_items-phone" class="pe-3"><?php the_sub_field('phone'); ?></span>
+								<span id="rinrose_footer-contact_items-email"><?php the_sub_field('email'); ?></span>
 							</p>
 						</div>
-						<div id="rinrose_footer_office" class="mb-2">
-							<h4 id="rinrose_footer_office-name" class="text-uppercase fw-lightbold"><?php the_sub_field('office'); ?></h4>
-							<p id="rinrose_footer_office-hours" class="mb-0"><?php the_sub_field('hours'); ?></p>
+						<div id="rinrose_footer-office" class="mb-4">
+							<h6 id="rinrose_footer-office_name" class="text-uppercase fw-lightbold"><?php the_sub_field('office'); ?></h6>
+							<p id="rinrose_footer-office_hours" class="mb-0 fs-small"><?php the_sub_field('hours'); ?></p>
 						</div>
 						<?php if(have_rows('social')) : ?>
-							<div id="rinrose_footer_social">
-								<div id="rinrose_footer_social-icons" class="d-flex">
-									<?php while(have_rows('social')) : the_row(); ?>
-										<a id="rinrose_footer_social-icons_<?php the_sub_field('type'); ?>" class="btn btn-outline-light rounded-circle me-3" href="<?php the_sub_field('link'); ?>" target="_blank">
-											<i class="fa-brands fa-<?php the_sub_field('type'); ?>"></i>
-										</a>
-									<?php endwhile; ?>
-								</div>
+							<div id="rinrose_footer-social" class="d-flex">
+								<?php while(have_rows('social')) : the_row(); ?>
+									<a id="rinrose_footer-social_<?php the_sub_field('type'); ?>" class="btn btn-outline-light rounded-circle p-2 me-5" href="<?php the_sub_field('link'); ?>" target="_blank">
+										<i class="fa-brands fa-<?php the_sub_field('type'); ?>"></i>
+									</a>
+								<?php endwhile; ?>
 							</div>
 						<?php endif; ?>
 					</div>
-					<div class="col">
-						<div id="rinrose_footer_links">
-							<div id="rinrose_footer_links-menu" class="list-group list-group-flush">
-								<?php $footer_links_args = array(
-								    'theme_location'  => "footer_links",
-								    'container'       => false,
-									'echo'            => false,
-									'items_wrap'      => '%3$s',
-									'depth'           => 0,
-									'link_class'	  => 'list-group-item list-group-item-action text-white text-uppercase bg-primary',
-								);
-								echo strip_tags(wp_nav_menu($footer_links_args), '<a>' ); ?>
-							</div>
-
-							<?php if(have_rows('inquiry_button')):
-								while(have_rows('inquiry_button')): the_row(); ?>
-									<div id="rinrose_footer_links-button">
-										<a class="btn text-uppercase btn-outline-light" target="<?php the_sub_field('target'); ?>" href="<?php the_sub_field('link'); ?>">
-											<?php the_sub_field('text'); ?>
-										</a>
-									</div>
-								<?php endwhile;
-							endif; ?>
-						</div>
-					</div>
-					<div class="col">
-						<div id="rinrose_footer_legal">
-							<div id="rinrose_footer_legal-logo">
-								<?php echo wp_get_attachment_image( get_sub_field('logo'), 'full', '', array( "class" => "img-fluid" ) );  ?>
-							</div>
-							<?php if(have_rows('icons')): ?>
-								<div id="rinrose_footer_legal-icons" class="d-flex">
-									<?php while(have_rows('icons')): the_row(); ?>
-										<div class="rinrose_footer_legal-icons_icon">
-											<?php echo wp_get_attachment_image( get_sub_field('image'), 'full', '', array( "class" => "img-fluid" ) );  ?>
-										</div>
-									<?php endwhile; ?>
-								</div>
-							<?php endif;
-							$footer_legal_args = array(
-							    'menu_class'        => "rinrose_footer-menu list-group list-group-flush text-white text-uppercase",
-							    'menu_id'           => "rinrose_footer_legal-menu",
-							    'container'         => false,
-							    'theme_location'    => "footer_legal",
-							    'add_li_class'		=> "list-group-item",
+					<div class="col-12 col-md-4 col-lg-3">
+						<div id="rinrose_footer-links" class="list-group list-group-flush mb-5">
+							<?php $footer_links_args = array(
+							    'theme_location'  => "footer_links",
+							    'container'       => false,
+								'echo'            => false,
+								'items_wrap'      => '%3$s',
+								'depth'           => 0,
+								'link_class'	  => 'list-group-item list-group-item-action text-white text-uppercase bg-primary fw-lightbold px-0 border border-0 lh-1 py-0 mb-4',
 							);
-							wp_nav_menu($footer_legal_args); ?>
+							echo strip_tags(wp_nav_menu($footer_links_args), '<a>' ); ?>
 						</div>
-						<div id="tenderling-footer-info">
-							<a href="https://www.tenderling.com" target="_blank" class="text-uppercase text-white text-opacity-50">Site by Tenderling</a>
+						<?php if(have_rows('inquiry_button')):
+							while(have_rows('inquiry_button')): the_row(); ?>
+								<div id="rinrose_footer-button">
+									<a class="btn text-uppercase btn-outline-light btn-sm" target="<?php the_sub_field('target'); ?>" href="<?php the_sub_field('link'); ?>">
+										<?php the_sub_field('text'); ?>
+									</a>
+								</div>
+							<?php endwhile;
+						endif; ?>
+					</div>
+					<div class="col-12 col-md-4 col-lg-3">
+						<div id="rinrose_footer-logo" class="mb-3 pb-3">
+							<?php echo wp_get_attachment_image( get_sub_field('logo'), 'full', '', array( "class" => "img-fluid" ) );  ?>
+						</div>
+						<?php if(have_rows('icons')): ?>
+							<div id="rinrose_footer-icons" class="d-flex mb-4">
+								<?php while(have_rows('icons')): the_row(); ?>
+									<div class="rinrose_footer-icons_icon opacity-75 pe-5">
+										<?php echo wp_get_attachment_image( get_sub_field('image'), 'full', '', array( "class" => "img-fluid" ) );  ?>
+									</div>
+								<?php endwhile; ?>
+							</div>
+						<?php endif; ?>
+						<div id="rinrose_footer-legal" class="list-group list-group-horizontal list-group-flush mb-3 flex-wrap">
+							<?php $footer_legal_args = array(
+							    'theme_location'  => "footer_legal",
+							    'container'       => false,
+								'echo'            => false,
+								'items_wrap'      => '%3$s',
+								'depth'           => 0,
+								'link_class'	  => 'list-group-item list-group-item-action text-white text-uppercase bg-primary fw-lightbold ps-0 pe-4 py-0 pb-2 fs-small border border-0 w-auto lh-1',
+							);
+							echo strip_tags(wp_nav_menu($footer_legal_args), '<a>' ); ?>
+						</div>
+						<div id="rinrose_footer-tenderling">
+							<a href="https://www.tenderling.com" target="_blank" class="text-uppercase text-white text-opacity-50 fw-lightbold text-decoration-none fs-xsmall">
+								<small>Site by Tenderling</small>
+							</a>
 						</div>
 					</div>
 				</div>

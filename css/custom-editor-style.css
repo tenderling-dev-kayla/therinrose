@@ -150,7 +150,7 @@ strong {
 }
 
 small, .small {
-  font-size: 0.875em;
+  font-size: 0.84375rem;
 }
 
 mark, .mark {
@@ -202,7 +202,7 @@ pre {
   margin-top: 0;
   margin-bottom: 1rem;
   overflow: auto;
-  font-size: 0.875em;
+  font-size: 0.84375rem;
 }
 pre code {
   font-size: inherit;
@@ -211,7 +211,7 @@ pre code {
 }
 
 code {
-  font-size: 0.875em;
+  font-size: 0.84375rem;
   color: #d63384;
   word-wrap: break-word;
 }
@@ -221,10 +221,10 @@ a > code {
 
 kbd {
   padding: 0.2rem 0.4rem;
-  font-size: 0.875em;
+  font-size: 0.84375rem;
   color: #ffffff;
   background-color: #212529;
-  border-radius: 0.2rem;
+  border-radius: 0;
 }
 kbd kbd {
   padding: 0;
@@ -430,7 +430,7 @@ progress {
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
-  --bs-purple: #5533ff;
+  --bs-purple: #6f42c1;
   --bs-pink: #d63384;
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
@@ -701,7 +701,7 @@ progress {
 }
 
 .figure-caption, .wp-block-image > figure figcaption, figure.wp-block-image figcaption {
-  font-size: 0.875em;
+  font-size: 0.84375rem;
   color: #6c757d;
 }
 
@@ -799,7 +799,7 @@ progress {
 }
 
 .initialism {
-  font-size: 0.875em;
+  font-size: 0.84375rem;
   text-transform: uppercase;
 }
 
@@ -819,7 +819,7 @@ progress {
 .blockquote-footer, .wp-block-quote cite {
   margin-top: -1rem;
   margin-bottom: 1rem;
-  font-size: 0.875em;
+  font-size: 0.84375rem;
   color: #6c757d;
 }
 .blockquote-footer::before, .wp-block-quote cite::before {
@@ -848,12 +848,12 @@ progress {
 
 .has-purple-color,
 .has-purple-color:visited {
-  color: #5533ff;
+  color: #6f42c1;
 }
 
 .has-purple-background-color {
-  background-color: #5533ff;
-  border-color: #5533ff;
+  background-color: #6f42c1;
+  border-color: #6f42c1;
 }
 
 .has-pink-color,
@@ -1154,8 +1154,8 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
 }
 
 .wp-block-buttons .wp-block-button .wp-block-button__link {
-  padding: 0.875rem 2rem;
-  font-size: 0.875;
+  padding: 0.875em 2em;
+  font-size: 0.984375rem;
   border-radius: 0;
 }
 .wp-block-buttons .wp-block-button:not(.is-style-outline) .wp-block-button__link {
