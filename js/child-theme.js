@@ -9601,7 +9601,8 @@
 	  var lineSymbol = {
 	    path: 'M 0,-1 0,1',
 	    strokeOpacity: 1,
-	    scale: 2
+	    scale: 2,
+	    strokeColor: '#80949C'
 	  };
 	  new google.maps.Polyline({
 	    path: drawCircle(myLatLng, radius / 1609.344, 1),
