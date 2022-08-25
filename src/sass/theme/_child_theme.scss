@@ -1,0 +1,169 @@
+#rinrose_home-splash {
+    height: calc(100vh - 127px);
+    position: relative;
+    overflow: hidden;
+}
+#rinrose_home-splash_video {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translateY(-50%);
+}
+
+.admin-bar {
+    #rinrose_header {
+        top: 32px!important;
+    }
+    #rinrose_header-offcanvas {
+        margin-top: 32px!important;
+        max-height: calc(100vh - 32px)!important;
+    }
+    #rinrose_home-splash {
+        height: calc(100vh - 159px);
+    }
+}
+#rinrose_header {
+    .container-fluid {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+#rinrose_header-offcanvas {
+    background-image: url('/wp-content/themes/therinrose-tenderling/inc/img/rinrose-pattern-dark-landscape.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#wrapper-navbar {
+    height: 127px;
+}
+.btn-link {
+  font-weight: $btn-font-weight;
+}
+.wrapper {
+    padding: 0;
+}
+ul#rinrose_header-offcanvas_body-nav {
+    .menu-item {
+        padding: 40px;
+
+        a {
+            color: $white;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-size: 43px;
+            text-decoration: none;
+            line-height: 52px;
+        }
+    }
+}
+#rinrose_home-amenities_footer {
+    margin-top: -20vh;
+}
+#rinrose_home_amenities_body-right_content {
+    transform: translateY(-100%);
+}
+.panorama {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+div#rinrose_footer-social .btn {
+    width: 36px;
+    height: 36px;
+    border-width: 2px;
+}
+div#rinrose_footer-logo img {
+    max-height: 37px;
+    width: auto;
+    max-width: 100%;
+}
+.rinrose_footer-icons_icon img {
+    max-height: 32px;
+    width: auto;
+    max-width: 100%;
+}
+#rinrose_footer-legal > .list-group-item:last-child {
+    width: 100%!important;
+    padding-right: 0!important;
+}
+#map {
+  height: 100%;
+}
+div#rinrose_home-splash_overlay {
+    z-index: 1030;
+    background-color: #fff;
+    background-image: url('/wp-content/themes/therinrose-tenderling/inc/img/rinrose-pattern-light-landsacpe.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: 0;
+    transition: max-height 2.5s ease-out;
+    overflow: hidden;
+
+    div#rinrose_home-splash_overlay-content {
+        opacity: 0;
+        transition: opacity 2s ease-out 250ms;
+    }
+}
+nav#rinrose_header {
+    z-index: 1031;
+    transition: background-color .5s ease-out 1.5s;
+
+    div#rinrose_header-main_brand {
+        opacity: 1;
+        transition: opacity 1.5s ease-out 1000ms;
+    }
+}
+#rinrose_home-splash_overlay-video {
+    opacity: 0;
+    transition: opacity 1.5 ease-out 1000ms;
+}
+body.rinrose_fresh_home {
+    div#rinrose_home-splash_overlay {
+        padding-top: 127px;
+        height: 100vh!important;
+        max-height: 100vh!important;
+        transition: max-height 2.5s ease-in;
+    
+        div#rinrose_home-splash_overlay-content {
+            opacity: 1;
+            transition: opacity 2s ease-in 250ms;
+        }
+    }
+    nav#rinrose_header {
+        --bs-bg-opacity: 0;
+        transition: background-color .5s ease-in 1.5s;
+
+        div#rinrose_header-main_brand {
+            opacity: 0;
+            transition: opacity 1.5s ease-in 1000ms;
+        }
+    }
+    #rinrose_home-splash_overlay-video {
+        opacity: 1;
+        transition: opacity 1.5 ease-in 1000ms;
+    }
+}
+a#rinrose_header-main_brand-logo img,
+a#rinrose_header-offcanvas_header-brand_logo img {
+    max-height: 100px;
+}
+#rinrose_home-splash_overlay-video {
+    width: 75%;
+    height: 97.5%;
+    top: 1.25%!important;
+    right: 1.5%!important;
+    z-index: -1;
+}
+.rinrose-clipped_video {
+    -webkit-clip-path: url(#rinrose-clipped_svg);
+    clip-path: url(#rinrose-clipped_svg);
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+#map {
+  height: 100%;
+}
