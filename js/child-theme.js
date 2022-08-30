@@ -9297,16 +9297,38 @@
 	})();
 
 	jQuery(document).ready(function ($) {
-	  var body = $('.rinrose_fresh_home');
+	  var body = $('body');
+	  $(window).on('load', function () {
+	    let scrollTop = document.documentElement.scrollTop;
+
+	    if (scrollTop === 0) ; else {
+	      body.removeClass('rinrose_fresh_home').addClass('rinrose_scrolled_home');
+	      $('#rinrose_home-splash').addClass('rinrose_splash_out').addClass('rinrose_splash_in');
+	    }
+	  });
 	  $(window).scroll(function () {
 	    var scroll = $(window).scrollTop();
 
 	    if (scroll >= 25) {
 	      body.removeClass('rinrose_fresh_home').addClass('rinrose_scrolled_home');
+	      setTimeout(function () {
+	        $('#rinrose_home-splash').addClass('rinrose_splash_out');
+	        $('#rinrose_home-splash').addClass('rinrose_splash_in');
+	      }, 100);
 	    }
 	  });
 	  setTimeout(function () {
-	    body.removeClass('rinrose_fresh_home').addClass('rinrose_scrolled_home');
+	    $('#rinrose_header-main_brand').addClass('header-logo-in');
+	    $('#rinrose_home-splash_mask').addClass('rinrose_mask_in');
+	    setTimeout(function () {
+	      $('#rinrose_header-main_brand').addClass('header-logo-in-end');
+	    }, 50);
+	  }, 5);
+	  setTimeout(function () {//body.removeClass('rinrose_fresh_home').addClass('rinrose_animate_home');
+	    //setTimeout(function() {
+	    //	$('#rinrose_home-splash').addClass('rinrose_splash_out');
+	    //	$('#rinrose_home-splash').addClass('rinrose_splash_in');
+	    //}, 1250);
 	  }, 3000);
 	});
 	var map;
@@ -9734,7 +9756,56 @@
 	  return extp;
 	}
 
-	window.initMap = initMap;
+	window.initMap = initMap; //Check for item in viewport
+
+	function elementInViewport(el) {
+	  var top = el.offsetTop;
+	  var left = el.offsetLeft;
+	  var width = el.offsetWidth;
+	  var height = el.offsetHeight;
+
+	  while (el.offsetParent) {
+	    el = el.offsetParent;
+	    top += el.offsetTop;
+	    left += el.offsetLeft;
+	  }
+
+	  return top < window.pageYOffset + window.innerHeight && left < window.pageXOffset + window.innerWidth && top + height > window.pageYOffset && left + width > window.pageXOffset;
+	} //Add animation classes to .rinrose_has_animation
+
+
+	function animateThings(el) {
+	  if (el.classList.contains('rinrose_had_animation')) ; else {
+	    el.classList.add('animate__animated', 'animate__' + el.dataset.animation, 'animate__delay-' + el.dataset.delay);
+	    el.addEventListener('animationend', () => {
+	      el.classList.remove('animate__animated', 'animate__' + el.dataset.animation, 'animate__delay-' + el.dataset.delay);
+	      el.classList.add('rinrose_had_animation');
+	    });
+	  }
+	}
+
+	window.addEventListener('scroll', function (event) {
+	  var videoBox = document.querySelector('#rinrose_home-splash');
+	  var videoFile = document.querySelector('#rinrose_home-splash_video');
+	  var videoMaskBg = document.querySelector('#rinrose_home-splash_mask-bg');
+
+	  if (elementInViewport(videoBox)) {
+	    videoFile.classList.remove("invisible");
+	    videoFile.classList.add("visible");
+	    videoMaskBg.classList.remove("d-none");
+	  } else {
+	    videoFile.classList.remove("visible");
+	    videoFile.classList.add("invisible");
+	    videoMaskBg.classList.add("d-none");
+	  }
+
+	  const animatedItems = document.querySelectorAll('.rinrose_has_animation');
+	  animatedItems.forEach(animatedItem => {
+	    if (elementInViewport(animatedItem)) {
+	      animateThings(animatedItem);
+	    }
+	  });
+	}, false);
 
 	exports.Alert = alert;
 	exports.Button = button;

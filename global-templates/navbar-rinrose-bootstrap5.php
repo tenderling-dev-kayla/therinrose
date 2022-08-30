@@ -91,7 +91,7 @@ if(have_rows('header', 'option')) :
 						<!-- Your site title as branding in the menu -->
 						<?php if (get_sub_field('logo')) : ?>
 							<a id="rinrose_header-main_brand-logo" class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
-								<?php echo wp_get_attachment_image( get_sub_field('logo'), 'full', "", array( "class" => "img-fluid", "alt" => get_bloginfo( 'name' ) ) ); ?>
+								<?php echo wp_get_attachment_image( get_sub_field('logo'), 'full', "", array( "class" => "", "alt" => get_bloginfo( 'name' ) ) ); ?>
 							</a>
 						<?php endif; ?>
 						<!-- end custom logo -->

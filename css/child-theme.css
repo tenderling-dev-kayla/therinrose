@@ -16632,60 +16632,84 @@ figure.woocommerce-product-gallery__wrapper {
   display: block;
 }
 
-#rinrose_home-splash {
-  height: calc(100vh - 127px);
+:root {
+  --animate-delay: 0.5s;
+}
+
+section {
   position: relative;
-  overflow: hidden;
 }
 
-#rinrose_home-splash_video {
+.wrapper {
+  min-height: 100vh;
+  background: #ffffff;
+  position: relative;
+  z-index: 3;
+  padding: 0;
+}
+.wrapper:after {
+  content: " ";
+  width: 100%;
+  height: 5px;
+  background: #0C2939;
   position: absolute;
-  top: 50%;
   left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  transform: translateY(-50%);
-}
-
-.admin-bar #rinrose_header {
-  top: 32px !important;
-}
-.admin-bar #rinrose_header-offcanvas {
-  margin-top: 32px !important;
-  max-height: calc(100vh - 32px) !important;
-}
-.admin-bar #rinrose_home-splash {
-  height: calc(100vh - 159px);
-}
-
-#rinrose_header .container-fluid, #rinrose_header .container-sm, #rinrose_header .container-md, #rinrose_header .container-lg, #rinrose_header .container-xl, #rinrose_header .container-xxl {
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-#rinrose_header-offcanvas {
-  background-image: url("/wp-content/themes/therinrose-tenderling/inc/img/rinrose-pattern-dark-landscape.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-#wrapper-navbar {
-  height: 127px;
+  bottom: -2px;
 }
 
 .btn-link {
   font-weight: 500;
 }
 
-.wrapper {
-  padding: 0;
+.panorama {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
-ul#rinrose_header-offcanvas_body-nav .menu-item {
+#rinrose_header {
+  z-index: 1031;
+  min-height: 127px;
+  transition: background-color 0.5s ease-out 1.5s;
+}
+#rinrose_header .container-fluid, #rinrose_header .container-sm, #rinrose_header .container-md, #rinrose_header .container-lg, #rinrose_header .container-xl, #rinrose_header .container-xxl {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#rinrose_header div#rinrose_header-main_brand a {
+  position: fixed;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: auto;
+  display: flex;
+  text-align: center;
+  left: 50%;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  max-height: 100px;
+  transform: translateX(-50%);
+  top: 15px;
+  transition: all 500ms ease-in 1s;
+  opacity: 0;
+}
+#rinrose_header div#rinrose_header-main_brand.header-logo-in a {
+  opacity: 1;
+}
+#rinrose_header div#rinrose_header-main_brand.header-logo-in.header-logo-end a {
+  transition: all 500ms ease-in 1s;
+}
+#rinrose_header #rinrose_header-offcanvas {
+  background-image: url("/wp-content/themes/therinrose-tenderling/inc/img/rinrose-pattern-dark-landscape.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#rinrose_header #rinrose_header-offcanvas ul#rinrose_header-offcanvas_body-nav .menu-item {
   padding: 40px;
 }
-ul#rinrose_header-offcanvas_body-nav .menu-item a {
+#rinrose_header #rinrose_header-offcanvas ul#rinrose_header-offcanvas_body-nav .menu-item a {
   color: #ffffff;
   text-transform: uppercase;
   font-weight: 400;
@@ -16693,133 +16717,124 @@ ul#rinrose_header-offcanvas_body-nav .menu-item a {
   text-decoration: none;
   line-height: 52px;
 }
-
-#rinrose_home-amenities_footer {
-  margin-top: -20vh;
+#rinrose_header #rinrose_header-offcanvas a#rinrose_header-offcanvas_header-brand_logo img {
+  max-height: 100px;
 }
 
-#rinrose_home_amenities_body-right_content {
-  transform: translateY(-100%);
+#rinrose_footer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
 }
-
-.panorama {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-div#rinrose_footer-social .btn, div#rinrose_footer-social .wpcf7 input[type=submit], .wpcf7 div#rinrose_footer-social input[type=submit], div#rinrose_footer-social .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-notices-wrapper .woocommerce-message div#rinrose_footer-social a.button, div#rinrose_footer-social .woocommerce-info a.button, .woocommerce-info div#rinrose_footer-social a.button {
+#rinrose_footer div#rinrose_footer-social .btn, #rinrose_footer div#rinrose_footer-social .wpcf7 input[type=submit], .wpcf7 #rinrose_footer div#rinrose_footer-social input[type=submit], #rinrose_footer div#rinrose_footer-social .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-notices-wrapper .woocommerce-message #rinrose_footer div#rinrose_footer-social a.button, #rinrose_footer div#rinrose_footer-social .woocommerce-info a.button, .woocommerce-info #rinrose_footer div#rinrose_footer-social a.button {
   width: 36px;
   height: 36px;
   border-width: 2px;
 }
-
-div#rinrose_footer-logo img {
+#rinrose_footer div#rinrose_footer-logo img {
   max-height: 37px;
   width: auto;
   max-width: 100%;
 }
-
-.rinrose_footer-icons_icon img {
+#rinrose_footer .rinrose_footer-icons_icon img {
   max-height: 32px;
   width: auto;
   max-width: 100%;
 }
-
-#rinrose_footer-legal > .list-group-item:last-child {
+#rinrose_footer #rinrose_footer-legal > .list-group-item:last-child {
   width: 100% !important;
   padding-right: 0 !important;
 }
 
-#map {
-  height: 100%;
+div#rinrose_home-wrapper #content {
+  padding-top: 127px;
 }
 
-div#rinrose_home-splash_overlay {
-  z-index: 1030;
-  background-color: #fff;
+#rinrose_home-splash {
+  height: calc(100vh - 127px);
+  position: relative;
+  overflow: hidden;
+}
+#rinrose_home-splash #rinrose_home-splash_mask-bg {
+  background-color: #ffffff;
+  position: fixed;
   background-image: url("/wp-content/themes/therinrose-tenderling/inc/img/rinrose-pattern-light-landsacpe.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  max-height: 0;
-  transition: max-height 2.5s ease-out;
+}
+#rinrose_home-splash #rinrose_home-splash_mask {
+  background-color: #0C2939;
+  transition: all 500ms ease-out 1s;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
   overflow: hidden;
-}
-div#rinrose_home-splash_overlay div#rinrose_home-splash_overlay-content {
+  max-width: 34%;
+  margin-left: 38.68%;
+  margin-right: auto;
+  max-height: 92%;
+  -webkit-clip-path: url("#rinrose-clipped_svg");
+  clip-path: url("#rinrose-clipped_svg");
   opacity: 0;
-  transition: opacity 2s ease-out 250ms;
 }
-
-nav#rinrose_header {
-  z-index: 1031;
-  transition: background-color 0.5s ease-out 1.5s;
+#rinrose_home-splash #rinrose_home-splash_mask #rinrose_home-splash_video {
+  position: fixed;
+  top: calc(50% + 127px);
+  left: 0;
+  height: calc(100vh - 127px);
+  min-width: 100%;
+  min-height: 100%;
+  transform: translateY(-50%);
+  -o-object-fit: fill;
+  object-fit: fill;
+  -o-object-position: center;
+  object-position: center;
 }
-nav#rinrose_header div#rinrose_header-main_brand {
-  opacity: 1;
-  transition: opacity 1.5s ease-out 1000ms;
-}
-
-#rinrose_home-splash_overlay-video {
+#rinrose_home-splash.rinrose_splash_out #rinrose_home-splash_mask {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  max-height: 100%;
   opacity: 0;
-  transition: opacity 1.5 ease-out 1000ms;
+  -webkit-clip-path: none;
+  clip-path: none;
+  transition: all 500ms ease-out 250ms;
 }
-
-body.rinrose_fresh_home div#rinrose_home-splash_overlay {
-  padding-top: 127px;
-  height: 100vh !important;
-  max-height: 100vh !important;
-  transition: max-height 2.5s ease-in;
-}
-body.rinrose_fresh_home div#rinrose_home-splash_overlay div#rinrose_home-splash_overlay-content {
-  opacity: 1;
-  transition: opacity 2s ease-in 250ms;
-}
-body.rinrose_fresh_home nav#rinrose_header {
-  --bs-bg-opacity: 0;
-  transition: background-color 0.5s ease-in 1.5s;
-}
-body.rinrose_fresh_home nav#rinrose_header div#rinrose_header-main_brand {
+#rinrose_home-splash.rinrose_splash_out.rinrose_splash_in #rinrose_home-splash_mask-bg {
   opacity: 0;
-  transition: opacity 1.5s ease-in 1000ms;
 }
-body.rinrose_fresh_home #rinrose_home-splash_overlay-video {
+#rinrose_home-splash.rinrose_splash_out.rinrose_splash_in #rinrose_home-splash_mask {
   opacity: 1;
-  transition: opacity 1.5 ease-in 1000ms;
 }
 
-a#rinrose_header-main_brand-logo img,
-a#rinrose_header-offcanvas_header-brand_logo img {
-  max-height: 100px;
+#rinrose_home-amenities #rinrose_home-amenities_body-left_image {
+  background-position: left top;
+  background-size: 60% auto;
+}
+#rinrose_home-amenities #rinrose_home-amenities_footer {
+  margin-top: -20vh;
 }
 
-#rinrose_home-splash_overlay-video {
-  width: 75%;
-  height: 97.5%;
-  top: 1.25% !important;
-  right: 1.5% !important;
-  z-index: -1;
-}
-
-.rinrose-clipped_video {
-  -webkit-clip-path: url(#rinrose-clipped_svg);
-  clip-path: url(#rinrose-clipped_svg);
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
-#map {
+#rinrose_home-location #map {
   height: 100%;
 }
-
-#legend {
+#rinrose_home-location #legend {
   transform: translateX(32px);
 }
-#legend .legend_icon {
+#rinrose_home-location #legend .legend_icon {
   width: 15px;
   height: 15px;
 }
-#legend .legend_label {
+#rinrose_home-location #legend .legend_label {
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 600;
@@ -16829,32 +16844,32 @@ a#rinrose_header-offcanvas_header-brand_logo img {
   position: relative;
   top: 2px;
 }
-#legend div {
+#rinrose_home-location #legend div {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-#legend .legend_label.legend_metroline {
+#rinrose_home-location #legend .legend_label.legend_metroline {
   color: #9EABA3;
 }
-#legend .legend_label.legend_metro {
+#rinrose_home-location #legend .legend_label.legend_metro {
   color: #9EABA3;
 }
-#legend .legend_label.legend_entertainment {
+#rinrose_home-location #legend .legend_label.legend_entertainment {
   color: #02293A;
 }
-#legend .legend_label.legend_shopping {
+#rinrose_home-location #legend .legend_label.legend_shopping {
   color: #B37350;
 }
-#legend .legend_label.legend_recreation {
+#rinrose_home-location #legend .legend_label.legend_recreation {
   color: #6A8171;
 }
-#legend .legend_label.legend_education {
+#rinrose_home-location #legend .legend_label.legend_education {
   color: #D8B9AB;
 }
-#legend .legend_label.legend_radius {
+#rinrose_home-location #legend .legend_label.legend_radius {
   color: #80949C;
 }
-#legend i.legend_icon_line.legend_metroline {
+#rinrose_home-location #legend i.legend_icon_line.legend_metroline {
   width: 15px;
   height: 2px;
   border-bottom: 2px solid #9eaba3;
@@ -16862,13 +16877,80 @@ a#rinrose_header-offcanvas_header-brand_logo img {
   position: relative;
   top: -2px;
 }
-#legend i.legend_icon_line.legend_radius {
+#rinrose_home-location #legend i.legend_icon_line.legend_radius {
   width: 15px;
   height: 2px;
   border-bottom: 2px dotted #9eaba3;
   display: inline-block;
   position: relative;
   top: -2px;
+}
+
+body.rinrose_fresh_home nav#rinrose_header {
+  --bs-bg-opacity: 0;
+  transition: background-color 0.5s ease-in 1.5s;
+}
+body.rinrose_fresh_home nav#rinrose_header #rinrose_header-main_brand a {
+  top: 127px;
+  max-height: 77%;
+  pointer-events: none;
+}
+body.rinrose_fresh_home #rinrose_home-splash #rinrose_home-splash_mask {
+  -webkit-clip-path: url("#rinrose-clipped_svg");
+  clip-path: url("#rinrose-clipped_svg");
+  margin-left: calc((100% - 0.92 * (100vh - 127px) * 1707 / 1654) / 2);
+  width: calc(0.92 * (100vh - 127px) * 1707 / 1654);
+  max-width: calc(0.92 * (100vh - 127px) * 1707 / 1654);
+  margin-right: auto;
+  max-height: 92%;
+  opacity: 0;
+}
+body.rinrose_fresh_home #rinrose_home-splash #rinrose_home-splash_mask.rinrose_mask_in {
+  opacity: 1;
+}
+
+body.rinrose_scrolled_home #rinrose_header {
+  transition: background-color 50ms ease-out 0s;
+}
+body.rinrose_scrolled_home #rinrose_header div#rinrose_header-main_brand a {
+  transition: all 150ms ease-out 0s;
+}
+body.rinrose_scrolled_home #rinrose_home-splash #rinrose_home-splash_mask {
+  transition: all 150ms ease-out 0s;
+}
+body.rinrose_scrolled_home #rinrose_home-splash.rinrose_splash_out #rinrose_home-splash_mask {
+  transition: all 50ms ease-out 0ms;
+}
+body.rinrose_scrolled_home #rinrose_home-splash.rinrose_splash_out.rinrose_splash_in #rinrose_home-splash_mask {
+  opacity: 1;
+}
+
+.admin-bar #rinrose_header {
+  top: 32px !important;
+}
+.admin-bar #rinrose_header #rinrose_header-main_brand a {
+  top: 47px;
+}
+.admin-bar #rinrose_header #rinrose_header-offcanvas {
+  margin-top: 32px !important;
+  max-height: calc(100vh - 32px) !important;
+}
+.admin-bar #rinrose_home-splash {
+  height: calc(100vh - 159px);
+}
+.admin-bar #rinrose_home-splash #rinrose_home-splash_mask #rinrose_home-splash_video {
+  top: calc(50% + 159px);
+  height: calc(100vh - 159px);
+}
+.admin-bar.rinrose_fresh_home #rinrose_header #rinrose_header-main_brand a {
+  top: 159px;
+}
+.admin-bar.rinrose_fresh_home #rinrose_home-splash #rinrose_home-splash_mask {
+  -webkit-clip-path: url("#rinrose-clipped_svg");
+  clip-path: url("#rinrose-clipped_svg");
+  margin-left: calc((100% - 0.92 * (100vh - 159px) * 1707 / 1654) / 2);
+  width: calc(0.92 * (100vh - 159px) * 1707 / 1654);
+  max-width: calc(0.92 * (100vh - 159px) * 1707 / 1654);
 }
 
 .has-blue-color,

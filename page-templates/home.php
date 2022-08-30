@@ -21,33 +21,19 @@ get_header();
 		    	//Mobile Video = the_sub_field('mobile_video');
 		    	?>
 				<section id="rinrose_home-splash">
-					<div id="rinrose_home-splash_video">
-						<div class="ratio ratio-16x9" id="rinrose_home-splash_video-sizing">
-							<video loop="loop" autoplay="" playsinline="" muted="" id="rinrose_home-splash_video-file" preload="none" src="<?php the_sub_field('video'); ?>"> 
-								<source type="video/mp4" src="<?php the_sub_field('video'); ?>">
-							</video>
-						</div>
+					<div id="rinrose_home-splash_mask-bg" class="w-100 h-100 top-0 start-0"></div>
+					<div id="rinrose_home-splash_mask" class="w-100 h-100">
+						<video loop="loop" autoplay="" playsinline="" muted="" id="rinrose_home-splash_video" preload="none" src="<?php the_sub_field('video'); ?>"> 
+							<source type="video/mp4" src="<?php the_sub_field('video'); ?>">
+						</video>
 					</div>
 				</section>
-				<div id="rinrose_home-splash_overlay" class="position-absolute top-0 start-0 w-100 vh-100 justify-content-center d-flex">
-					<div id="rinrose_home-splash_overlay-content" class="p-5 mb-5 position-relative">
-						<img src="/wp-content/themes/therinrose-tenderling/inc/img/rinrose_logo.svg" class="img-fluid mw-100 mh-100" />
-						<div id="rinrose_home-splash_overlay-video" class="position-absolute p-5">
-							<video id="rinrose_home-splash_overlay-video_file" class="rinrose-clipped_video w-100 h-100" loop="loop" autoplay="" playsinline="" muted="" preload="none" width="360px" height="474px" src="<?php the_sub_field('mobile_video'); ?>"> 
-								<source type="video/mp4" src="<?php the_sub_field('mobile_video'); ?>">
-							</video>
-						</div>
-					</div>
-					<svg width="0" height="0" viewBox="0 0 1102 1455" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<clipPath id="rinrose-clipped_svg" clipPathUnits="objectBoundingBox" transform="scale(0.00090744101 0.00068728522)">
-							<path d="M0.29995 0.400391H654.3C816.4 0.400391 958.7 87.1004 1037.2 216.5H667.3C471.1 216.5 293.7 298.7 167.9 430.6C65.9999 315.5 3.09995 165.1 0.29995 0.400391Z" />
-							<path d="M507.1 918.6H0.199951V1454.6H507.1V918.6Z" />
-							<path d="M654.3 895.3H0.29995C3.09995 730.5 65.9999 580.1 167.9 465.1C293.7 596.9 471.1 679.2 667.3 679.2H1037.2C958.7 808.6 816.4 895.3 654.3 895.3Z" />
-							<path d="M667.3 655.8C477.2 655.8 305.4 575.9 183.8 447.8C305.4 319.8 477.2 239.8 667.3 239.8H1050.4C1083.2 302 1101.7 372.7 1101.7 447.8C1101.7 522.9 1083.1 593.6 1050.4 655.8H667.3Z" />
-							<path d="M610.8 998.9V1226.7C610.8 1352.3 713 1454.5 838.6 1454.5H1066.4V1226.7C1066.4 1101.1 964.2 998.9 838.6 998.9H610.8Z" />
-					   	</clipPath>
-					</svg>
-				</div>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1707 1654" width="0" height="0" fill="none">
+					<clipPath id="rinrose-clipped_svg" clipPathUnits="objectBoundingBox" transform="scale(0.00058582308 0.00060459492)">
+						<path d="M442.6,1643.2v-618.4c0-93.6,17.1-184.9,50.8-271.4c32.5-83.6,79.5-160.1,139.5-227.4l6.4-7.2l-6.4-7.2 c-60-67.3-107-143.8-139.5-227.4c-33.7-86.5-50.8-177.8-50.8-271.4v-2.1h735.8c280.1,0,508.1,227.9,508.1,508 c0,280.1-227.9,508-508.1,508h-147.2v616.3H442.6z"/>
+						<path d="M1381.5,1643.2c-146.7,0-266-119.3-266-266v-266h266c146.7,0,266,119.3,266,266v266H1381.5z"/>
+					</clipPath>
+				</svg>
 			<?php endwhile;
 		endif;
 
@@ -56,13 +42,13 @@ get_header();
 		 **/
 		if( have_rows('intro') ):
 		    while( have_rows('intro') ): the_row(); ?>
-				<section id="rinrose_home-intro" class="py-5">
+				<section id="rinrose_home-intro" class="py-5 bg-white">
 					<div class="container py-5 text-center">
 						<div class="row justify-content-center">
-							<div class="col-12 col-lg-8">
+							<div class="col-12 col-lg-8 rinrose_has_animation" data-animation="fadeIn">
 								<h1 id="rinrose_home-intro_title" class="px-5 text-primary display-1 mb-3"><?php the_sub_field('title'); ?></h1>
 							</div>
-							<div class="col-12 col-lg-9">
+							<div class="col-12 col-lg-9 rinrose_has_animation" data-animation="fadeIn">
 								<div id="rinrose_home-intro_blurb" class="px-2"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 							</div>
 						</div>
@@ -76,28 +62,32 @@ get_header();
 		 **/
 		if( have_rows('amenities') ):
 		    while( have_rows('amenities') ): the_row(); ?>
-				<section id="rinrose_home-amenities">					
-					<div id="rinrose_home-amenities_banner">
-						<?php echo wp_get_attachment_image( get_sub_field('banner'), 'full', "", array( "class" => "img-fluid" ) ); ?>
-					</div>
+				<section id="rinrose_home-amenities" class="bg-white pb-5">
+					<?php $amenBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>					
+					<div id="rinrose_home-amenities_banner" class="vh-60 panorama" style="background-image: url(<?php echo $amenBg[0]; ?>)"></div>
 					<div id="rinrose_home-amenities_body" class="d-flex justify-content-between mt-5 pt-5 align-items-center">
 						<div id="rinrose_home-amenities_body-left" class="w-60">
-							<?php echo wp_get_attachment_image( get_sub_field('left_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_body-left_img", ) ); ?>
+							<?php $amenLeftBg = wp_get_attachment_image_src(get_sub_field('left_image'), 'full', false); ?>
+							<div id="rinrose_home-amenities_body-left_image" class="panorama min-vh-100" style="background-image: url(<?php echo $amenLeftBg[0]; ?>)"></div>
 						</div>
-						<div id="rinrose_home-amenities_body-right" class="w-40 p-5">
-							<div id="rinrose_home_amenities_body-right_content">
-								<h2 id="rinrose_home_amenities_body-right_content-title" class="display-1 text-primary pb-3"><?php the_sub_field('title'); ?></h2>
-								<?php if(have_rows('button')):
-									while(have_rows('button')): the_row(); ?>
-										<a id="rinrose_home-amenities_body-right_content-button" class="btn btn-outline-primary text-uppercase" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
-									<?php endwhile;
-								endif; ?>
+						<div id="rinrose_home-amenities_body-right" class="w-40 px-5 pt-1 pb-5">
+							<div id="rinrose_home_amenities_body-right_content" class="pb-5 mb-5">
+								<div id="rinrose_home_amenities_body-right_content-animated" class="rinrose_has_animation mb-5 pb-5" data-animation="fadeIn">
+									<h2 id="rinrose_home_amenities_body-right_content-title" class="display-1 text-primary pb-3"><?php the_sub_field('title'); ?></h2>
+									<?php if(have_rows('button')):
+										while(have_rows('button')): the_row(); ?>
+											<a id="rinrose_home-amenities_body-right_content-button" class="btn btn-outline-primary text-uppercase" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
+										<?php endwhile;
+									endif; ?>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div id="rinrose_home-amenities_footer" class="w-100 d-flex justify-content-end pb-5 mb-5">
+					<div id="rinrose_home-amenities_footer" class="w-100 d-flex justify-content-end pb-5">
 						<div id="rinrose_home-amenities_footer-image" class="w-40 px-5">
-							<?php echo wp_get_attachment_image( get_sub_field('right_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_footer-image_img" ) ); ?>
+							<div id="rinrose_home-amenities_footer-image_wrap" class="rinrose_has_animation" data-animation="slideInRight">
+								<?php echo wp_get_attachment_image( get_sub_field('right_image'), 'full', "", array( "class" => "img-fluid", "id" => "rinrose_home-amenities_footer-image_wrap-img" ) ); ?>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -109,19 +99,19 @@ get_header();
 		 **/
 		if( have_rows('residences') ):
 		    while( have_rows('residences') ): the_row(); ?>
-				<section id="rinrose_home-residences">
+				<section id="rinrose_home-residences" class="bg-white pb-3">
 					<?php $resBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
 					<div id="rinrose_home-residences_banner" class="vh-60 d-flex align-items-end px-5 py-3  panorama" style="background-image:  url('<?php echo $resBg[0]; ?>')">
-						<h2 id="rinrose_home_residences-title" class="display-1 text-white px-5">
+						<h2 id="rinrose_home_residences-title" class="display-1 text-white px-5 rinrose_has_animation" data-animation="fadeIn">
 							<?php the_sub_field('title'); ?>
 						</h2>
 					</div>
-					<div id="rinrose_home-residences_blurb" class="d-flex p-5 mb-5">
+					<div id="rinrose_home-residences_blurb" class="d-flex p-5 mb-5 rinrose_has_animation" data-animation="fadeIn">
 						<div id="rinrose_home-residences_blurb-content" class="w-50 px-5">
 							<?php echo do_shortcode(get_sub_field('blurb')); ?>
 						</div>
 					</div>
-					<div id="rinrise_home_residences-grid" class="container pb-5 mb-3">
+					<div id="rinrise_home_residences-grid" class="container pb-5">
 						<h3 id="rinrose_home_residences-grid_title" class="text-center text-primary text-uppercase pb-5"><?php the_sub_field('grid_title'); ?></h3>
 						<div id="rinrise_home_residences-grid_display">
 							<!--Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button) -->
@@ -144,26 +134,30 @@ get_header();
 		 **/
 		if( have_rows('location') ):
 		    while( have_rows('location') ): the_row(); ?>
-				<section id="rinrose_home-location">
+				<section id="rinrose_home-location" class="bg-white">
 					<?php $locationBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
 					<div id="rinrose_home-location_banner" class="panorama vh-60 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $locationBg[0]; ?>')">
 						<div id="rinrose_home-location_banner-content" class="container d-flex justify-content-center">
-							<div id="rinrose_home-location_banner-content_body" class="py-5 w-50">
+							<div id="rinrose_home-location_banner-content_body" class="py-5 w-50 rinrose_has_animation" data-animation="fadeIn">
 								<h2 id="rinrose_home-location_banner-content_body-title" class="display-1 text-white text-center"><?php the_sub_field('banner_text'); ?></h2>
 							</div>
 						</div>
 					</div>
 					<div id="rinrose_home_location-info" class="container py-5 my-5 d-flex justify-content-center">
 						<div id="rinrose_home_location-info_content" class="w-50 text-center">
-							<h3 id="rinrose_home_location-content_title" class="text-primary text-uppercase"><?php the_sub_field('title'); ?></h3>
-							<div id="rinrose_home_location-content_blurb">
+							<h3 id="rinrose_home_location-content_title" class="text-primary text-uppercase rinrose_has_animation" data-animation="fadeIn">
+								<?php the_sub_field('title'); ?>
+							</h3>
+							<div id="rinrose_home_location-content_blurb" class="rinrose_has_animation" data-animation="fadeIn">
 								<?php echo do_shortcode(get_sub_field('blurb')); ?>
 							</div>
 						</div>
 					</div>
-					<div id="rinrose_home_location-map" class="vh-80">
-						<div id="map"></div>
-						<div id="legend" class="bg-white px-3 py-2"><h3 class="visually-hidden">Legend</h3></div>
+					<div id="rinrose_home-map" class="vh-80 position-relative">
+						<div id="rinrose_home-map_box" class="position-absolute w-100 h-100">
+							<div id="map"></div>
+							<div id="legend" class="bg-white px-3 py-2"><h3 class="visually-hidden">Legend</h3></div>
+						</div>
 					</div>
 				</section>
 			<?php endwhile;
@@ -174,14 +168,18 @@ get_header();
 		 **/
 		if( have_rows('wellness') ):
 		    while( have_rows('wellness') ): the_row(); ?>
-		    	<section id="rinrose_home-wellness">
+		    	<section id="rinrose_home-wellness" class="bg-primary">
 		    		<a id="wellness" class="d-none anchorPin"></a>
 		    		<?php $wellnessBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
 					<div id="rinrose_home-wellness_banner" class="panorama vh-60 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $wellnessBg[0]; ?>')">
 						<div id="rinrose_home-wellness_banner-content" class="container d-flex justify-content-center">
 							<div id="rinrose_home-wellness_banner-content_body" class="py-5 w-60">
-								<h2 id="rinrose_home-wellness_banner-content_body-title" class="h3 text-white text-center text-uppercase pb-3"><?php the_sub_field('title'); ?></h2>
-								<div id="rinrose_home-wellness_banner-content_body-blurb" class="text-white text-center"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
+								<h2 id="rinrose_home-wellness_banner-content_body-title" class="h3 text-white text-center text-uppercase pb-3 rinrose_has_animation" data-animation="fadeIn">
+									<?php the_sub_field('title'); ?>
+								</h2>
+								<div id="rinrose_home-wellness_banner-content_body-blurb" class="text-white text-center rinrose_has_animation" data-animation="fadeIn">
+									<?php echo do_shortcode(get_sub_field('blurb')); ?>
+								</div>
 							</div>
 						</div>
 					</div>
