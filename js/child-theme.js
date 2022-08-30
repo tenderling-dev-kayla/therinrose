@@ -9324,11 +9324,12 @@
 	      $('#rinrose_header-main_brand').addClass('header-logo-in-end');
 	    }, 50);
 	  }, 5);
-	  setTimeout(function () {//body.removeClass('rinrose_fresh_home').addClass('rinrose_animate_home');
-	    //setTimeout(function() {
-	    //	$('#rinrose_home-splash').addClass('rinrose_splash_out');
-	    //	$('#rinrose_home-splash').addClass('rinrose_splash_in');
-	    //}, 1250);
+	  setTimeout(function () {
+	    body.removeClass('rinrose_fresh_home').addClass('rinrose_animate_home');
+	    setTimeout(function () {
+	      $('#rinrose_home-splash').addClass('rinrose_splash_out');
+	      $('#rinrose_home-splash').addClass('rinrose_splash_in');
+	    }, 1250);
 	  }, 3000);
 	});
 	var map;
