@@ -1171,4 +1171,8 @@ body.understrap-no-sidebar .wp-block-cover.alignwide {
   font-weight: 400;
 }
 
+body {
+  margin: 10px !important;
+}
+
 /*# sourceMappingURL=custom-editor-style.css.map */

@@ -223,7 +223,17 @@ add_filter( 'nav_menu_link_attributes', 'tenderling_add_menu_link_class', 1, 3 )
 add_filter( 'body_class','tenderling_body_classes' );
 function tenderling_body_classes( $classes ) {
     if ( is_front_page() ) {
-        $classes[] = 'rinrose_fresh_home';
+        $classes[] = 'rinrose_home rinrose_fresh_home';
     }
     return $classes;
 }
+
+
+
+/**Order Galleries oldest first**/
+function rinrose_archive_order( $query ) {
+    if ( is_post_type_archive( 'gallery' ) ) {
+        $query->set( 'order', 'ASC' );
+    }
+}
+add_filter( 'pre_get_posts', 'rinrose_archive_order' );
