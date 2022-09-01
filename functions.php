@@ -184,6 +184,11 @@ tenderling_require_folder('inc/cpt');
  **/
 tenderling_require_folder('inc/admin');
 
+/**
+ * include Fields folder for ACF metabox fields 
+ **/
+tenderling_require_folder('inc/fields');
+
 
 /**
  * Register Nav Menus

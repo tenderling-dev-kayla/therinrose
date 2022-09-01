@@ -44,7 +44,7 @@ defined( 'ABSPATH' ) || exit;
 					<div class="container py-5 text-center">
 						<div class="row justify-content-center">
 							<div class="col-12 col-lg-8 rinrose_has_animation" data-animation="fadeIn">
-								<h1 id="rinrose_home-intro_title" class="px-5 text-primary display-1 mb-3 entry-title"><?php the_sub_field('title'); ?></h1>
+								<h1 id="rinrose_home-intro_title" class="text-primary display-1 mb-3 entry-title"><?php the_sub_field('title'); ?></h1>
 							</div>
 							<div class="col-12 col-lg-9 rinrose_has_animation" data-animation="fadeIn">
 								<div id="rinrose_home-intro_blurb" class="px-2"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
