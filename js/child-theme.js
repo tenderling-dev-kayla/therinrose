@@ -9847,9 +9847,20 @@
 	  }, 50);
 	}
 
+	function homeSplashLoad() {
+	  document.body.classList.remove('rinrose_fresh_home');
+	  document.body.classList.add('rinrose_animate_home');
+	  setTimeout(function () {
+	    let splash = document.querySelector('#rinrose_home-splash');
+	    splash.classList.add('rinrose_splash_out');
+	    splash.classList.add('rinrose_splash_in');
+	  }, 1250);
+	}
+
 	window.addEventListener('scroll', runScrollFuncs, false);
 	window.addEventListener('load', runLoadFuncs);
-	setTimeout(homeLogoMask, 5); //setTimeout(homeSplashLoad, 6000);
+	setTimeout(homeLogoMask, 5);
+	setTimeout(homeSplashLoad, 6000);
 
 	exports.Alert = alert;
 	exports.Button = button;
