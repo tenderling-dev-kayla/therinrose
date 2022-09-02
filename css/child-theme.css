@@ -17738,7 +17738,7 @@ ul ul {
 }
 .rinrose_fresh_home nav#rinrose_header #rinrose_header-main_brand a {
   top: 127px;
-  max-height: 77%;
+  max-height: calc(0.92 * (100vh - 127px));
   pointer-events: none;
   opacity: 0;
 }
@@ -17800,6 +17800,7 @@ ul ul {
 }
 .admin-bar.rinrose_fresh_home #rinrose_header #rinrose_header-main_brand a {
   top: 159px;
+  max-height: calc(0.92 * (100vh - 159px));
 }
 .admin-bar.rinrose_fresh_home #rinrose_home-splash #rinrose_home-splash_mask {
   -webkit-clip-path: url("#rinrose-clipped_svg");

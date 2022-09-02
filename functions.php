@@ -224,7 +224,7 @@ function tenderling_add_menu_link_class( $atts, $item, $args ) {
 }
 add_filter( 'nav_menu_link_attributes', 'tenderling_add_menu_link_class', 1, 3 );
 
-/**Add Body Class**/
+/**Add Body Class to Homepage**/
 add_filter( 'body_class','tenderling_body_classes' );
 function tenderling_body_classes( $classes ) {
     if ( is_front_page() ) {
@@ -233,8 +233,6 @@ function tenderling_body_classes( $classes ) {
     return $classes;
 }
 
-
-
 /**Order Galleries oldest first**/
 function rinrose_archive_order( $query ) {
     if ( is_post_type_archive( 'gallery' ) ) {
@@ -242,3 +240,12 @@ function rinrose_archive_order( $query ) {
     }
 }
 add_filter( 'pre_get_posts', 'rinrose_archive_order' );
+
+
+/**Add Image Sizes**/
+add_image_size('4K', 4096, 4096);
+add_image_size('2K', 2560, 2560);
+add_image_size('FHD', 1920, 1920);
+add_image_size('HD', 1280, 1280);
+add_image_size('SD', 896, 896);
+add_image_size('XS', 640, 640);
