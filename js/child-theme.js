@@ -9796,11 +9796,11 @@
 	}
 
 	function homeAnimationParallaxScroll() {
-	  var scroll = document.body.scrollTop;
+	  var bodyClass = document.body.classList;
 
-	  if (scroll >= 25) {
-	    document.body.classList.remove('rinrose_fresh_home');
-	    document.body.classList.add('rinrose_scrolled_home');
+	  if (bodyClass.contains('rinrose_fresh_home') && !bodyClass.contains('rinrose_animate_home')) {
+	    bodyClass.remove('rinrose_fresh_home');
+	    bodyClass.add('rinrose_scrolled_home');
 	    var splash = document.querySelector('#rinrose_home-splash');
 	    setTimeout(function () {
 	      splash.classList.add('rinrose_splash_out');
