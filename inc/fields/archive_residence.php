@@ -9,8 +9,24 @@ if( function_exists('acf_add_local_field_group') ):
 
 acf_add_local_field_group(array(
     'key' => 'group_62e948eb3acc8',
-    'title' => 'Residence Archive Settings',
+    'title' => 'Residence Settings',
     'fields' => array(
+        array(
+            'key' => 'field_6318a3002c54a',
+            'label' => 'Archive',
+            'name' => '',
+            'type' => 'tab',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'placement' => 'top',
+            'endpoint' => 0,
+        ),
         array(
             'key' => 'field_62e948eb4222a',
             'label' => 'Residence Archive',
@@ -128,6 +144,46 @@ acf_add_local_field_group(array(
                 ),
             ),
         ),
+        array(
+            'key' => 'field_6318a30b2c54b',
+            'label' => 'Single',
+            'name' => '',
+            'type' => 'tab',
+            'instructions' => '',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'placement' => 'top',
+            'endpoint' => 0,
+        ),
+        array(
+            'key' => 'field_6318a3152c54c',
+            'label' => 'Single Residence Splash Image Default',
+            'name' => 'single_residence_splash',
+            'type' => 'image',
+            'instructions' => '<b>Aspect:</b> Horizontal<br/><b>W:</b> 1920px &middot; <b>H:</b> 1080px',
+            'required' => 0,
+            'conditional_logic' => 0,
+            'wrapper' => array(
+                'width' => '',
+                'class' => '',
+                'id' => '',
+            ),
+            'return_format' => 'id',
+            'preview_size' => 'medium',
+            'library' => 'all',
+            'min_width' => '',
+            'min_height' => '',
+            'min_size' => '',
+            'max_width' => '',
+            'max_height' => '',
+            'max_size' => '',
+            'mime_types' => '',
+        ),
     ),
     'location' => array(
         array(
@@ -149,4 +205,4 @@ acf_add_local_field_group(array(
     'show_in_rest' => 0,
 ));
 
-endif;          
+endif;      

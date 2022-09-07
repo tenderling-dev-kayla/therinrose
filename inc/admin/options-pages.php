@@ -38,14 +38,14 @@ if( function_exists('acf_add_options_page') ) {
     ));
     // Add archive settings pages to each post type.
     $gallery_archive = acf_add_options_page(array(
-        'page_title'  => __('Galleries Archive Settings'),
-        'menu_title'  => __('Galleries Archive'),
+        'page_title'  => __('Galleries Settings'),
+        'menu_title'  => __('Settings'),
         'parent_slug' => 'edit.php?post_type=gallery',
         'menu_slug'   => 'gallery-archive-options',
     ));
     $residence_archive = acf_add_options_page(array(
-        'page_title'  => __('Residences Archive Settings'),
-        'menu_title'  => __('Residences Archive'),
+        'page_title'  => __('Residences Settings'),
+        'menu_title'  => __('Settings'),
         'parent_slug' => 'edit.php?post_type=residence',
         'menu_slug'   => 'residence-archive-options',
     ));
