@@ -249,3 +249,37 @@ add_image_size('FHD', 1920, 1920);
 add_image_size('HD', 1280, 1280);
 add_image_size('SD', 896, 896);
 add_image_size('XS', 640, 640);
+
+/**modify WP Image scaling**/
+function mynamespace_big_image_size_threshold( $threshold ) {
+	return 4096; // new threshold
+}
+add_filter('big_image_size_threshold', 'mynamespace_big_image_size_threshold', 999, 1);
+
+/**Remove srcset max image width**/
+function remove_max_srcset_image_width( $max_width ) {
+    return false;
+}
+add_filter( 'max_srcset_image_width', 'remove_max_srcset_image_width' );
+
+/**function to display image with custom class and srcset**/
+function rinrose_get_image($attachment_id, $args = []) {
+	$class = (empty($args['class'])) ? 'img-fluid' : 'img-fluid '.$args['class'];
+	$size = (empty($args['size'])) ? '4K' : $args['size'];
+	$src = wp_get_attachment_image_url($attachment_id, $size);
+	$srcset = wp_get_attachment_image_srcset($attachment_id, '4K');
+	$meta = wp_get_attachment_metadata($attachment_id);
+	$sizes = wp_get_attachment_image_sizes($attachment_id, $size, $meta);
+
+
+	ob_start(); ?>
+	<img src="<?php echo esc_url( $src ); ?>"
+     srcset="<?php echo esc_attr( $srcset ); ?>"
+     sizes="<?php echo esc_attr( $sizes ); ?>" alt="Foo Bar">
+
+     <?php $return = ob_get_clean();
+     return $srcset;
+}
+
+
+

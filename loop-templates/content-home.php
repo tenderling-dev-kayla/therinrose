@@ -43,11 +43,11 @@ defined( 'ABSPATH' ) || exit;
 		    	<?php while( have_rows('intro') ): the_row(); ?>
 					<div class="container py-5 text-center">
 						<div class="row justify-content-center">
-							<div class="col-12 col-lg-8 rinrose_has_animation" data-animation="fadeIn">
+							<div class="col-12 col-lg-9 rinrose_has_animation" data-animation="fadeIn">
 								<h1 id="rinrose_home-intro_title" class="text-primary display-1 mb-3 entry-title"><?php the_sub_field('title'); ?></h1>
 							</div>
-							<div class="col-12 col-lg-9 rinrose_has_animation" data-animation="fadeIn">
-								<div id="rinrose_home-intro_blurb" class="px-2"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
+							<div class="col-12 col-lg-10 rinrose_has_animation" data-animation="fadeIn">
+								<div id="rinrose_home-intro_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 							</div>
 						</div>
 					</div>
@@ -108,7 +108,7 @@ defined( 'ABSPATH' ) || exit;
 							</h2>
 						</div>
 						<div id="rinrose_home-residences_blurb" class="d-flex p-5 mb-5 rinrose_has_animation" data-animation="fadeIn">
-							<div id="rinrose_home-residences_blurb-content" class="w-50 px-5">
+							<div id="rinrose_home-residences_blurb-content" class="w-50 ps-5 pe-2">
 								<?php echo do_shortcode(get_sub_field('blurb')); ?>
 							</div>
 						</div>
@@ -140,13 +140,13 @@ defined( 'ABSPATH' ) || exit;
 					<?php $locationBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
 					<div id="rinrose_home-location_banner" class="panorama vh-60 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $locationBg[0]; ?>')">
 						<div id="rinrose_home-location_banner-content" class="container d-flex justify-content-center">
-							<div id="rinrose_home-location_banner-content_body" class="py-5 w-50 rinrose_has_animation" data-animation="fadeIn">
+							<div id="rinrose_home-location_banner-content_body" class="py-5 px-3 w-60 rinrose_has_animation" data-animation="fadeIn">
 								<h2 id="rinrose_home-location_banner-content_body-title" class="display-1 text-white text-center"><?php the_sub_field('banner_text'); ?></h2>
 							</div>
 						</div>
 					</div>
 					<div id="rinrose_home_location-info" class="container py-5 my-5 d-flex justify-content-center">
-						<div id="rinrose_home_location-info_content" class="w-50 text-center">
+						<div id="rinrose_home_location-info_content" class="w-60 text-center px-3">
 							<h3 id="rinrose_home_location-content_title" class="text-primary text-uppercase rinrose_has_animation" data-animation="fadeIn">
 								<?php the_sub_field('title'); ?>
 							</h3>
@@ -178,7 +178,7 @@ defined( 'ABSPATH' ) || exit;
 		    		<?php $wellnessBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
 					<div id="rinrose_home-wellness_banner" class="panorama vh-60 d-flex align-items-center justify-content-center bg-pos-bottom" style="background-image: url('<?php echo $wellnessBg[0]; ?>')">
 						<div id="rinrose_home-wellness_banner-content" class="container d-flex justify-content-center">
-							<div id="rinrose_home-wellness_banner-content_body" class="py-5 w-60">
+							<div id="rinrose_home-wellness_banner-content_body" class="py-5  px-3 w-70">
 								<h2 id="rinrose_home-wellness_banner-content_body-title" class="h3 text-white text-center text-uppercase pb-3 rinrose_has_animation" data-animation="fadeIn">
 									<?php the_sub_field('title'); ?>
 								</h2>

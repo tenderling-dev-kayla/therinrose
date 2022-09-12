@@ -49,10 +49,10 @@ defined( 'ABSPATH' ) || exit;
 		    			<div id="<?php echo $rowID; ?>" class="<?php echo $rowClass; ?> d-flex">
 		    				<?php while( have_rows('row') ): the_row(); ?>
 		    					<div id="<?php echo $rowID; ?>-colLeft" class="<?php echo $rowClass; ?>-col w-50 rinrose_has_animation" data-animation="slideInLeft">
-		    						<?php echo wp_get_attachment_image( get_sub_field('left'), 'full', "", array( "class" => "img-fluid" ) ); ?>
+		    						<?php echo rinrose_get_image(get_sub_field('left')); ?>
 		    					</div>
 		    					<div id="<?php echo $rowID; ?>-colRight" class="<?php echo $rowClass; ?>-col w-50 rinrose_has_animation" data-animation="slideInRight">
-		    						<?php echo wp_get_attachment_image( get_sub_field('right'), 'full', "", array( "class" => "img-fluid" ) ); ?>
+		    						<?php echo wp_get_attachment_image( get_sub_field('right'), '4K'); ?>
 		    					</div>
 		    				<?php endwhile; ?>
 		    			</div>
@@ -110,7 +110,6 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 			</section>
 		<?php endif; ?>
-
 	</div><!-- .entry-content -->
 	<footer class="entry-footer">
 		<?php /**
@@ -126,3 +125,5 @@ defined( 'ABSPATH' ) || exit;
 		<?php endif; ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
+
+
