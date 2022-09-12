@@ -27,7 +27,7 @@
 						<?php if(have_rows('social')) : ?>
 							<div id="rinrose_footer-social" class="d-flex">
 								<?php while(have_rows('social')) : the_row(); ?>
-									<a id="rinrose_footer-social_<?php the_sub_field('type'); ?>" class="btn btn-outline-light rounded-circle p-2 me-5" href="<?php the_sub_field('link'); ?>" target="_blank">
+									<a id="rinrose_footer-social_<?php the_sub_field('type'); ?>" class="btn btn-outline-light rounded-circle p-2 me-5" role="button" href="<?php the_sub_field('link'); ?>" target="_blank">
 										<i class="fa-brands fa-<?php the_sub_field('type'); ?>"></i>
 									</a>
 								<?php endwhile; ?>
@@ -49,7 +49,7 @@
 						<?php if(have_rows('inquiry_button')):
 							while(have_rows('inquiry_button')): the_row(); ?>
 								<div id="rinrose_footer-button">
-									<a class="btn text-uppercase btn-outline-light btn-sm" target="<?php the_sub_field('target'); ?>" href="<?php the_sub_field('link'); ?>">
+									<a class="btn text-uppercase btn-outline-light btn-sm" role="button" target="<?php the_sub_field('target'); ?>" href="<?php the_sub_field('link'); ?>">
 										<?php the_sub_field('text'); ?>
 									</a>
 								</div>
@@ -81,7 +81,7 @@
 							echo strip_tags(wp_nav_menu($footer_legal_args), '<a>' ); ?>
 						</div>
 						<div id="rinrose_footer-tenderling">
-							<a href="https://www.tenderling.com" target="_blank" class="text-uppercase text-white text-opacity-50 fw-lightbold text-decoration-none fs-xsmall">
+							<a href="https://www.tenderling.com" target="_blank" class="text-uppercase text-white text-opacity-50 fw-lightbold text-decoration-none fs-xsmall" role="button">
 								<small>Site by Tenderling</small>
 							</a>
 						</div>

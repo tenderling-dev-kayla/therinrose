@@ -76,7 +76,7 @@ defined( 'ABSPATH' ) || exit;
 									<h2 id="rinrose_home_amenities_body-right_content-title" class="display-1 text-primary pb-3"><?php the_sub_field('title'); ?></h2>
 									<?php if(have_rows('button')):
 										while(have_rows('button')): the_row(); ?>
-											<a id="rinrose_home-amenities_body-right_content-button" class="btn btn-outline-primary text-uppercase" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
+											<a id="rinrose_home-amenities_body-right_content-button" class="btn btn-outline-primary text-uppercase" role="button" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
 										<?php endwhile;
 									endif; ?>
 								</div>
@@ -122,7 +122,7 @@ defined( 'ABSPATH' ) || exit;
 						<?php if(have_rows('button')):
 							while(have_rows('button')): the_row(); ?>
 								<div id="rinrose_home_residences-grid_button" class="text-center py-5">
-									<a class="btn btn-outline-primary text-uppercase" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
+									<a class="btn btn-outline-primary text-uppercase" role="button" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
 								</div>
 							<?php endwhile;
 						endif; ?>
