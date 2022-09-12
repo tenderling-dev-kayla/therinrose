@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 		    	<?php while( have_rows('splash') ): the_row(); ?>
 					<div id="rinrose_home-splash_mask-bg" class="w-100 h-100 top-0 start-0" role="presentation"></div>
 					<?php $posterBg = wp_get_attachment_image_src(get_sub_field('poster'), 'full', false); ?>
-					<div id="rinrose_home-splash_mask" class="w-100 h-100" style="background-image: url(<?php echo $posterBg[0]; ?>);">
+					<div id="rinrose_home-splash_mask" class="w-100 h-100" style="background-image: url(<?php echo $posterBg[0]; ?>);" role="presentation">
 						<video loop="loop" autoplay="" playsinline="" muted="" id="rinrose_home-splash_video" preload="none" src="<?php the_sub_field('video'); ?>"> 
 							<source type="video/mp4" src="<?php the_sub_field('video'); ?>">
 						</video>
@@ -115,9 +115,9 @@ defined( 'ABSPATH' ) || exit;
 							</div>
 						</div>
 					</section><!-- #rinrose_home-residences_info -->
-					<section id="rinrise_home_residences-grid" class="container pb-5" aria-labelledby="rinrose_home-residences-grid_title">
+					<section id="rinrose_home_residences-grid" class="container pb-5" aria-labelledby="rinrose_home_residences-grid_title">
 						<h3 id="rinrose_home_residences-grid_title" class="text-center text-primary text-uppercase pb-5"><?php the_sub_field('grid_title'); ?></h3>
-						<div id="rinrise_home_residences-grid_display">
+						<div id="rinrose_home_residences-grid_display">
 							<!--Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button) -->
 							<img src="/wp-content/themes/therinrose-tenderling/inc/img/rinrose-floorplans_placeholder.jpg" class="img-fluid" alt="Placeholder floor plans image" />
 						</div>
@@ -128,7 +128,7 @@ defined( 'ABSPATH' ) || exit;
 								</div>
 							<?php endwhile;
 						endif; ?>
-					</section><!-- #rinrise_home_residences-grid -->
+					</section><!-- #rinrose_home_residences-grid -->
 				<?php endwhile; ?>
 			</div><!-- rinrose_home-residences -->
 		<?php endif;
