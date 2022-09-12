@@ -21,16 +21,16 @@ defined( 'ABSPATH' ) || exit;
 				</div>
 			</div>
 			<div class="d-flex justify-content-center align-items-center pt-3 pb-5">
-				<?php if(have_rows('buttons')): ?>
-					<?php while(have_rows('buttons')): the_row(); ?>
-						<a  
-						  class="rinrose_contact-button btn text-uppercase btn-outline-primary m-2" 
-						  href="<?php the_sub_field('link'); ?>" 
-						  target="<?php the_sub_field('target'); ?>"
-						>
-							<?php the_sub_field('text'); ?>
-						</a>
-					<?php endwhile;
+				<?php if(have_rows('buttons')):
+					while(have_rows('buttons')): the_row();
+						$btn_args = [
+							'href' => get_sub_field('link'),
+							'label' => get_sub_field('text'),
+							'target' => get_sub_field('target'),
+							'class' => 'rinrose_contact-button btn text-uppercase btn-outline-primary m-2',
+						];
+						the_rinrose_btn_link($btn_args);
+					endwhile;
 				endif; ?>
 			</div>
 		</div><!-- .entry-content -->

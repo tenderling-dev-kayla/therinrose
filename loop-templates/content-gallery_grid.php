@@ -39,9 +39,12 @@ defined( 'ABSPATH' ) || exit;
 	</div><!-- .entry-content -->
 	<footer class="entry-footer rinrose_has_animation" data-animation="fadeIn">
 		<div class="rinrose_gallery-archive_single-button d-flex justify-content-center align-items-center pt-3 pb-5">
-			<a class="rinrose_gallery-button btn text-uppercase btn-outline-primary m-2" href="<?php the_permalink(); ?>">
-				View All
-			</a>
+			<?php $btn_args = [
+				'href' => get_permalink(),
+				'label' => 'View All',
+				'class' => 'rinrose_gallery-button btn text-uppercase btn-outline-primary m-2',
+			];
+			the_rinrose_btn_link($btn_args); ?>
 		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
