@@ -21,7 +21,7 @@
 							</p>
 						</div>
 						<div id="rinrose_footer-office" class="mb-4">
-							<h6 id="rinrose_footer-office_name" class="text-uppercase fw-lightbold"><?php the_sub_field('office'); ?></h6>
+							<h3 id="rinrose_footer-office_name" class="text-uppercase fw-lightbold h6"><?php the_sub_field('office'); ?></h3>
 							<p id="rinrose_footer-office_hours" class="mb-0 fs-small"><?php the_sub_field('hours'); ?></p>
 						</div>
 						<?php if(have_rows('social')) : ?>
