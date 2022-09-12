@@ -27,8 +27,8 @@
 						<?php if(have_rows('social')) : ?>
 							<div id="rinrose_footer-social" class="d-flex">
 								<?php while(have_rows('social')) : the_row(); ?>
-									<a id="rinrose_footer-social_<?php the_sub_field('type'); ?>" class="btn btn-outline-light rounded-circle p-2 me-5" role="button" href="<?php the_sub_field('link'); ?>" target="_blank">
-										<i class="fa-brands fa-<?php the_sub_field('type'); ?>"></i>
+									<a id="rinrose_footer-social_<?php the_sub_field('type'); ?>" class="btn btn-outline-light rounded-circle p-2 me-5" role="button" href="<?php the_sub_field('link'); ?>" target="_blank" aria-label="<?php the_sub_field('type'); ?> profile link - opens in a new tab">
+										<i class="fa-brands fa-<?php the_sub_field('type'); ?>" aria-label="<?php the_sub_field('type'); ?>"></i>
 									</a>
 								<?php endwhile; ?>
 							</div>
