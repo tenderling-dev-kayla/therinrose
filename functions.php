@@ -282,4 +282,33 @@ function rinrose_get_image($attachment_id, $args = []) {
 }
 
 
+/**Create ADA Compliant Link or Button**/
+function get_rinrose_btn_link($args = array()) { //$href='', $label='', $target='', $id='', $class='', $data=''
+	$href = $label = $target = $id = $class = $data = '';
+	extract($args);
+	$alt = false;
+	if($target == '_blank'):
+		if(is_array($label)):
+			$alt = $label['text'].' (Opens a new window)';
+		else:
+			$alt = $label.' (Opens a new window)';
+		endif;
+	endif;
 
+	ob_start(); ?>
+
+	<a role="button" 
+	  href="<?php echo $href; ?>" 
+	  target="<?php echo $target; ?>" 
+	  class="<?php echo $class; ?>" 
+	  id="<?php echo $id; ?>" 
+	  <?php echo ($alt) ? 'aria-label="'.$alt.'"' : ''; ?>
+	>
+		<?php echo (is_array($label)) ? $label['html'] : $label; ?>
+	</a>
+
+	<?php return ob_get_clean();
+}
+function the_rinrose_btn_link($args = array()) {
+	echo get_rinrose_btn_link($args);
+}

@@ -76,11 +76,15 @@ defined( 'ABSPATH' ) || exit;
 							<div id="rinrose_home_amenities_body-right_content" class="pb-5 mb-5">
 								<div id="rinrose_home_amenities_body-right_content-animated" class="rinrose_has_animation mb-5 pb-5" data-animation="fadeIn">
 									<h2 id="rinrose_home_amenities_body-right_content-title" class="display-1 text-primary pb-3"><?php the_sub_field('title'); ?></h2>
-									<?php if(have_rows('button')):
-										while(have_rows('button')): the_row(); ?>
-											<a id="rinrose_home-amenities_body-right_content-button" class="btn btn-outline-primary text-uppercase" role="button" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
-										<?php endwhile;
-									endif; ?>
+									<?php $amenBtn = get_sub_field('button');
+									$amenBtn_args = [
+										'href' => $amenBtn['link'],
+										'label' => $amenBtn['label'],
+										'target' => '_self',
+										'class' => 'btn btn-outline-primary text-uppercase',
+										'id' => 'rinrose_home-amenities_body-right_content-button',
+									];
+									the_rinrose_btn_link($amenBtn_args); ?>
 								</div>
 							</div>
 						</div><!-- #rinrose_home-amenities_body-right -->
@@ -121,13 +125,16 @@ defined( 'ABSPATH' ) || exit;
 							<!--Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button) -->
 							<img src="/wp-content/themes/therinrose-tenderling/inc/img/rinrose-floorplans_placeholder.jpg" class="img-fluid" alt="Placeholder floor plans image" />
 						</div>
-						<?php if(have_rows('button')):
-							while(have_rows('button')): the_row(); ?>
-								<div id="rinrose_home_residences-grid_button" class="text-center py-5">
-									<a class="btn btn-outline-primary text-uppercase" role="button" href="<?php the_sub_field('link'); ?>"><?php the_sub_field('label'); ?></a>
-								</div>
-							<?php endwhile;
-						endif; ?>
+						<?php $resBtn = get_sub_field('button');
+						$resBtn_args = [
+							'href' => $resBtn['link'],
+							'label' => $resBtn['label'],
+							'target' => '_self',
+							'class' => 'btn btn-outline-primary text-uppercase',
+						]; ?>
+						<div id="rinrose_home_residences-grid_button" class="text-center py-5">
+							<?php the_rinrose_btn_link($resBtn_args); ?>
+						</div>
 					</section><!-- #rinrose_home_residences-grid -->
 				<?php endwhile; ?>
 			</div><!-- rinrose_home-residences -->

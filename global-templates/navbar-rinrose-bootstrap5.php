@@ -24,13 +24,15 @@ if(have_rows('header', 'option')) :
 					    		<div id="rinrose_header-offcanvas_header" class="row w-100 justify-content-between navbar navbar-dark">
 									<div id="rinrose_header-offcanvas_header-action" class="col-5 justify-content-start d-flex align-items-center">
 										<button id="rinrose_header-offcanvas_header-action_btn" type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-										<?php if (have_rows('left_link')):
-											while(have_rows('left_link')): the_row(); ?>
-												<a id="rinrose_header-offcanvas_header-action_link" class="btn btn-link text-decoration-none text-uppercase text-light ms-5" role="button" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-							    					<?php the_sub_field('text'); ?>
-							    				</a>
-							  				<?php endwhile;
-							  			endif; ?>
+										<?php $oc_leftLink = get_sub_field('left_link');
+										$oc_leftLink_args = [
+											'href' => $oc_leftLink['link'],
+											'label' => $oc_leftLink['text'],
+											'target' => $oc_leftLink['target'],
+											'class' => 'btn btn-link text-decoration-none text-uppercase text-light ms-5',
+											'id' => 'rinrose_header-offcanvas_header-action_link',
+										];
+										the_rinrose_btn_link($oc_leftLink_args); ?>
 								  	</div>
 								  	<div id="rinrose_header-offcanvas_header-brand" class="col-2 justify-content-center d-flex align-items-center">
 										<!-- Your site title as branding in the menu -->
@@ -42,20 +44,25 @@ if(have_rows('header', 'option')) :
 										<!-- end custom logo -->
 									</div>
 									<div id="rinrose_header-offcanvas_header-ctas" class="col-5 justify-content-end d-flex align-items-center">
-										<?php if (have_rows('right_link')):
-											while(have_rows('right_link')): the_row(); ?>
-							   					<a id="rinrose_header-offcanvas_header-ctas_link" class="btn btn-link text-decoration-none text-uppercase text-light me-5" role="button" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-							   						<?php the_sub_field('text'); ?>
-							   					</a>
-							  				<?php endwhile;
-							  			endif; ?>
-							  			<?php if (have_rows('right_button')):
-											while(have_rows('right_button')): the_row(); ?>
-							   					<a id="rinrose_header-offcanvas_header-ctas_btn" class="btn text-uppercase btn-outline-light" role="button" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-							   						<?php the_sub_field('text'); ?>
-							   					</a>
-							  				<?php endwhile;
-							  			endif; ?>
+										<?php $oc_rightLink = get_sub_field('right_link');
+										$oc_rightLink_args = [
+											'href' => $oc_rightLink['link'],
+											'label' => $oc_rightLink['text'],
+											'target' => $oc_rightLink['target'],
+											'class' => 'btn btn-link text-decoration-none text-uppercase text-light me-5',
+											'id' => 'rinrose_header-offcanvas_header-ctas_link',
+										];
+										the_rinrose_btn_link($oc_rightLink_args); 
+
+										$oc_rightBtn = get_sub_field('right_button');
+										$oc_rightBtn_args = [
+											'href' => $oc_rightBtn['link'],
+											'label' => $oc_rightBtn['text'],
+											'target' => $oc_rightBtn['target'],
+											'class' => 'btn text-uppercase btn-outline-light',
+											'id' => 'rinrose_header-offcanvas_header-ctas_btn',
+										];
+										the_rinrose_btn_link($oc_rightBtn_args); ?>
 								  	</div>
 								</div>
 					      		<div id="rinrose_header-offcanvas_body" class="offcanvas-body flex-grow-1 pe-3 h-100">
@@ -68,25 +75,28 @@ if(have_rows('header', 'option')) :
 									wp_nav_menu($header_menu_args); ?>
 								</div>
 								<div id="rinrose_header-offcanvas_footer">
-									<?php if (have_rows('menu_bottom_link')):
-					    				while(have_rows('menu_bottom_link')): the_row(); ?>
-											<span class="navbar-text" id="rinrose_header-offcanvas_footer-link">
-						        				<a class="btn btn-link text-uppercase text-light text-decoration-none" role="button" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-						        					<?php the_sub_field('text'); ?>
-						        				</a>
-						      				</span>
-						      			<?php endwhile;
-						      		endif; ?>
+									<?php $oc_menuLink = get_sub_field('menu_bottom_link');
+									$oc_menuLink_args = [
+										'href' => $oc_menuLink['link'],
+										'label' => $oc_menuLink['text'],
+										'target' => $oc_menuLink['target'],
+										'class' => 'btn btn-link text-uppercase text-light text-decoration-none',
+									]; ?>
+									<span class="navbar-text" id="rinrose_header-offcanvas_footer-link">
+				        				<?php the_rinrose_btn_link($oc_menuLink_args); ?>
+				      				</span>
 					      		</div>
 					      	</div>
 				    	</div>
-						<?php if (have_rows('left_link')):
-							while(have_rows('left_link')): the_row(); ?>
-								<a id="rinrose_header-main_toggle-link" class="btn btn-link text-decoration-none text-uppercase ms-5" role="button" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-			    					<?php the_sub_field('text'); ?>
-			    				</a>
-			  				<?php endwhile;
-			  			endif; ?>
+				    	<?php $leftLink = get_sub_field('left_link');
+						$leftLink_args = [
+							'href' => $leftLink['link'],
+							'label' => $leftLink['text'],
+							'target' => $leftLink['target'],
+							'class' => 'btn btn-link text-decoration-none text-uppercase ms-5',
+							'id' => 'rinrose_header-main_toggle-link',
+						];
+						the_rinrose_btn_link($leftLink_args); ?>
 			  		</div>
 			  		<div id="rinrose_header-main_brand" class="col-2 justify-content-center d-flex align-items-center">
 						<!-- Your site title as branding in the menu -->
@@ -98,20 +108,25 @@ if(have_rows('header', 'option')) :
 						<!-- end custom logo -->
 					</div>
 					<div id="rinrose_header-main_ctas" class="col-5 justify-content-end d-flex align-items-center">
-						<?php if (have_rows('right_link')):
-							while(have_rows('right_link')): the_row(); ?>
-			   					<a id="rinrose_header-main_ctas-link" class="btn btn-link text-decoration-none text-uppercase me-5" role="button" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-			   						<?php the_sub_field('text'); ?>
-			   					</a>
-			  				<?php endwhile;
-			  			endif; ?>
-			  			<?php if (have_rows('right_button')):
-							while(have_rows('right_button')): the_row(); ?>
-			   					<a id="rinrose_header-main_ctas-btn" class="btn text-uppercase btn-outline-primary" role="button" href="<?php the_sub_field('link'); ?>" target="<?php the_sub_field('target'); ?>">
-			   						<?php the_sub_field('text'); ?>
-			   					</a>
-			  				<?php endwhile;
-			  			endif; ?>
+						<?php $rightLink = get_sub_field('right_link');
+						$rightLink_args = [
+							'href' => $rightLink['link'],
+							'label' => $rightLink['text'],
+							'target' => $rightLink['target'],
+							'class' => 'btn btn-link text-decoration-none text-uppercase me-5',
+							'id' => 'rinrose_header-main_ctas-link',
+						];
+						the_rinrose_btn_link($rightLink_args); 
+
+						$rightBtn = get_sub_field('right_button');
+						$rightBtn_args = [
+							'href' => $rightBtn['link'],
+							'label' => $rightBtn['text'],
+							'target' => $rightBtn['target'],
+							'class' => 'btn text-uppercase btn-outline-primary',
+							'id' => 'rinrose_header-main_ctas-btn',
+						];
+						the_rinrose_btn_link($rightBtn_args); ?>
 			  		</div>
 				</div>
 		  	</div>

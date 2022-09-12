@@ -30,11 +30,18 @@
 									$field = get_sub_field_object('type');
 									$value = get_sub_field('type');
 									$label = $field['choices'][ $value ];
-									?>
-									<a id="rinrose_footer-social_<?php the_sub_field('type'); ?>" class="btn btn-outline-light rounded-circle p-2 me-5" role="button" href="<?php the_sub_field('link'); ?>" target="_blank" aria-label="<?php echo $label; ?> profile link - opens in a new tab">
-										<i class="fa-brands fa-<?php the_sub_field('type'); ?>" aria-label="<?php the_sub_field('type'); ?>"></i>
-									</a>
-								<?php endwhile; ?>
+									$social_args = [
+										'href' => get_sub_field('link'),
+										'label' => [
+											'html' => '<i class="fa-brands fa-'.get_sub_field('type').'" aria-label="'.$label.' icon"></i>',
+											'text' => $label.' Profile',
+										],
+										'target' => '_blank',
+										'class' => 'btn btn-outline-light rounded-circle p-2 me-5',
+										'id'	=>	'rinrose_footer-social_'.get_sub_field('type'),
+									];
+									the_rinrose_btn_link($social_args);
+								endwhile; ?>
 							</div>
 						<?php endif; ?>
 					</div>
@@ -53,9 +60,13 @@
 						<?php if(have_rows('inquiry_button')):
 							while(have_rows('inquiry_button')): the_row(); ?>
 								<div id="rinrose_footer-button">
-									<a class="btn text-uppercase btn-outline-light btn-sm" role="button" target="<?php the_sub_field('target'); ?>" href="<?php the_sub_field('link'); ?>">
-										<?php the_sub_field('text'); ?>
-									</a>
+									<?php $RFB_args = [
+										'href' => get_sub_field('link'),
+										'label' => get_sub_field('text'),
+										'target' => get_sub_field('target'),
+										'class' => 'btn text-uppercase btn-outline-light btn-sm',
+									];
+									the_rinrose_btn_link($RFB_args); ?>
 								</div>
 							<?php endwhile;
 						endif; ?>
@@ -85,7 +96,13 @@
 							echo strip_tags(wp_nav_menu($footer_legal_args), '<a>' ); ?>
 						</div>
 						<div id="rinrose_footer-tenderling">
-							<a href="https://www.tenderling.com" target="_blank" class="text-uppercase text-white text-opacity-50 fw-lightbold text-decoration-none fs-small" role="button">Site by Tenderling</a>
+							<?php $tend_args = [
+								'href' => 'https://tenderling.com',
+								'label' => 'Site by Tenderling',
+								'target' => '_blank',
+								'class' => 'text-uppercase text-white text-opacity-50 fw-lightbold text-decoration-none fs-smal',
+							];
+							the_rinrose_btn_link($tend_args); ?>
 						</div>
 					</div>
 				</div>
