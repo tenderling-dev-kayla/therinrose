@@ -13,7 +13,7 @@
 				<div class="row justify-content-between">
 					<div class="col-12 col-md-4 col-lg-4">
 						<div id="rinrose_footer-contact" class="mb-4">
-							<h6 id="rinrose_footer-contact_company" class="text-uppercase fw-lightbold"><?php the_sub_field('company'); ?></h6>
+							<h2 id="rinrose_footer-contact_company" class="text-uppercase fw-lightbold h6"><?php the_sub_field('company'); ?></h2>
 							<p id="rinrose_footer-contact_address" class="mb-0 fs-small"><?php the_sub_field('address'); ?></p>
 							<p id="rinrose_footer-contact_items" class="mb-0 fs-small">
 								<span id="rinrose_footer-contact_items-phone" class="pe-3"><?php the_sub_field('phone'); ?></span>
@@ -81,9 +81,7 @@
 							echo strip_tags(wp_nav_menu($footer_legal_args), '<a>' ); ?>
 						</div>
 						<div id="rinrose_footer-tenderling">
-							<a href="https://www.tenderling.com" target="_blank" class="text-uppercase text-white text-opacity-50 fw-lightbold text-decoration-none fs-xsmall" role="button">
-								<small>Site by Tenderling</small>
-							</a>
+							<a href="https://www.tenderling.com" target="_blank" class="text-uppercase text-white text-opacity-50 fw-lightbold text-decoration-none fs-xsmall" role="button">Site by Tenderling</a>
 						</div>
 					</div>
 				</div>

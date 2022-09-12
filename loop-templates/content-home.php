@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 		if( have_rows('splash') ): ?>
 			<div id="rinrose_home-splash" class="section">
 		    	<?php while( have_rows('splash') ): the_row(); ?>
-					<div id="rinrose_home-splash_mask-bg" class="w-100 h-100 top-0 start-0"></div>
+					<div id="rinrose_home-splash_mask-bg" class="w-100 h-100 top-0 start-0" role="presentation"></div>
 					<?php $posterBg = wp_get_attachment_image_src(get_sub_field('poster'), 'full', false); ?>
 					<div id="rinrose_home-splash_mask" class="w-100 h-100" style="background-image: url(<?php echo $posterBg[0]; ?>);">
 						<video loop="loop" autoplay="" playsinline="" muted="" id="rinrose_home-splash_video" preload="none" src="<?php the_sub_field('video'); ?>"> 
@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
 					</div>
 				<?php endwhile; ?>
 			</div><!-- #rinrose_home-splash -->
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1707 1654" width="0" height="0" fill="none">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1707 1654" width="0" height="0" fill="none" role="presentation">
 				<clipPath id="rinrose-clipped_svg" clipPathUnits="objectBoundingBox" transform="scale(0.00058582308 0.00060459492)">
 					<path d="M442.6,1643.2v-618.4c0-93.6,17.1-184.9,50.8-271.4c32.5-83.6,79.5-160.1,139.5-227.4l6.4-7.2l-6.4-7.2 c-60-67.3-107-143.8-139.5-227.4c-33.7-86.5-50.8-177.8-50.8-271.4v-2.1h735.8c280.1,0,508.1,227.9,508.1,508 c0,280.1-227.9,508-508.1,508h-147.2v616.3H442.6z"/>
 					<path d="M1381.5,1643.2c-146.7,0-266-119.3-266-266v-266h266c146.7,0,266,119.3,266,266v266H1381.5z"/>
@@ -63,12 +63,14 @@ defined( 'ABSPATH' ) || exit;
 		if( have_rows('amenities') ): ?>
 			<section id="rinrose_home-amenities" class="bg-white pb-5" aria-labelledby="rinrose_home_amenities_body-right_content-title">
 		    	<?php while( have_rows('amenities') ): the_row(); ?>
-					<?php $amenBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
-					<div id="rinrose_home-amenities_banner" class="vh-60 panorama bg-pos-bottom" style="background-image: url(<?php echo $amenBg[0]; ?>)"></div>
+					<?php $amenBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); 
+					$amenBgAlt = get_post_meta(get_sub_field('banner'), '_wp_attachment_image_alt', TRUE); ?>
+					<div id="rinrose_home-amenities_banner" class="vh-60 panorama bg-pos-bottom" style="background-image: url(<?php echo $amenBg[0]; ?>)" role="img" aria-label="<?php echo $amenBgAlt; ?>"></div>
 					<div id="rinrose_home-amenities_body" class="d-flex justify-content-between mt-5 pt-5 align-items-center">
 						<div id="rinrose_home-amenities_body-left" class="w-60">
-							<?php $amenLeftBg = wp_get_attachment_image_src(get_sub_field('left_image'), 'full', false); ?>
-							<div id="rinrose_home-amenities_body-left_image" class="panorama min-vh-100" style="background-image: url(<?php echo $amenLeftBg[0]; ?>)"></div>
+							<?php $amenLeftBg = wp_get_attachment_image_src(get_sub_field('left_image'), 'full', false); 
+							$amenLeftBgAlt = get_post_meta(get_sub_field('left_image'), '_wp_attachment_image_alt', TRUE); ?>
+							<div id="rinrose_home-amenities_body-left_image" class="panorama min-vh-100" style="background-image: url(<?php echo $amenLeftBg[0]; ?>)" role="img" aria-label="<?php echo $amenLeftBgAlt; ?>"></div>
 						</div><!--#rinrose_home-amenities_body-left -->
 						<div id="rinrose_home-amenities_body-right" class="w-40 px-5 pt-1 pb-5">
 							<div id="rinrose_home_amenities_body-right_content" class="pb-5 mb-5">
@@ -117,7 +119,7 @@ defined( 'ABSPATH' ) || exit;
 						<h3 id="rinrose_home_residences-grid_title" class="text-center text-primary text-uppercase pb-5"><?php the_sub_field('grid_title'); ?></h3>
 						<div id="rinrise_home_residences-grid_display">
 							<!--Residences CPT Grid query here. Show Featured. 3 Wide (Type, name, plan art, button) -->
-							<img src="/wp-content/themes/therinrose-tenderling/inc/img/rinrose-floorplans_placeholder.jpg" class="img-fluid" />
+							<img src="/wp-content/themes/therinrose-tenderling/inc/img/rinrose-floorplans_placeholder.jpg" class="img-fluid" alt="Placeholder floor plans image" />
 						</div>
 						<?php if(have_rows('button')):
 							while(have_rows('button')): the_row(); ?>
