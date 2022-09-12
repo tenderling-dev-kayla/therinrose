@@ -81,7 +81,7 @@
 							echo strip_tags(wp_nav_menu($footer_legal_args), '<a>' ); ?>
 						</div>
 						<div id="rinrose_footer-tenderling">
-							<a href="https://www.tenderling.com" target="_blank" class="text-uppercase text-white text-opacity-50 fw-lightbold text-decoration-none fs-xsmall" role="button">Site by Tenderling</a>
+							<a href="https://www.tenderling.com" target="_blank" class="text-uppercase text-white text-opacity-50 fw-lightbold text-decoration-none fs-small" role="button">Site by Tenderling</a>
 						</div>
 					</div>
 				</div>
