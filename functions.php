@@ -217,12 +217,24 @@ add_filter('nav_menu_css_class', 'tenderling_additional_class_menu_li', 1, 3);
  * Add Menu A class option
  **/
 function tenderling_add_menu_link_class( $atts, $item, $args ) {
-  if (property_exists($args, 'link_class')) {
-    $atts['class'] = $args->link_class;
-  }
-  return $atts;
+	$classes = $atts['class'];
+	if (property_exists($args, 'link_class')) {
+    	$atts['class'] = $classes.' '.$args->link_class;
+	}
+	return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'tenderling_add_menu_link_class', 1, 3 );
+
+/**
+ * Add aria label to new tab links in menus
+ **/
+function tenderling_add_menu_aria_label( $atts, $item, $args ) {
+	if($item->target == '_blank') {
+		$atts['aria-label'] = $item->title.' (Opens a new window)';
+	}
+	return $atts;
+}
+add_filter( 'nav_menu_link_attributes', 'tenderling_add_menu_aria_label', 1, 3 );
 
 /**Add Body Class to Homepage**/
 add_filter( 'body_class','tenderling_body_classes' );
@@ -283,7 +295,7 @@ function rinrose_get_image($attachment_id, $args = []) {
 
 
 /**Create ADA Compliant Link or Button**/
-function get_rinrose_btn_link($args = array()) { //$href='', $label='', $target='', $id='', $class='', $data=''
+function get_rinrose_btn_link($args = array()) { 
 	$href = $label = $target = $id = $class = $data = '';
 	extract($args);
 	$alt = false;

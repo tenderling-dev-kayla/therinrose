@@ -91,6 +91,7 @@
 								'echo'            => false,
 								'items_wrap'      => '%3$s',
 								'depth'           => 0,
+								'walker'		  => new Understrap_WP_Bootstrap_Navwalker(),
 								'link_class'	  => 'list-group-item list-group-item-action text-white text-uppercase bg-primary fw-lightbold ps-0 pe-4 py-0 pb-2 fs-small border border-0 w-auto lh-1',
 							);
 							echo strip_tags(wp_nav_menu($footer_legal_args), '<a>' ); ?>

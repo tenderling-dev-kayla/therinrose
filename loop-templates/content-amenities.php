@@ -18,8 +18,9 @@ defined( 'ABSPATH' ) || exit;
 		if( have_rows('splash') ): ?>
 			<section id="rinrose_amenities-splash" class="bg-primary">
 			    <?php while( have_rows('splash') ): the_row(); ?>
-		    		<?php $splashBg = wp_get_attachment_image_src(get_sub_field('image'), 'full', false); ?>
-					<div id="rinrose_amenities-splash_banner" class="vh-full panorama" style="background-image: url(<?php echo $splashBg[0]; ?>)"></div>
+		    		<?php $splashBg = wp_get_attachment_image_src(get_sub_field('image'), 'full', false); 
+		    		$splashBgAlt = get_post_meta(get_sub_field('image'), '_wp_attachment_image_alt', TRUE); ?>
+					<div id="rinrose_amenities-splash_banner" class="vh-full panorama" style="background-image: url(<?php echo $splashBg[0]; ?>)" role="img" aria-label="<?php echo $splashBgAlt; ?>"></div>
 					<div id="rinrose_home-intro" class="py-5 bg-white">
 						<div class="container py-5 text-center">
 							<div class="row justify-content-center">
@@ -49,7 +50,7 @@ defined( 'ABSPATH' ) || exit;
 		    			<div id="<?php echo $rowID; ?>" class="<?php echo $rowClass; ?> d-flex">
 		    				<?php while( have_rows('row') ): the_row(); ?>
 		    					<div id="<?php echo $rowID; ?>-colLeft" class="<?php echo $rowClass; ?>-col w-50 rinrose_has_animation" data-animation="slideInLeft">
-		    						<?php echo rinrose_get_image(get_sub_field('left')); ?>
+		    						<?php echo wp_get_attachment_image( get_sub_field('left'), '4K'); ?>
 		    					</div>
 		    					<div id="<?php echo $rowID; ?>-colRight" class="<?php echo $rowClass; ?>-col w-50 rinrose_has_animation" data-animation="slideInRight">
 		    						<?php echo wp_get_attachment_image( get_sub_field('right'), '4K'); ?>
@@ -118,8 +119,9 @@ defined( 'ABSPATH' ) || exit;
 		if( have_rows('banner') ): ?>
 			<div id="rinrose_amenities-banner">
 				<?php while(have_rows('banner')): the_row(); 
-					$bannerBg = wp_get_attachment_image_src(get_sub_field('image'), 'full', false); ?>
-					<div id="rinrose_home-amenities_banner" class="vh-80 panorama" style="background-image: url(<?php echo $bannerBg[0]; ?>)"></div>
+					$bannerBg = wp_get_attachment_image_src(get_sub_field('image'), 'full', false); 
+					$bannerBgAlt = get_post_meta(get_sub_field('image'), '_wp_attachment_image_alt', TRUE); ?>
+					<div id="rinrose_home-amenities_banner" class="vh-80 panorama" style="background-image: url(<?php echo $bannerBg[0]; ?>)" role="img" aria-label="<?php echo $bannerBgAlt; ?>"></div>
 				<?php endwhile; ?>
 			</div>
 		<?php endif; ?>

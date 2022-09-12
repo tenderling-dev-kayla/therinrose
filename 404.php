@@ -27,17 +27,15 @@ get_header();
 									<div id="rinrose_404-copy" class="text-center pb-2">
 										<?php echo do_shortcode(get_sub_field('copy')); ?>
 									</div> 
-									<?php if(have_rows('button')):
-										while(have_rows('button')): the_row(); ?>
-											<a id="rinrose_404-btn" 
-											  class="btn text-uppercase btn-outline-primary" 
-											  href="<?php the_sub_field('link'); ?>" 
-											  target="<?php the_sub_field('target'); ?>"
-											>
-												<?php the_sub_field('label'); ?>
-			   								</a>
-			   							<?php endwhile;
-			   						endif; ?>
+									<?php $btn = get_sub_field('button');
+									$btn_args = [
+										'href' => $btn['link'],
+										'label' => $btn['label'],
+										'target' => $btn['target'],
+										'class' => 'btn btn-outline-primary text-uppercase',
+										'id'	=>	'rinrose_404-btn',
+									];
+									the_rinrose_btn_link($btn_args); ?>
 								</div><!-- .page-content -->
 							</section><!-- .error-404 -->
 						<?php endwhile;
