@@ -57,8 +57,6 @@ function theme_enqueue_styles() {
 	//Add animate.css library
 	wp_enqueue_style('animate-css', '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', false);
 
-	//add Bugherd
-	wp_enqueue_script( 'bugherd-js', 'https://www.bugherd.com/sidebarv2.js?apikey=ryqnejdoperwopye4k4osa', null, null, false);
 
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
