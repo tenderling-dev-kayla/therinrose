@@ -43,10 +43,10 @@ defined( 'ABSPATH' ) || exit;
 		    	<?php while( have_rows('intro') ): the_row(); ?>
 					<div class="container py-5 text-center">
 						<div class="row justify-content-center">
-							<div class="col-12 col-lg-9 rinrose_has_animation" data-animation="fadeIn">
+							<div class="col-12 col-lg-10 rinrose_has_animation" data-animation="fadeIn">
 								<h1 id="rinrose_home-intro_title" class="text-primary display-1 mb-3 entry-title"><?php the_sub_field('title'); ?></h1>
 							</div>
-							<div class="col-12 col-lg-10 rinrose_has_animation" data-animation="fadeIn">
+							<div class="col-12 col-lg-11 rinrose_has_animation" data-animation="fadeIn">
 								<div id="rinrose_home-intro_blurb"><?php echo do_shortcode(get_sub_field('blurb')); ?></div>
 							</div>
 						</div>
@@ -63,14 +63,12 @@ defined( 'ABSPATH' ) || exit;
 		if( have_rows('amenities') ): ?>
 			<section id="rinrose_home-amenities" class="bg-white pb-5" aria-labelledby="rinrose_home_amenities_body-right_content-title">
 		    	<?php while( have_rows('amenities') ): the_row(); ?>
-					<?php $amenBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); 
-					$amenBgAlt = get_post_meta(get_sub_field('banner'), '_wp_attachment_image_alt', TRUE); ?>
-					<div id="rinrose_home-amenities_banner" class="vh-60 panorama bg-pos-bottom" style="background-image: url(<?php echo $amenBg[0]; ?>)" role="img" aria-label="<?php echo $amenBgAlt; ?>"></div>
+					<?php $amenBgAlt = get_post_meta(get_sub_field('banner'), '_wp_attachment_image_alt', TRUE); ?>
+					<div id="rinrose_home-amenities_banner" class="vh-60 panorama bg-pos-bottom" role="img" aria-label="<?php echo $amenBgAlt; ?>"></div>
 					<div id="rinrose_home-amenities_body" class="d-flex justify-content-between mt-5 pt-5 align-items-center">
 						<div id="rinrose_home-amenities_body-left" class="w-60">
-							<?php $amenLeftBg = wp_get_attachment_image_src(get_sub_field('left_image'), 'full', false); 
-							$amenLeftBgAlt = get_post_meta(get_sub_field('left_image'), '_wp_attachment_image_alt', TRUE); ?>
-							<div id="rinrose_home-amenities_body-left_image" class="panorama min-vh-100" style="background-image: url(<?php echo $amenLeftBg[0]; ?>)" role="img" aria-label="<?php echo $amenLeftBgAlt; ?>"></div>
+							<?php $amenLeftBgAlt = get_post_meta(get_sub_field('left_image'), '_wp_attachment_image_alt', TRUE); ?>
+							<div id="rinrose_home-amenities_body-left_image" class="panorama min-vh-100" role="img" aria-label="<?php echo $amenLeftBgAlt; ?>"></div>
 						</div><!--#rinrose_home-amenities_body-left -->
 						<div id="rinrose_home-amenities_body-right" class="w-40 px-5 pt-1 pb-5">
 							<div id="rinrose_home_amenities_body-right_content" class="pb-5 mb-5">
@@ -107,8 +105,7 @@ defined( 'ABSPATH' ) || exit;
 			<div id="rinrose_home-residences" class="bg-white pb-3 section">
 		    	<?php while( have_rows('residences') ): the_row(); ?>
 		    		<section id="rinrose_home-residences_info" aria-labelledby="rinrose_home_residences-title">
-						<?php $resBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
-						<div id="rinrose_home-residences_banner" class="vh-60 d-flex align-items-end px-5 py-3 bg-pos-bottom panorama" style="background-image:  url('<?php echo $resBg[0]; ?>')">
+						<div id="rinrose_home-residences_banner" class="vh-60 d-flex align-items-end px-5 py-3 bg-pos-bottom panorama">
 							<h2 id="rinrose_home_residences-title" class="display-1 text-white px-5 rinrose_has_animation" data-animation="fadeIn">
 								<?php the_sub_field('title'); ?>
 							</h2>
@@ -146,16 +143,15 @@ defined( 'ABSPATH' ) || exit;
 		if( have_rows('location') ): ?>
 			<section id="rinrose_home-location" class="bg-white section" aria-labelledby="rinrose_home-location_banner-content_body-title">
 			    <?php while( have_rows('location') ): the_row(); ?>
-					<?php $locationBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
-					<div id="rinrose_home-location_banner" class="panorama vh-60 d-flex align-items-center justify-content-center" style="background-image: url('<?php echo $locationBg[0]; ?>')">
+					<div id="rinrose_home-location_banner" class="panorama vh-60 d-flex align-items-center justify-content-center">
 						<div id="rinrose_home-location_banner-content" class="container d-flex justify-content-center">
-							<div id="rinrose_home-location_banner-content_body" class="py-5 px-3 w-60 rinrose_has_animation" data-animation="fadeIn">
+							<div id="rinrose_home-location_banner-content_body" class="py-5 w-70 rinrose_has_animation" data-animation="fadeIn">
 								<h2 id="rinrose_home-location_banner-content_body-title" class="display-1 text-white text-center"><?php the_sub_field('banner_text'); ?></h2>
 							</div>
 						</div>
 					</div>
 					<div id="rinrose_home_location-info" class="container py-5 my-5 d-flex justify-content-center">
-						<div id="rinrose_home_location-info_content" class="w-60 text-center px-3">
+						<div id="rinrose_home_location-info_content" class="w-70 px-4 text-center">
 							<h3 id="rinrose_home_location-content_title" class="text-primary text-uppercase rinrose_has_animation" data-animation="fadeIn">
 								<?php the_sub_field('title'); ?>
 							</h3>
@@ -184,10 +180,9 @@ defined( 'ABSPATH' ) || exit;
 			<div id="rinrose_home-wellness" class="bg-primary section">
 		    	<?php while( have_rows('wellness') ): the_row(); ?>
 		    		<a id="wellness" class="d-none anchorPin"></a>
-		    		<?php $wellnessBg = wp_get_attachment_image_src(get_sub_field('banner'), 'full', false); ?>
-					<div id="rinrose_home-wellness_banner" class="panorama vh-60 d-flex align-items-center justify-content-center bg-pos-bottom" style="background-image: url('<?php echo $wellnessBg[0]; ?>')">
+					<div id="rinrose_home-wellness_banner" class="panorama vh-60 d-flex align-items-center justify-content-center bg-pos-bottom">
 						<div id="rinrose_home-wellness_banner-content" class="container d-flex justify-content-center">
-							<div id="rinrose_home-wellness_banner-content_body" class="py-5  px-3 w-70">
+							<div id="rinrose_home-wellness_banner-content_body" class="py-5 px-3 w-80">
 								<h2 id="rinrose_home-wellness_banner-content_body-title" class="h3 text-white text-center text-uppercase pb-3 rinrose_has_animation" data-animation="fadeIn">
 									<?php the_sub_field('title'); ?>
 								</h2>

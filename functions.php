@@ -56,6 +56,10 @@ function theme_enqueue_styles() {
 
 	//Add animate.css library
 	wp_enqueue_style('animate-css', '//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', false);
+
+	//add Bugherd
+	wp_enqueue_script( 'bugherd-js', 'https://www.bugherd.com/sidebarv2.js?apikey=ryqnejdoperwopye4k4osa', null, null, false);
+
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
@@ -324,3 +328,119 @@ function get_rinrose_btn_link($args = array()) {
 function the_rinrose_btn_link($args = array()) {
 	echo get_rinrose_btn_link($args);
 }
+
+/** Preload Background Images **/
+function rinrose_img_atts($attachment_id) {
+	$upload_dir = wp_upload_dir();
+	$attachment_metadata = wp_get_attachment_metadata( $attachment_id );
+	$image = [
+		'href' => wp_get_attachment_image_url($attachment_id, '4K'),
+		'srcset' => wp_get_attachment_image_srcset($attachment_id, '4K'),
+		'sizes' => wp_get_attachment_image_sizes($attachment_id, '4K'),
+		'meta' => wp_get_attachment_metadata($attachment_id),
+		'upload' => $upload_dir['url'] . '/',
+	];
+	return (object) $image;
+}
+function rinrose_preload_images($imgs) {
+	$return = '';
+	if(is_array($imgs)) :
+		ob_start();
+		foreach($imgs as $i):
+			$img = rinrose_img_atts($i);
+			echo '<link rel="preload" as="image" href="'.$img->href.'" imagesrcset="'.$img->srcset.'" imagesizes="'.$img->sizes.'">
+';
+		endforeach;
+		$return = ob_get_clean();
+	elseif($imgs) :
+		$img = rinrose_img_atts($imgs);
+		$return = '<link rel="preload" as="image" href="'.$img->href.'" imagesrcset="'.$img->srcset.'" imagesizes="'.$img->sizes.'">';
+	endif;
+	return $return;
+}
+function rinrose_preload() {
+	$images = [];
+	$imgs = [];
+	$cssVars = '';
+	if(basename(get_page_template()) == 'home.php'):
+		$images = [
+	        'poster' => [
+	        	'file' => get_field('splash_poster'),
+	        	'css' => 'rinrose_home-splash_mask',
+	        ],
+	        'banner' => [
+	        	'file' => get_field('amenities_banner'),
+	        	'css' => 'rinrose_home-amenities_banner',
+	        ],
+	        'leftImg' => [
+	        	'file' => get_field('amenities_left_image'),
+	        	'css' => 'rinrose_home-amenities_body-left_image',
+	        ],
+	        'resBanner' => [
+	        	'file' => get_field('residences_banner'),
+	        	'css' => 'rinrose_home-residences_banner',
+	        ],
+	        'locBanner' => [
+	        	'file' => get_field('location_banner'),
+	        	'css' => 'rinrose_home-location_banner',
+	        ],
+	        'wellBanner' => [
+	        	'file' => get_field('wellness_banner'),
+	        	'css' => 'rinrose_home-wellness_banner',
+	        ],
+	    ];
+	elseif(basename(get_page_template()) == 'amenities.php'):
+		$images = [
+			'splash' => [
+				'file' => get_field('splash_image'),
+				'css' => 'rinrose_amenities-splash_banner',
+			],
+			'banner' => [
+				'file' => get_field('banner_image'),
+				'css' => 'rinrose_amenities-banner_img',
+			],
+		];
+	elseif(is_post_type_archive('gallery')):
+		$images = [
+			'splash' => [
+				'file' => get_field('gallery_image', 'option'),
+				'css' => 'rinrose_gallery-archive_splash',
+			],
+		];
+	elseif(is_post_type_archive('residence')):
+		$images = [
+			'splash' => [
+				'file' => get_field('residence_splash', 'option'),
+				'css' => 'rinrose_residence-archive_splash',
+			],
+		];
+	elseif(is_singular('residence')):
+		$images = [
+			'splash' => [
+				'file' => get_field('single_residence_splash', 'option'),
+				'css' => 'rinrose_residence-splash',
+			],
+		];
+	endif;
+
+	ob_start(); ?>
+<style>
+:root {
+	<?php foreach($images as $image): 
+		$data = rinrose_img_atts($image['file']);
+		$imgs[] = $image['file']; ?>
+--<?php echo $image['css']; ?>:  url("<?php echo $data->href; ?>");
+		<?php foreach($data->meta['sizes'] as $key => $info):
+			$var = $image['css'].'_'.$key;
+			$file = $data->upload.$info['file']; ?>
+--<?php echo $var; ?>: url("<?php echo $file; ?>");
+		<?php endforeach;
+	endforeach; ?>
+}
+</style>
+<?php
+	$cssVars = ob_get_clean();
+	echo rinrose_preload_images($imgs);
+	echo $cssVars;
+}
+add_action( 'wp_head','rinrose_preload', 10);

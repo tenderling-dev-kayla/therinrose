@@ -18,8 +18,7 @@ get_header();
 				<?php if(have_rows('gallery', 'options')):
 					while(have_rows('gallery', 'options')): the_row(); ?>
 						<header class="page-header">
-							<?php $splashBg = wp_get_attachment_image_src(get_sub_field('image'), 'full', false); ?>
-							<div id="rinrose_gallery-archive_splash" class="vh-80 d-flex align-items-end px-5 py-3 bg-pos-bottom panorama" style="background-image:  url('<?php echo $splashBg[0]; ?>')">
+							<div id="rinrose_gallery-archive_splash" class="vh-80 d-flex align-items-end px-5 py-3 bg-pos-bottom panorama">
 								<h1 id="rinrose_home_residences-title" class="display-1 text-white px-5 rinrose_has_animation" data-animation="fadeIn">
 									<?php the_sub_field('heading'); ?>
 								</h1>
